@@ -1,5 +1,5 @@
 ---
-title: Setting up TYpes
+title: Setting up Types
 teaching: 30
 exercises: 0
 questions:
