@@ -3,23 +3,21 @@ title: "Slideshow Viewer Dev"
 teaching: 0
 exercises: 0
 questions:
-- What is a Software Carpentry lesson template?
-- Which lesson template should we use for source?
-- How to import lesson template as a GitHub repo?
+- Experimenting with images
 objectives:  
-- Identify Software Carpentry lesson template source.
-- Build DUNE repo and corresponding .io site.
+- Experimentation
 keypoints:
-- Build from styles template is straightforward but requires a few steps for GitHub Pages to render correctly.
+- Demo
 ---
-
 
 <!--testing style and script-->
 <style>
 body {background-color: white;}
 h1 {color: blue;}
 </style>
-
+<script>
+<!-- will try https://www.w3schools.com/howto/howto_css_modal_images.asp -->
+</script>
 
 ### Testing Image Embeds
 
@@ -81,6 +79,39 @@ Click on the image to open in window, right click to open in you window or tab.
 > ![Testing slide embed](../fig/Setting-up-Types/Setting-up-Types.001.jpeg)
 >
 {: .callout}
+
+
+
+
+> Before inserting Items and their corresponding Tests, we need to define a Component Type and Test Type, respectively. We will do so, first with the WEB UI, and then through the REST API in this section.
+>
+>> ## Slide Reveal
+>>  ![Testing slide embed](../fig/Setting-up-Types/Setting-up-Types.001.jpeg)
+>>
+>> Reference:  [Slide Show](../fig/Setting-up-Types-v1.key)
+>>{: output}
+>{: .solution}
+{: .challenge}
+
+
+> First the WEB UI approach.
+>> ## Slide Reveal
+>>  ![Testing slide embed](../fig/Setting-up-Types/Setting-up-Types.002.jpeg)
+>>
+>>  Reference:  [Slide Show](../fig/Setting-up-Types-v1.key)
+>>{: output}
+>{: .solution}
+{: .challenge}
+
+
+> One can access to the two versions of the HWDB from these addresses.  We will use the development version in this session.
+>> ## Slide Reveal
+>>  ![Testing slide embed](../fig/Setting-up-Types/Setting-up-Types.003.jpeg)
+>>
+>>  Reference:  [Slide Show](../fig/Setting-up-Types-v1.key)
+>>{: output}
+>{: .solution}
+{: .challenge}
 
 
 {% include links.md %}
