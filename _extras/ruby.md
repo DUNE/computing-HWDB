@@ -22,18 +22,18 @@ keypoints:
 >> ## Glossary  
 >> - Terminal is a operating system interface on MacOS that can be found in the Applications:Utilities folder.
 >> - Macports is considered to be the default package manager for MacOS - [https://guide.macports.org/](https://guide.macports.org)
->> - Homebrew is a package manager for MacOS -[https://brew.sh](https://brew.sh), docs [https://docs.brew.sh/](https://docs.brew.sh) Installation
+>> - Homebrew is a package manager for MacOS -[https://brew.sh](https://brew.sh), docs [https://docs.brew.sh/](https://docs.brew.sh) Installation Options: [https://docs.brew.sh/Installation](https://docs.brew.sh/Installation).
 >> - Ruby is a scripting language, presumably akin to perl, for example. Ruby is installed by default on MacOS. - [https://ruby-lang.org/en/](https://ruby-lang.org/en/)
->> - Ruby Gems are open source Ruby code that provide utility. Example gems include Bundler, and Jekyll. JSON and Rails are two other examples. Ruby gems can be inspected at https://rubygems.org. More on gems: https://medium.com/@morgannegagne/what-is-a-ruby-gem-1eec2684e68
+>> - Ruby Gems are open source Ruby code that provide utility. Example gems include Bundler, and Jekyll. JSON and Rails are two other examples. Ruby gems can be inspected at [https://rubygems.org](https://rubygems.org). More on RubyGems: [https://medium.com/@morgannegagne/what-is-a-ruby-gem-1eec2684e68](https://medium.com/@morgannegagne/what-is-a-ruby-gem-1eec2684e68).
 >> - rbenv - allows for managemnent of ruby version used when multiple versions of ruby are installed on a Mac (or PC). 
->> - chruby - another way to switch between versions of ruby. - https://github.com/postmodern/chruby#readme
->> - RVM - Ruby Version Manager is used to manage multiple installations of Ruby - https://rvm.io
->> - ruby-build - https://github.com/rbenv/ruby-build#readme
->> - ruby-install - makes possible the installation of ruby into a specific directory - https://github.io/postmodern/ruby-install#readme
->> - Bundler - a Ruby utility for matching a project specific gem to an associated Ruby version - https://bundler.io/getting_started.html 
->> - Jekyll - markdown to HTML renderer for .io site  https://jekyllrb.com/ and installation https://jekyllrb.com/docs/installation
+>> - chruby - another way to switch between versions of ruby - [https://github.com/postmodern/chruby#readme](https://github.com/postmodern/chruby#readm)
+>> - RVM - Ruby Version Manager is used to manage multiple installations of Ruby - [https://rvm.io](https://rvm.io).
+>> - ruby-build - [https://github.com/rbenv/ruby-build#readme](https://github.com/rbenv/ruby-build#readme)
+>> - ruby-install - makes possible the installation of ruby into a specific directory - [https://github.io/postmodern/ruby-install#readme](https://github.io/postmodern/ruby-install#readme)
+>> - Bundler - a Ruby utility for matching a project specific gem to an associated Ruby version - [https://bundler.io/getting_started.html](https://bundler.io/getting_started.html)
+>> - Jekyll - markdown to HTML renderer for .io site  [https://jekyllrb.com/](https://jekyllrb.com) and installation [https://jekyllrb.com/docs/installation](https://jekyllrb.com/docs/installation)
 >>
->>These glossary items resourced as https://ruby-lang.org/en/documentation/installation
+>>These glossary items resourced as [https://ruby-lang.org/en/documentation/installation](https://ruby-lang.org/en/documentation/installation)
 >>{: .output}
 >{: .solution}
 {: .challenge}
