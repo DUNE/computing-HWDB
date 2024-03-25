@@ -1,5 +1,5 @@
 ---
-title: "Build Notes for Editing Environment"
+title: "Building the Ruby Editing Environment"
 teaching: 0
 exercises: 0
 questions:
@@ -10,7 +10,6 @@ keypoints:
 - Best to edit markdown files locally, test, verify, then push to GitHub.
 ---
 
-
 #### Essential ingredients:
 
 - gh-pages set for a given github repository (computing-HWDB -> https://github.com/DUNE/computing-HWDB renders as https://dune.github.io/computing-HWDB
@@ -18,7 +17,6 @@ keypoints:
 - Ruby: powerful scripting language
 - Gems: open source Ruby code
 - Bundler: gem manager
-
 
 > The relavent software for establishing the Ruby editing environment for use with GitHub's gh-pages are:
 >> ## Glossary  
@@ -100,20 +98,29 @@ $ which ruby
 $ ruby --version
 ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.x86_64-darwin20]
 
+#verify $HOME gem directory and versions of Ruby installed
+$ ls -l ~/.gem/ruby/
+drwxr-xr-x   9 daviddemuth  staff  288 Apr 23  2021 2.6.0
+
 #install the latest version
 $ brew install ruby
 $ ruby --version
 
-# verify gem is installed
+$ which ruby && ruby  --version
+/usr/local/opt/ruby/bin/ruby
+ruby 3.0.1p64 (2021-04-05 revision 0fb782ee38) [x86_64-darwin20]
+
+# verify RubyGems is installed
 $ which gem
 /usr/bin/gem
-
 $ gem --version
 3.0.3
 
-#verify $HOME gem directory and versions of Ruby installed
-$ ls -l ~/.gem/ruby/
-drwxr-xr-x   9 daviddemuth  staff  288 Apr 23  2021 2.6.0
+$ sudo gem update --system
+
+$ which gem && gem --version
+/usr/local/opt/ruby/bin/gem
+3.5.6
 
 #show local gems installed
 $ gem list
@@ -121,7 +128,7 @@ $ gem list
 #is ruby gem Bundler installed?
 $ gem list | grep bundler
 
-# install bundler
+# install the bundler gem
 $ gem install bundler
 
 #show ruby and gem paths (good for debugging)
@@ -129,10 +136,9 @@ $ gem env
 ~~~
 {: .language-bash}
 
-With ruby upgraded to a 3. version, and the corresponding gem also upgraded. 
+With ruby upgraded to a 3. version, and the corresponding gem also upgraded, try launching the localhost web server from the root directory of the github repository you are working from by typing 'make serve' at the Terminal command prompt.
 
-
-It might be necessary to install the jeckyll gem, and possibly ruby-install.
+If it fails, it might be necessary to install the jeckyll gem, and possibly ruby-install.
 
 Necessary is making sure your PATH to the new ruby and gems installation directories are correct.  In your installation log, you might of noticed a few prompts simlar to the following PATH commands, at these to your .bash_profile file located in your $HOME directory ('ls -a' to evidenced its existence, .bash_rc, and .profile could also work).
 
@@ -148,7 +154,6 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 {: .language-bash}
 
 Note: Check with '$which ruby && ruby --version' and '$which gem && gem --version' Compare to $ gem env (I noticed a discrepency between the install log recommendation for adding a $PATH to .bash_profile)
-
 
 Go to your GitHub repository e.g., computing-HWDB
 ~~~
@@ -168,8 +173,7 @@ With your emacs window open, edit away. With each file save, the ruby engine wil
 
 When you are ready to push the update to GitHub, we suggest the use of GitHub Desktop connected to your github account and working in your cloned repository.
 
-
-> ingnore for now
+> ingnore this archive for now...
 >> ## Archive
 >>~~~
 >># Is the Jekyll gem installed?
@@ -197,5 +201,8 @@ When you are ready to push the update to GitHub, we suggest the use of GitHub De
 
 
 Updates to this page will follow.
+
+A curiosity is using virtual environments with Ruby, as we do with Python using virtualenv? Reference: [https://develves.net/blogs/asd/2016-03-17-using-virtual-environments-ruby-1/](https://develves.net/blogs/asd/2016-03-17-using-virtual-environments-ruby-1/). 
+See also [https://stackoverflow.com/questions/486995/ruby-equivalent-of-virtualenv](https://stackoverflow.com/questions/486995/ruby-equivalent-of-virtualenv).
 
 {% include links.md %}
