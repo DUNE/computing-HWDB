@@ -82,6 +82,88 @@ Homebrew will be used for installations in this tutorial.
 >{: .solution}
 {: .challenge}
 
+> Follow instructions for installation of Ruby 3 on Ubuntu
+>> ## Ubuntu Install Notes
+>> Updated: April 25, 2024.
+>> This was tested on Ubuntu 20.04 running under WSL on Windows 11.
+>>
+>> Unfortunately, under Ubuntu 20.04, "apt" only installs Ruby 2.7. To install version 3.+,
+>> you must use a separate installer. The following instructions are for using "rbenv" and 
+>> are summarized from 
+>> [https://phoenixnap.com/kb/install-ruby-ubuntu] (https://phoenixnap.com/kb/install-ruby-ubuntu).
+>>
+>>~~~
+>> # Update the system repositories
+>> $ sudo apt update
+>>~~~
+>>{: .language-bash}
+>>
+>>~~~
+>> # Download and install the libraries and compilers Ruby needs to run
+>> $ sudo apt install \
+>>     git \
+>>     curl \
+>>     autoconf \
+>>     bison \
+>>     build-essential \
+>>     libssl-dev \
+>>     libyaml-dev \
+>>     libreadline6-dev \
+>>     zlib1g-dev \
+>>     libncurses5-dev \
+>>     libffi-dev \
+>>     libgdbm6 \
+>>     libgdbm-dev \
+>>     libdb-dev
+>>~~~
+>>{: .language-bash}
+>>~~~
+>> # Install rbenv from github
+>> $ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+>>~~~
+>>{: .language-bash}
+>>~~~
+>> # Update your bashrc file
+>> $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+>> $ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+>> $ source ~/.bashrc
+>>~~~
+>>{: .language-bash}
+>>~~~
+>> # List available versions
+>> $ rbenv install -l
+>> 3.0.7
+>> 3.1.5
+>> 3.2.4
+>> 3.3.1
+>> jruby-9.4.6.0
+>> mruby-3.3.0
+>> picoruby-3.0.0
+>> truffleruby-24.0.1
+>> truffleruby+graalvm-24.0.1
+>>~~~
+>>{: .language-bash}
+>>{: .output}
+>>~~~
+>> # Install Ruby 3
+>> $ rbenv install 3.3.1
+>>~~~
+>>{: .language-bash}
+>>~~~
+>> # Activate the newly installed version
+>> $ rbenv global 3.3.1
+>>~~~
+>>{: .language-bash}
+>>~~~
+>> # Check Ruby and Gem versions
+>> $ ruby --version
+>> ruby 3.3.1 (2024-04-23 revision c56cd86388) [x86_64-linux]
+>> $ gem --version
+>> 3.5.9
+>>~~~
+>>{: .language-bash}
+>{: .solution}
+{: .challenge}
 
 Assuming the Homebrew installation or upgrade went smoothly, lets verify a few things with respect to the Ruby programming language. That is, what is the latest version of Ruby, Gem, and Bundler?
 
