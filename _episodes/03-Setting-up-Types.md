@@ -3,7 +3,7 @@ title: Setting up Types
 teaching: 30
 exercises: 0
 questions:
-- How do we define a Componnet Type and a Test Type with the WEB UI?
+- How do we define a Component Type and a Test Type with the WEB UI?
 - How about through the REST API?
 objectives:
 - Users should be able to setup both Component Types and Test Types so that
@@ -402,6 +402,11 @@ Similarly one can easily *get* lists of Systems, Subsystems, and Component Types
 - List of Subsystems: /subsystems/\<project_id>/\<system_id>
 - List of Component Types: /component-types/\<project_id>/\<system_id>/\<subsystem_id>
 
+[back to top](#contents)
+<br/><br/> 
+
+
+
 > ## Quiz
 > GET lists of Systems, Subsystems, and Component Types for the following cases:
 > - Obtain a list of Systems for project_id = D
@@ -555,7 +560,7 @@ Inside of the *data blob*, we see;
 - comments
 - manufacturers
 - roles (Managed by)
-- specifications and its version)
+- specifications and its version
 - subsystem
 - connectors
 It shows the latest version of its Specifications by default.

@@ -23,15 +23,23 @@ This tutorial will teach the basics of accessing and using the DUNE Hardware Dat
 
 {% comment %} This is a comment in Liquid {% endcomment %}
 
-> ## Prerequisites
+> ## Getting Started
 >
-> FIXME
-{: .prereq}
+> First step: follow the directions in the "[Setup](
+> {{ page.root }}/setup.html)" to arrived prepared for this event. Follow the instruction there to obtain your FNAL certificate, 
+> which you will need to communicate with the RESR API of the HWDB.
+{: .callout}
 
 By the end of this training, participants will know how to:
 * learning outcome 1
 * learning outcome 2
 * learning outcome 3
+
+<h2 id="schedule">Schedule by Day</h2>
+
+The official schedule for this event is listed on the [Indico site (59762)](https://indico.fnal.gov/event/59762/timetable/#20230524).
+
+{% include sc/schedule.html %}
 
 
 
