@@ -3,7 +3,7 @@ title: Data Management using WEB UI
 teaching: 60
 exercises: 0
 questions:
-- question 1
+- How does one use the WEB UI?
 objectives:
 - objective 1
 - objective 2

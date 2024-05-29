@@ -35,12 +35,14 @@ By the end of this training, participants will know how to:
 * learning outcome 2
 * learning outcome 3
 
+
+<!--
 <h2 id="schedule">Schedule by Day</h2>
 
 The official schedule for this event is listed on the [Indico site (59762)](https://indico.fnal.gov/event/59762/timetable/#20230524).
 
 {% include sc/schedule.html %}
 
-
+-->
 
 {% include links.md %}

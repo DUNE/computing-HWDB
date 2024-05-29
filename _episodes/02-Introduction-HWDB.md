@@ -3,22 +3,40 @@ title: Introduction to the DUNE HWDB
 teaching: 30
 exercises: 0
 questions:
-- question 1
+- What is the HWDB?
+- What are its essential components?
 objectives:
 - objective 1
 - objective 2
 keypoints:
 - keypoint 1
 ---
-## Lesson Part 1
 
-Part 1...
-
-## Lesson Part 2
+>## Contents
+>
+>|-------------+------------------|
+>|    | Description  |
+>|-------------+------------------|
+>| [PID](#pid) | |
+>|-------------+------------------|
+>| &emsp;[Project Identifier (required)](#project-identifier-required) | |
+>|-------------+------------------|
+>| &emsp;[System Identifier (required)](#system-identifier-required) | |
+>|-------------+------------------|
+>| &emsp;[Subsystem Identifier (required)](#subsystem-identifier-required) | |
+>|-------------+------------------|
+>| &emsp;[Component Type Identifier (required)](#component-type-identifier-required) | |
+>|-------------+------------------|
+>| &emsp;[Item Number (required)](#item-number-required) | |
+>|-------------+------------------|
+>| &emsp;[Country of Origin (required)](#country-of-origin-required) | |
+>|-------------+------------------|
+>| &emsp;[Responsible Institution ID (required)](#responsible-institution-id-required) | |
+>|-------------+------------------|
 
 ## PID
 
-The Parts Identifier (**PID**) is a 32-characters alphanumeric string that is used to uniquely identify all the LBNF and DUNE components that are used during the construction of the LBNF facility (including both the far site at the Sanford Underground Research Facility – SURF and the near site at Fermilab) and of all the corresponding detectors. The parts identifier forms a unique identifier for that part in the hardware database. Each part which has important information associated with it must have a parts identifier assigned so the data can be archived in the hardware database. The parts identifier is used for all equipment bar codes, QR codes, tags and other systems of identification. The PID is composed of 10 fields, of which 7 are required
+The Parts Identifier (**PID**) is a 32-characters alphanumeric string that is used to uniquely identify all the LBNF and DUNE components that are used during the construction of the LBNF facility (including both the far site at the Sanford Underground Research Facility – SURF and the near site at Fermilab) and of all the corresponding detectors. The parts identifier forms a unique identifier for that part in the hardware database. Each part which has important information associated with it must have a parts identifier assigned so the data can be archived in the hardware database. The parts identifier is used for all equipment bar codes, QR codes, tags and other systems of identification. The PID is composed of 10 fields, of which 7 are required. More information about PIDs can be found under [LBNF/DUNE Parts Identifier: EDMS 2505353](https://edms.cern.ch/ui/#!master/navigator/document?D:101278257:101278257:subDocs).
 
 ### Project Identifier (required)
 
@@ -284,6 +302,7 @@ The country of origin is a two-character string representing the country respons
 
 The responsible institution ID is a three-digit number (001-999) representing the institution inside LBNF/DUNE responsible for the part or assembly. The responsible institution is the last of the immutable fields making both the country and institution required information before a part number can be assigned to a given part. The range 001-500 are reserved for the DUNE collaboration institutions. 000 is an illegal value.
 
+{% include country-code-table/index.html %}
 
 
 {% include links.md %}
