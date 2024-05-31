@@ -166,6 +166,8 @@ This can seem overwhealming at first, but notice the following important fields:
 
 ### GET List of Items
 
+[Jump to Post counterpart](#post-mulitple-items)
+
 You can also get items by simply specifying the Component Type ID. To do so you can use the `/component-types/<type_id>/components` API endpoint. For the following example we will use component type 'Front Axle' with ID `Z00100400005`.
 
 ~~~
@@ -758,6 +760,7 @@ When executed, it should produce a similar response to the following.
 
 You can also post images in three different ways: for a given Component Type, for a given Item, and for a given Test entry. Most major image types are supported including .jpeg, .tiff, .pdf, .bmp, and .png.
 
+
 #### POST Image for Component Type
 
 Posting an image for a given Component Type utilizes the `/component-types/<type_id>/images` API endpoint. Suppose you wish to post an image myimage.pdf to the component type `Z00100100048`.
@@ -777,6 +780,7 @@ When executed, the response is as follows.
 }
 ~~~
 
+
 #### POST Image for Item
 
 Posting an image for a specific item utilizes the `/components/<eid>/images` API endpoint. Suppose you wish to post an image myimage.pdf to the item `Z00100100048-00033`.
@@ -795,6 +799,7 @@ When executed, the response is as follows.
   "status": "OK"
 }
 ~~~
+
 
 #### POST Image for Test
 
@@ -897,6 +902,9 @@ When executed, the response is as follows.
 }
 ~~~
 {: .output}
+
+[back to top](#contents)
+
 
 ## Item Filtering
 
