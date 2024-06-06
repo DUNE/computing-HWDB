@@ -1,0 +1,87 @@
+
+<div class="image-container2">
+    <img src="../fig/Data-management-WEB-UI/prep-add-items.png" alt="prep-add-items">
+    <button class="overlay-button3" style="top: 67%; left: 30%;" onclick="showInfo('datasheet')"></button>
+    <button class="overlay-button4" style="top: 85%; left: 30%;" onclick="showInfo('connectors')"></button>
+</div>
+
+<div id="datasheet" class="popup">
+    <span class="close" onclick="closePopup('datasheet')">&times;</span>
+    <p>Datasheet: When we add a new “Front Axle,” we will need to have a “Last Name” and “First Name” to assign to it.
+    </p>
+</div>
+<div id="connectors" class="popup">
+    <span class="close" onclick="closePopup('connectors')">&times;</span>
+    <p>Connectors: We can see here that we will need two other Items of a different Component Type to complete the Front Axle. 
+
+        (Note that we don't necessarily need to have sub-components "My L Wheel" and "My R Wheel" right away. We can create the Front Axle and add the two subcomponents later.)</p>
+</div>
+
+
+<script>
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .image-container2 {
+        position: relative;
+        display: inline-block;
+    }
+
+    .image-container2 img {
+        display: block;
+        max-width: 60%;
+        height: auto;
+    }
+
+    .overlay-button3 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 400px; 
+        height: 100px; 
+        outline: none;
+    }
+
+    .overlay-button4 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 400px; 
+        height: 45px; 
+        outline: none;
+    }
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        z-index: 1000;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+</style>
+

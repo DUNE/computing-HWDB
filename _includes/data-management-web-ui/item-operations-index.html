@@ -1,0 +1,138 @@
+
+<div class="image-container10">
+    <img src="../fig/Data-management-WEB-UI/edit-item.png" alt="edit-item">
+    <button class="small" style="top: 10%; left: 20.2%;" onclick="showInfo('QR')"></button>
+    <button class="long" style="top: 10%; left: 24.3%;" onclick="showInfo('location-item')"></button>
+    <button class="medium" style="top: 10%; left: 34.2%;" onclick="showInfo('specs')"></button>
+    <button class="long" style="top: 10%; left: 42.7%;" onclick="showInfo('structure')"></button>
+    <button class="long" style="top: 10%; left: 53.3%;" onclick="showInfo('container')"></button>
+    <button class="medium2" style="top: 10%; left: 63.5%;" onclick="showInfo('test')"></button>
+    <button class="medium2" style="top: 10%; left: 71%;" onclick="showInfo('image')"></button>
+</div>
+
+<div id="QR" class="popup">
+    <span class="close" onclick="closePopup('QR')">&times;</span>
+    <p>View a QR code containing a URL to this Item in the HWDB</p>
+    <img src="../fig/Data-management-WEB-UI/item-QR.png" alt="QR" style="max-width: 60%">
+</div>
+<div id="location-item" class="popup">
+    <span class="close" onclick="closePopup('location-item')">&times;</span>
+    <p>View location history of this Item. Allows you to add to it as well. </p>
+    <img src="../fig/Data-management-WEB-UI/item-location.png" alt="location" style="max-width: 60%">
+</div>
+<div id="specs" class="popup">
+    <span class="close" onclick="closePopup('specs')">&times;</span>
+    <p>View a historical record of the Specifications for this Item </p>
+    <img src="../fig/Data-management-WEB-UI/item-specification.png" alt="image-menu">
+</div>
+<div id="structure" class="popup">
+    <span class="close" onclick="closePopup('structure')">&times;</span>
+    <p>View a historical record of which Items this Item has been attached to as a sub-component (i.e., “parents” of this item). </p>
+    <img src="../fig/Data-management-WEB-UI/item-structure.png" alt="image-menu" style="max-width: 60%">
+</div>
+<div id="container" class="popup">
+    <span class="close" onclick="closePopup('container')">&times;</span>
+    <p>View a historical record of the sub-components attached to this item. </p>
+    <img src="../fig/Data-management-WEB-UI/item-container.png" alt="image-menu">
+</div>
+<div id="test" class="popup">
+    <span class="close" onclick="closePopup('test')">&times;</span>
+    <p>View test history of this Item. Allows you to add to it as well. </p>
+    <img src="../fig/Data-management-WEB-UI/item-test.png" alt="image-menu">
+</div>
+<div id="image" class="popup">
+    <span class="close" onclick="closePopup('image')">&times;</span>
+    <p>View image history of this Item. Allows you to add to it as well.</p>
+    <img src="../fig/Data-management-WEB-UI/add-image.png" alt="image-menu" style="max-width: 60%">
+</div>
+
+
+
+<script>
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .image-container10 {
+        position: relative;
+        display: inline-block;
+    }
+
+    .image-container10 img {
+        display: block;
+        max-width: 60%;
+        height: auto;
+    }
+
+    .small {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 45px; 
+        height: 28px; 
+        outline: none;
+    }
+
+    .medium2 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 80px; 
+        height: 28px; 
+        outline: none;
+    }
+
+    .medium {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 90px; 
+        height: 28px; 
+        outline: none;
+    }
+
+    .long {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 110px; 
+        height: 28px; 
+        outline: none;
+    }
+
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        z-index: 1000;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+</style>
+

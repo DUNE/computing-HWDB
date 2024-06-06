@@ -1,0 +1,72 @@
+
+<div class="image-container10">
+    <img src="../fig/Data-management-WEB-UI/test-history.png" alt="test-history">
+    <button class="overlay-button17" style="top: 48%; left: 29%;" onclick="showInfo('add-image-test')"></button>
+</div>
+
+<div id="add-image-test" class="popup">
+    <span class="close" onclick="closePopup('add-image-test')">&times;</span>
+    <p>Clicking on the image button produces a menu identical to that seen in above. </p>
+    <img src="../fig/Data-management-WEB-UI/test-image.png" alt="image-menu">
+</div>
+
+
+
+<script>
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .image-container10 {
+        position: relative;
+        display: inline-block;
+    }
+
+    .image-container10 img {
+        display: block;
+        max-width: 50%;
+        height: auto;
+    }
+
+    .overlay-button17 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 190px; 
+        height: 20px; 
+        outline: none;
+    }
+
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        z-index: 1000;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+</style>
+

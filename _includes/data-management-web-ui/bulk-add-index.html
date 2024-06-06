@@ -1,0 +1,73 @@
+
+<div class="image-container5">
+    <img src="../fig/Data-management-WEB-UI/bulk-add.png" alt="bulk-add">
+    <button class="overlay-button11" style="top: 81.5%; left: 25.7%;" onclick="showInfo('save')"></button>
+</div>
+
+<div id="save" class="popup">
+    <span class="close" onclick="closePopup('save')">&times;</span>
+    <p>When you click “Save,” it will take you to a page containing bar codes and QR codes for the Items you have created, an example of which is below.
+    </p>
+    <img src="../fig/Data-management-WEB-UI/bulk-add-codes.png" alt="barcode/qrcodes">
+</div>
+
+
+
+<script>
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .image-container5 {
+        position: relative;
+        display: inline-block;
+    }
+
+    .image-container5 img {
+        display: block;
+        max-width: 75%;
+        height: auto;
+    }
+
+    .overlay-button11 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); /* Transparent background */
+        border: 2px solid red; /* Thin red border */
+        cursor: pointer;
+        width: 68px; /* Adjust size as needed */
+        height: 30px; /* Adjust size as needed */
+        outline: none;
+    }
+
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        z-index: 1000;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+</style>
+

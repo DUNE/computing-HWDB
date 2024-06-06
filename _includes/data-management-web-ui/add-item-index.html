@@ -1,0 +1,157 @@
+
+<div class="image-container4">
+    <img src="../fig/Data-management-WEB-UI/add-item.png" alt="add-item">
+    <button class="overlay-button7" style="top: 9.5%; left: 77.5%;" onclick="showInfo('Comp-type-def')"></button>
+    <button class="overlay-button7" style="top: 13%; left: 77.5%;" onclick="showInfo('PID-barcode')"></button>
+    <button class="overlay-button7" style="top: 66%; left: 77.5%;" onclick="showInfo('expand-specific')"></button>
+    <button class="overlay-button7" style="top: 86.9%; left: 77.5%;" onclick="showInfo('expand-subcomp')"></button>
+
+    <button class="overlay-button8" style="top: 22%; left: 20%;" onclick="showInfo('serial-sum')"></button>
+    <button class="overlay-button8" style="top: 34%; left: 20%;" onclick="showInfo('manufac')"></button>
+    <button class="overlay-button8" style="top: 86.9%; left: 20%;" onclick="showInfo('subcomp')"></button>
+    <button class="overlay-button8" style="top: 18%; left: 20%;" onclick="showInfo('location')"></button>
+
+    <button class="overlay-button9" style="top: 25.3%; left: 20%;" onclick="showInfo('institution-country')"></button>
+    <button class="overlay-button9" style="top: 54%; left: 20%;" onclick="showInfo('status')"></button>
+
+    <button class="overlay-button10" style="top: 66%; left: 20%;" onclick="showInfo('specific')"></button>
+</div>
+
+<div id="Comp-type-def" class="popup">
+    <span class="close" onclick="closePopup('Comp-type-def')">&times;</span>
+    <p>View the Component Type definition</p>
+</div>
+<div id="PID-barcode" class="popup">
+    <span class="close" onclick="closePopup('PID-barcode')">&times;</span>
+    <p>View the bar code for this Item. (This only works when editing an item. It will not be available when you are initially creating the item.)
+    </p>
+</div>
+<div id="expand-specific" class="popup">
+    <span class="close" onclick="closePopup('expand-specific')">&times;</span>
+    <p>Expand/Contract Specification section</p>
+</div>
+<div id="expand-subcomp" class="popup">
+    <span class="close" onclick="closePopup('expand-subcomp')">&times;</span>
+    <p>Expand/Contract Sub-components section</p>
+</div>
+
+<div id="serial-sum" class="popup">
+    <span class="close" onclick="closePopup('serial-sum')">&times;</span>
+    <p>Serial Number (optional). Use this if an item has an identifiable serial number to record. It is recommended to make this unique (within this Component type) if used, but the HWDB will not enforce uniqueness.</p>
+</div>
+<div id="manufac" class="popup">
+    <span class="close" onclick="closePopup('manufac')">&times;</span>
+    <p>Manufacturer (optional). Select from the list of manufacturers defined for this Component Type</p>
+</div>
+<div id="subcomp" class="popup">
+    <span class="close" onclick="closePopup('subcomp')">&times;</span>
+    <p>Sub-components. This is empty when initially adding the Item. We have to come back and edit the Item to add sub-components</p>
+</div>
+<div id="location" class="popup">
+    <span class="close" onclick="closePopup('location')">&times;</span>
+    <p>Gives the latest location the item was at, cannot be edited during creation.</p>
+</div>
+
+<div id="institution-country" class="popup">
+    <span class="close" onclick="closePopup('institution-country')">&times;</span>
+    <p>Institution/Country (required). Select the institution responsible for managing this Item.
+    </p>
+</div>
+<div id="status" class="popup">
+    <span class="close" onclick="closePopup('status')">&times;</span>
+    <p>Component status (required). Marks the Item as being active for use as a subcomponent. There are three possibilities: "available", "temporarily not available", "permanantly not available". The status must be marked as "available" to be used as a subcomponent.</p>
+</div>
+
+<div id="specific" class="popup">
+    <span class="close" onclick="closePopup('specific')">&times;</span>
+    <p>Specifications. These fields are defined in the Component Type for this Item.
+    </p>
+</div>
+
+<script>
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .image-container4 {
+        position: relative;
+        display: inline-block;
+    }
+
+    .image-container4 img {
+        display: block;
+        max-width: 60%;
+        height: auto;
+    }
+
+    .overlay-button7 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 24px; 
+        height: 24px; 
+        outline: none;
+    }
+
+    .overlay-button8 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red;
+        cursor: pointer;
+        width: 657px; 
+        height: 25px; 
+        outline: none;
+    }
+
+    .overlay-button9 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 657px; 
+        height: 50px; 
+        outline: none;
+    }
+
+    .overlay-button10 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 657px; 
+        height: 120px; 
+        outline: none;
+    }
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        z-index: 1000;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+</style>
+

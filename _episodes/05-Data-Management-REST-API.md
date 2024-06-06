@@ -93,8 +93,8 @@ https://dbwebapi2.fnal.gov:8443/cdb/api/v1/ --> APIPATH
 ## GET
 
 ### GET Item            
-<a href="{{site.url}}/05-Data-Management-REST-API/index.html#post-item" style="margin-left: 0px; padding: 5px 10px; background-color: #00a6ff; color: white; text-decoration: none; border-radius: 4px;">Jump to post counterpart</a>
 
+[Jump to POST counterpart](#post-item)
 
 'Getting' an item calls the `/components/<pid>` API endpoint. For the following example we will use the following item: `Z00100400005-00001`. Use the following command line in order to 'get' the desired item.
 
@@ -166,7 +166,7 @@ This can seem overwhealming at first, but notice the following important fields:
 
 ### GET List of Items
 
-[Jump to Post counterpart](#post-mulitple-items)
+[Jump to POST counterpart](#post-mulitple-items)
 
 You can also get items by simply specifying the Component Type ID. To do so you can use the `/component-types/<type_id>/components` API endpoint. For the following example we will use component type 'Front Axle' with ID `Z00100400005`.
 
@@ -248,6 +248,8 @@ In order to access a specific page number, you can use `CURL 'APIPATH/component-
 
 ### GET Test Types
 
+[Jump to POST counterpart](#post-test-type)
+
 You can check which test types are compatible with a given component type. In order to do so you can use the `/component-types/<type_id>/test-types` API endpoint. The following is an example using component type `Z00100100046`.
 
 ~~~
@@ -314,6 +316,8 @@ The response when executed is quite long, so we display an abbreviated list.
 
 ### GET Test Results
 
+[Jump to POST counterpart](#post-test-result)
+
 You can also get test results associated with particular items. This uses the `/components/<eid>/tests/<test_type_name>` API endpoint. For the following example, we will use item `Z00100100046-00008` and test type `Test_Parts_3_TestType_10`.
 
 ~~~
@@ -365,6 +369,8 @@ Which returns the following.
 <br/><br/> 
 
 ### GET Location of Item
+
+[Jump to POST counterpart](#post-new-location)
 
 You can get the current and previous locations of an item using the `/components/<pid>/locations` API endpoint. The returned list is sorted by most recent first. We will use item `Z00100300030-00103` for the following example.
 
@@ -447,6 +453,8 @@ The process is identical for producing QR codes.
 
 ### GET Images
 
+[Jump to POST counterpart](#post-image-for-item)
+
 Regardless of how the image was posted (for a given Component Type, Item, or Test entry) the process of GETting the image and downloading it is very similar. The following are the API endpoints for Component type, Item, and Test entry respectively. Note that GETting an image from a test entry requires the OID. The manner in which the OID can be obtained is shown [here](#post-image-for-test).
 
 ~~~
@@ -528,6 +536,8 @@ CURL 'APIPATH/img/fa636f5c-186d-11ef-ba26-2f96aeb61232' -o myimage.pdf
 
 ### POST item
 
+[Jump to GET counterpart](#get-item)
+
 When you post an item, the database generates a unique DUNE PID and assigns it to the item. Posting an item calls on the `/component-types/<type_id>/components` API endpoint. For the following example we will post an item with Component Type ID `Z00100400005`. You can execute the command using the following line:
 
 ~~~
@@ -582,6 +592,8 @@ Which displays the assigned PID, `Z00100400005-00014`.
 <br/><br/> 
 
 ### POST mulitple items
+
+[Jump to GET counterpart](#get-list-of-items)
 
 You can also post multiple items for a specified Component Type ID at once. To do so, you can use the `/component-types/<type_id>/bulk-add` API endpoint. For the following example we will post items with Component Type ID `Z00100400005`. You can execute the command using the following line:
 
@@ -641,6 +653,8 @@ You can see that two distinct PIDs have been assigned `Z00100400005-00015` and `
 
 ### POST Test Type
 
+[Jump to GET counterpart](#get-test-types)
+
 Creating a Test Type for a particular Component Type calls upon the `/component-types/<type_id>/test-types` API endpoint. When posting a test type, the test type name and specifications are required. We will continue using Component Type `Z00100400005`.You can excecute the following command line:
 
 ~~~
@@ -685,6 +699,8 @@ Which displays that a test type of name Test_Parts_3_TestType_10 was created.
 
 ### POST Test Result
 
+[Jump to GET counterpart](#get-test-results)
+
 Posting test results calls upon the `/components/<pid>/tests` API endpoint. you must specify the name of the test and the specifications. It is important to note that you should know the schema of the specifications prior to submission of the JSON file. Comments are optional. For the following example, the external ID is `Z00100100046-00008`. The command is as follows:
 
 ~~~
@@ -724,6 +740,8 @@ When executed, it should produce a response similar to the following:
 
 ### POST New location
 
+[Jump to GET counterpart](#get-location-of-item)
+
 You can post a new location to an item by using the `/components/<pid>/locations` API endpoint. The location is specified by Institution ID, which can be found [here]({{site.url}}/02-Introduction-HWDB/index.html#responsible-institution-id-required). When adding a new location to an item, if the time zone is not specified for the arrival time the time zone defaults to CST. The following is an example.
 
 ~~~
@@ -758,10 +776,13 @@ When executed, it should produce a similar response to the following.
 
 ### POST Images
 
+[Jump to GET counterpart](#get-images)
+
 You can also post images in three different ways: for a given Component Type, for a given Item, and for a given Test entry. Most major image types are supported including .jpeg, .tiff, .pdf, .bmp, and .png.
 
 
 #### POST Image for Component Type
+
 
 Posting an image for a given Component Type utilizes the `/component-types/<type_id>/images` API endpoint. Suppose you wish to post an image myimage.pdf to the component type `Z00100100048`.
 
@@ -782,6 +803,7 @@ When executed, the response is as follows.
 
 
 #### POST Image for Item
+
 
 Posting an image for a specific item utilizes the `/components/<eid>/images` API endpoint. Suppose you wish to post an image myimage.pdf to the item `Z00100100048-00033`.
 
@@ -932,6 +954,42 @@ The following is a list of specific examples for get via test data:
 /api/v1/components?testdata=I[0]==1.2604860486048603e-06 | jq.data[].part_id
 ~~~
 {: .language-bash}
+
+[back to top](#contents)
+
+### Syntax
+
+There is certain syntax that can be used when you are refining your search using filter fields. The following symbols can be utilized with **numbers** in filter fields. 
+
+>|------+------|
+>| symbol | definition|
+>|------+------|
+>| == | equal to|
+>|------+------|
+>| != | not equal to|
+>|------+------|
+>| < | less than|
+>|------+------|
+>| <= | less than or equal to|
+>|------+------|
+>| > | greater than|
+>|------+------|
+>| >= | greater than or equal to|
+>|------+------|
+
+The following symbols can be utilized with **strings** and **substrings** in filter fields.
+
+>|------+------|
+>| symbol | definition|
+>|------+------|
+>| == | equal to|
+>|------+------|
+>| != | not equal to|
+>|------+------|
+>| ~ | case sensitive regex search|
+>|------+------|
+>| ~* | case insensitive regex search|
+>|------+------|
 
 [back to top](#contents)
 

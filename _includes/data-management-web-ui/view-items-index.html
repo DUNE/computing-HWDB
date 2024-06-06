@@ -1,0 +1,94 @@
+
+<div class="image-container3">
+    <img src="../fig/Data-management-WEB-UI/list-items-CT.png" alt="view-items-list">
+    <button class="overlay-button5" style="top: 33%; left: 8.5%;" onclick="showInfo('bulk-add')"></button>
+    <button class="overlay-button5" style="top: 33%; left: 20%;" onclick="showInfo('add-single')"></button>
+    <button class="overlay-button5" style="top: 33%; left: 31%;" onclick="showInfo('filter')"></button>
+    <button class="overlay-button6" style="top: 50%; left: 14%;" onclick="showInfo('view-item')"></button>
+</div>
+
+<div id="bulk-add" class="popup">
+    <span class="close" onclick="closePopup('bulk-add')">&times;</span>
+    <p>Click here to add multiple Items at the same time. These new items will have the default Specifications and will have no subcomponents. You will have to come back and edit them individually.</p>
+</div>
+<div id="add-single" class="popup">
+    <span class="close" onclick="closePopup('add-single')">&times;</span>
+    <p>Click here to add a single item. You will be able to set Specifications and Subcomponents at creation time.</p>
+</div>
+<div id="filter" class="popup">
+    <span class="close" onclick="closePopup('filter')">&times;</span>
+    <p>Use “Filter” to reduce the number of Items shown on this page</p>
+</div>
+<div id="view-item" class="popup">
+    <span class="close" onclick="closePopup('view-item')">&times;</span>
+    <p>Click here to view this specific item</p>
+</div>
+
+
+<script>
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .image-container3 {
+        position: relative;
+        display: inline-block;
+    }
+
+    .image-container3 img {
+        display: block;
+        max-width: 85%;
+        height: auto;
+    }
+
+    .overlay-button5 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); /* Transparent background */
+        border: 2px solid red; /* Thin red border */
+        cursor: pointer;
+        width: 120px; /* Adjust size as needed */
+        height: 25px; /* Adjust size as needed */
+        outline: none;
+    }
+
+    .overlay-button6 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); /* Transparent background */
+        border: 2px solid red; /* Thin red border */
+        cursor: pointer;
+        width: 150px; /* Adjust size as needed */
+        height: 25px; /* Adjust size as needed */
+        outline: none;
+    }
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        z-index: 1000;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+</style>
+

@@ -1,0 +1,86 @@
+<div class="image-container1">
+    <img src="../fig/Data-management-WEB-UI/component-type-list.png" alt="component-type-list">
+    <button class="overlay-button1" style="top: 58%; left: 11%;" onclick="showInfo('comp-type')"></button>
+    <button class="overlay-button2" style="top: 58.2%; left: 39.5%;" onclick="showInfo('test-type')"></button>
+    <button class="overlay-button2" style="top: 58.2%; left: 47%;" onclick="showInfo('list-item')"></button>
+</div>
+
+<div id="comp-type" class="popup">
+    <span class="close" onclick="closePopup('comp-type')">&times;</span>
+    <p>Click here for details about the Component Type, including the Specifications Definition and Subcomponents.</p>
+</div>
+<div id="test-type" class="popup">
+    <span class="close" onclick="closePopup('test-type')">&times;</span>
+    <p>Click here for Test Type definitions for this Component Type.</p>
+</div>
+<div id="list-item" class="popup">
+    <span class="close" onclick="closePopup('list-item')">&times;</span>
+    <p>Click here for a list of Items for this Component Type.</p>
+</div>
+
+<script>
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .image-container1 {
+        position: relative;
+        display: inline-block;
+    }
+
+    .image-container1 img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .overlay-button1 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); /* Transparent background */
+        border: 2px solid red; /* Thin red border */
+        cursor: pointer;
+        width: 208px; /* Adjust size as needed */
+        height: 25px; /* Adjust size as needed */
+        outline: none;
+    }
+
+    .overlay-button2 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); /* Transparent background */
+        border: 2px solid red; /* Thin red border */
+        cursor: pointer;
+        width: 25px; /* Adjust size as needed */
+        height: 25px; /* Adjust size as needed */
+        outline: none;
+    }
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        z-index: 1000;
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+</style>
