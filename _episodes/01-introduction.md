@@ -1,9 +1,9 @@
 ---
-title: Workshop Welcome and Introduction 
+title: Introduction to the Website
 teaching: 0
 exercises: 0
 questions:
-- What should I expect in participating in this workshop?
+- What is this website?
 objectives:  
 - Introduce instructors and mentors.
 - Provide overview of the three schedule.

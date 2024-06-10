@@ -1,5 +1,5 @@
 ---
-title: Training Day to Day Schedule
+title: Tutorial Day to Day Schedule
 teaching: 0
 exercises: 0
 questions:
