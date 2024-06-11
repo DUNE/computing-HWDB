@@ -65,7 +65,7 @@ keypoints:
  Before inserting Items and their corresponding Tests, we need to define a Component Type and Test Type, respectively.
  We will do so, first with the WEB UI, and then through the REST API in the 2nd half of this session.
 
- One can access to the two versions of the HWDB from these addresses.  We will use the development version in this session.
+ One can access to the two versions of the HWDB from these addresses.We will use the development version in this session.
 
  Production version : [https://dbweb0.fnal.gov/cdb/login/sso]
 
@@ -78,7 +78,7 @@ keypoints:
 ## Going through the hierarchy of IDs
 
  In the previous session, we introduced a several different types of IDs:
- **Project**, **System ID**, **Subsystem ID**, and **Component Type ID**. 
+ **Project**, **System ID**, **Subsystem ID**, and **Component Type ID**.
  With the WEB UI, one can go down (and up) such hierarchy of IDs easily.
  Click **Admin** in the side-menu. It will show a sub-menu as shown here. One can select any of the three, **Projects**, **Systems**, or **Subsystems** to get into each of these lists.
 ![sub menu list](../fig/Setting-up-Types/Admin-list.png){: .image-with-shadow}{: width="15%"}
@@ -104,7 +104,7 @@ Now let’s click the *folder* in the **DUNE** row & **Systems** column. This wi
 
 ![CompType list](../fig/Setting-up-Types/List-CompTypes.png){: .image-with-shadow}{: width="85%"}
 
-Four Component Types for Field Cage Spacer Bar are seen.  
+Four Component Types for Field Cage Spacer Bar are seen.
 In this list one can click the **ITEMS** or **Test Types** columns to see a list of the corresponding Items or Test Types, if it exists, respectively.
 
 [back to top](#contents)
@@ -113,7 +113,7 @@ In this list one can click the **ITEMS** or **Test Types** columns to see a list
 
 ## Defining a Component Type
 
- Now that we can go through the hierarchy of existing IDs, let’s edit one of the existing Component Types. Pick one that you like to modify. 
+ Now that we can go through the hierarchy of existing IDs, let’s edit one of the existing Component Types.Pick one that you like to modify.
  As an example, we’ll modify the Component Type, **CPA Parts FR4 bottom frame** (type id = Z00100100017) here. 
 
  First, let’s find the Component Type.
@@ -127,7 +127,7 @@ Clicking its **TYPE NAME** should display its definition as shown below:
 ![Comp Filters](../fig/Setting-up-Types/CompTypeDefinition.png){: .image-with-shadow}{: width="70%"}
 
 
- Some of the fields are in *gray*, indicating that you are not allowed to edit them, such as **Type Name**, **Type ID**, **Full Name**, **Part Type ID**, **Created**, and **Created by**... etc.
+ Some of the fields are in *gray*, indicating that you are not allowed to edit them, such as**Type Name**, **Type ID**, **Full Name**, **Part Type ID**, **Created**, and **Created by**... etc.
  Here **Full Name** is a name that combines the all id names together:
  - Project = Z
  - System name = Sandbox
@@ -181,7 +181,7 @@ Clicking its **TYPE NAME** should display its definition as shown below:
  Database schema for Specifications can be provided by **[YAML]**,  a human-friendly data serialization
  language for all programming languages. It has typically a form of;
 
-  Key : Value 
+  Key : Value
 
  Value could be numbers, strings, null, list, array, or even an empty array. For instance,
  if you define a Specifications like the following;

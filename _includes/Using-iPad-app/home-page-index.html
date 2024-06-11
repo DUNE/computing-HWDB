@@ -1,0 +1,104 @@
+
+<div class="login-page">
+    <img src="../fig/Using-iPad-app/home-page.png" alt="home-page">
+    <button class="name-button" style="top: 17%; left: 31.5%;" onclick="showInfo('name')"></button>
+    <button class="email-button" style="top: 24%; left: 31.5%;" onclick="showInfo('email')"></button>
+    <button class="institution-button" style="top: 39.6%; left: 31.5%;" onclick="showInfo('institution')"></button>
+    <button class="institution-button" style="top: 56.2%; left: 31.5%;" onclick="window.location.href='{{site.url}}/07-Using-iPad-App/index.html#shipment-tracker'"></button>
+    <button class="institution-button" style="top: 73.5%; left: 31.5%;" onclick="window.location.href='{{site.url}}/07-Using-iPad-App/index.html#pid-display'"></button>
+</div>
+
+<div id="name" class="popup">
+    <span class="close" onclick="closePopup('name')">&times;</span>
+    <p> Provide your name. Will be used for locally saved file names.</p>
+</div>
+<div id="email" class="popup">
+    <span class="close" onclick="closePopup('email')">&times;</span>
+    <p> Provide at least one E-mail address. Will be used to send our Emails.</p>
+</div>
+<div id="institution" class="popup">
+    <span class="close" onclick="closePopup('institution')">&times;</span>
+    <p> Select your institution by tapping it. Will be used when request the HWDB to generate a new PID(s).</p>
+</div>
+
+
+
+<script>
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .login-page {
+        position: relative;
+        display: inline-block;
+    }
+
+    .login-page img {
+        display: block;
+        max-width: 50%;
+        height: auto;
+    }
+
+    .name-button {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 420px; 
+        height: 30px; 
+        outline: none;
+    }
+
+    .email-button {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 420px; 
+        height: 105px; 
+        outline: none;
+    }
+
+    .institution-button {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 420px; 
+        height: 35px; 
+        outline: none;
+    }
+
+
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        z-index: 1000; 
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+</style>
+
