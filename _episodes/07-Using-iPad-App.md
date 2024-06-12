@@ -12,8 +12,23 @@ keypoints:
 ---
 
 ## Contents
-
-
+>
+>|-------------------------------------+------------------|
+>| Section                             | Description      |
+>|-------------------------------------+------------------|
+>| [Basics](#basics)                   |                  |
+>| &emsp;[Requirements](#requirements) |                  |
+>| &emsp;[Deployment](#deployment)     |                  |
+>| &emsp;[Login Page](#login-page)     |                  |
+>|-------------------------------------+------------------|
+>| [Shipment Tracker](#shipment-tracker) |               |
+>|-------------------------------------+------------------|
+>| [PID Display](#pid-display)         |                  |
+>|-------------------------------------+------------------|
+>| [QR-Code](#qr-code)                 |                  |
+>|-------------------------------------+------------------|
+>| [Local Storage](#local-storage)     |                  |
+>|-------------------------------------+------------------|
 
 ## Basics
 
@@ -55,9 +70,50 @@ Once you have logged in, you will see the following:
 
 ## Shipment Tracker
 
+The Shipment Tracker provides a UI to deal with Location info of components in the HWDB. It allows you to easily view the location history of an Item, provides info on sub-components (if any exist). It also allows you to enter a new location and create a new item for which you can produce the corresponsing QR-code. It also lets you attach a picture associated with a particular location.
+
+You pick a particular Component Type to start.  E.g., a Component Type, DUNE CPA shipping crate. Select an existing or create PID.  E.g., a PID = one of your DUNE CPA shipping crates. If any, assign its sub-component PIDs.  E.g., PIDs for CPA assembly tools and CPA Panels. Start by selecting a Component Type (e.g., a Type for shipping crate).You can select one either by scanning a QR code (see below)or select from the list (see the next page). You could also select a Component Type from the list. It shows Types that have been previously selected on your iPad. If you don’t see what you want, you can add a new Type.
+
+Below, you can click on the red boxes to simulate adding a Type ID to the Shipment Tracker. You can click the blue "Return" box on the top left to return to the top level Shipment Tracker menu.
+
+{% include Using-iPad-app/shipment-tracker-index.html %}
+
+The location history is shown in the order of “Time(CST)”. You can add a new log or look at the individual entry more in detail.
+
+{% include Using-iPad-app/history-list-index.html %}
+
+Currently, the HWDB does not have the capability to link an image to a location entry. The information, therefore, is stored as a Test of the PID with Test Type Name = _location_info.
+
+As seen in the list of PIDs associated with certain component types, you can directly add PIDs. You can also assign subcomponents here.
+
+
+{% include Using-iPad-app/pid-add-index.html %}
+
+
+
 
 ## PID Display
 
+The PID Display is a PID viewer that is hierarchically structured, meaning you are first provided the highest-level category **System ID** from which you can specify until you reach the desired **PID**. If you have previously synced to the HWDB for that Component Type, the display orders the PIDs based on what are stored locally (SQLite). This is useful if you need PID lists (particularly long lists) with poor network connections.
+
+Below, you can click on the red boxes to simulate going through the PID display. You can click the blue "Return" box on the top left to return to the top level System ID list.
+
+{% include Using-iPad-app/pid-display-index.html %}
+
+You will notice that each level of the PID Display can be independently updated to sync with the HWDB, but it can also be done all at once using the "Sync All" button present on the top right of the System ID list page. It takes some time to sync them all. But it ultimately depends on the amount of the contents the DB currently holds.
+For now, it takes only ~2mins.
+
+![Sync all pid](../fig/Using-iPad-app/sync-all-pid.png){: width="50%"} 
+
+## QR-Code
+
+QR-codes are easy to generate on the iPad app.
+
+{% include Using-iPad-app/qr-code-index.html %}
 
 
+## Local Storage
 
+The info of the generated “Type List” is stored within the app folder. `CPAProductionChecklists -> Tracker -> _tracker_typeidlist` Pictures taken in the app and QR codes generated are also stored in the `Tracker` folder.
+
+{% include Using-iPad-app/local-storage-index.html %}

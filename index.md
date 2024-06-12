@@ -27,13 +27,13 @@ This tutorial will teach the basics of accessing and using the DUNE Hardware Dat
 >
 > First step: follow the directions in the "[Setup](
 > {{ page.root }}/setup.html)" to arrived prepared for this event. Follow the instruction there to obtain your FNAL certificate, 
-> which you will need to communicate with the RESR API of the HWDB.
+> which you will need to communicate with the REST API of the HWDB.
 {: .callout}
 
 By the end of this training, participants will know how to:
-* learning outcome 1
-* learning outcome 2
-* learning outcome 3
+* How to GET/POST things from/to the DUNE HWDB through both the WEB UI and the RESR API methods.
+* How to easily go up&down PID hierarchy, scan QR-codes, and GET/POST Item locations using the iPad app.
+* how to easily POST massive data to the HWDB using the Python API.
 
 
 <!--

@@ -1,0 +1,124 @@
+<div id="system-id-container" class="container1">
+    <img src="../fig/Using-iPad-app/system-id.png" alt="system-id">
+    <button class="button" style="top: 54.5%; left: 33%;" onclick="newImg('system-id-container', 'subsystem-id-container')"></button>
+</div>
+
+<div id="subsystem-id-container" class="container1" style="display: none;">
+    <img src="../fig/Using-iPad-app/subsystem-id.png" alt="subsystem-id">
+    <button class="button" style="top: 72.7%; left: 33%;" onclick="newImg('subsystem-id-container', 'component-type-id-container')"></button>
+    <button class="return-button" style="top: 0%; left: 25%;" onclick="newImg('subsystem-id-container', 'system-id-container')">Return</button>
+</div>
+
+<div id="component-type-id-container" class="container1" style="display: none;">
+    <img src="../fig/Using-iPad-app/component-type-id.png" alt="component-type-id">
+    <button class="button" style="top: 79.5%; left: 33%;" onclick="newImg('component-type-id-container', 'pid-list-container')"></button>
+    <button class="return-button" style="top: 0%; left: 25%;" onclick="newImg('component-type-id-container', 'system-id-container')">Return</button>
+</div>
+
+<div id="pid-list-container" class="container1" style="display: none;">
+    <img src="../fig/Using-iPad-app/pid-list.png" alt="pid-list">
+    <button class="box-button" style="top: 78.7%; left: 62.3%;" onclick="showInfo('pid-info')"></button>
+    <button class="box-button" style="top: 78.7%; left: 66.5%;" onclick="showInfo('pid-test')"></button>
+    <button class="return-button" style="top: 0%; left: 25%;" onclick="newImg('pid-list-container', 'system-id-container')">Return</button>
+</div>
+
+<div id="pid-info" class="popup">
+    <span class="close" onclick="closePopup('pid-info')">&times;</span>
+    <p>More detail info for each PID. Displays its Specifications. Access to both Parent- and Sub-components. </p>
+    <img src="../fig/Using-iPad-app/pid-info.png" alt="pid-info" style="max-height: 70%">
+</div>
+
+<div id="pid-test" class="popup">
+    <span class="close" onclick="closePopup('pid-test')">&times;</span>
+    <p>Access to entire Test Data History of PID. </p>
+    <img src="../fig/Using-iPad-app/pid-test.png" alt="pid-test" style="max-width: 120%">
+</div>
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .container1 {
+        position: relative;
+        display: inline-block;
+
+    }
+
+    .container1 img {
+        display: block;
+        width: 50%;
+        height: auto;
+    }
+
+    .button {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 400px; 
+        height: 27px; 
+        outline: none;
+    }
+
+    .box-button {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 30px; 
+        height: 25px; 
+        outline: none;
+    }
+
+    .return-button {
+        position: absolute;
+        background: lightblue ; 
+        border: 2px solid blue; 
+        cursor: pointer;
+        width: 60px; 
+        height: 30px; 
+        outline: none;
+    }
+
+
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        z-index: 1000;
+        max-height: 70vh;
+        overflow-y: auto; 
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    </style>
+
+<script>
+    function newImg(currentContainerId, nextContainerId) {
+        document.getElementById(currentContainerId).style.display = 'none';
+        document.getElementById(nextContainerId).style.display = 'block';
+    }
+
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+</script>

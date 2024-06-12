@@ -33,10 +33,24 @@ keypoints:
 >|-------------+------------------|
 >| &emsp;[Responsible Institution ID (required)](#responsible-institution-id-required) | |
 >|-------------+------------------|
+>| &emsp;[Important Reminder](#important-reminder) | |
+>|-------------+------------------|
 
 ## PID
 
 The Parts Identifier (**PID**) is a 32-characters alphanumeric string that is used to uniquely identify all the LBNF and DUNE components that are used during the construction of the LBNF facility (including both the far site at the Sanford Underground Research Facility – SURF and the near site at Fermilab) and of all the corresponding detectors. The parts identifier forms a unique identifier for that part in the hardware database. Each part which has important information associated with it must have a parts identifier assigned so the data can be archived in the hardware database. The parts identifier is used for all equipment bar codes, QR codes, tags and other systems of identification. The PID is composed of 10 fields, of which 7 are required. More information about PIDs can be found under [LBNF/DUNE Parts Identifier: EDMS 2505353](https://edms.cern.ch/ui/#!master/navigator/document?D:101278257:101278257:subDocs).
+
+The following is an example of a PID.
+~~~
+D00502301200-00050-US125
+      D     = DUNE
+      005   = FD1-HD HVS
+      020   = CPA
+      01200 = DUNE Shipping Crate
+      00050 = the 50th item (crate)
+      US    = United States
+      125   = Argonne National Laboratory
+~~~
 
 ### Project Identifier (required)
 
@@ -304,6 +318,9 @@ The responsible institution ID is a three-digit number (001-999) representing th
 
 {% include country-code-table/index.html %}
 
+### Important Reminder
+
+When a PID is assigned, then the corresponding drawing should be associated (stored) with it. This will allow workers in the field to verify that the correct parts were used in the assemblies and installation. If/when a part is to be handled, transported, or assembled into other systems by other group, it must be marked with the PID.This will allow the workers to look up the relevant procedures, drawings, QC seps, and safety info at the installation location. Every shipment (box, crate) must be assigned with a PID. This is crucial in to be able to track the latest locations of parts and the number of parts at certain locations.
 
 {% include links.md %}
 

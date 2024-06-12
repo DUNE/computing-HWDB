@@ -1,0 +1,128 @@
+<div id="history-list-container" class="container3">
+    <img src="../fig/Using-iPad-app/history-list.png" alt="history-list">
+    <button class="rectangle-m-button" style="top: 48%; left: 42%;" onclick="newImg('history-list-container', 'new-log-container')"></button>
+    <button class="rectangle-s-button" style="top: 67%; left: 28.25%;" onclick="showInfo('hist-entry')"></button>
+    <button class="large-button2" style="top: 28.8%; left: 27%;" onclick="showInfo('subcomp-hist')"></button>
+</div>
+
+<div id="new-log-container" class="container3" style="display: none;">
+    <img src="../fig/Using-iPad-app/new-log.png" alt="new-log">
+    <button class="rectangle-m-button" style="top: 94%; left: 42%;" onclick="showInfo('log-email')"></button>
+    <button class="return-button" style="top: 0%; left: 25%;" onclick="newImg('new-log-container', 'history-list-container')">Return</button>
+</div>
+
+<div id="hist-entry" class="popup">
+    <span class="close" onclick="closePopup('hist-entry')">&times;</span>
+    <p>A particular history entry of a particular PID, (in this example a shipment). Entries cannot be edited, but its contents can be emailed.</p>
+    <img src="../fig/Using-iPad-app/hist-entry.png" alt="hist entry" style="max-height: 70%">
+</div>
+
+<div id="log-email" class="popup">
+    <span class="close" onclick="closePopup('log-email')">&times;</span>
+    <p>Uploads the contents to the HWDB, along w/ a picture. An E-mail message is auto-generated, including the newly assigned “image-id”.</p>
+    <img src="../fig/Using-iPad-app/log-email.png" alt="log-email" style="max-width: 70%">
+</div>
+
+<div id="subcomp-hist" class="popup">
+    <span class="close" onclick="closePopup('subcomp-hist')">&times;</span>
+    <p>A list of its sub-components is also shown, if there is any. In this example, it would be items in the shipment.</p>
+</div>
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .container3 {
+        position: relative;
+        display: inline-block;
+
+    }
+
+    .container3 img {
+        display: block;
+        width: 50%;
+        height: auto;
+    }
+
+    .large-button2 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 525px; 
+        height: 75px; 
+        outline: none;
+    }
+
+    .rectangle-s-button {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 100px; 
+        height: 25px; 
+        outline: none;
+    }
+
+    .rectangle-m-button {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 180px; 
+        height: 30px; 
+        outline: none;
+    }
+
+    .return-button {
+        position: absolute;
+        background: lightblue ; 
+        border: 2px solid blue; 
+        cursor: pointer;
+        width: 60px; 
+        height: 30px; 
+        outline: none;
+    }
+
+
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        z-index: 1000;
+        max-height: 70vh;
+        overflow-y: auto; 
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    </style>
+
+<script>
+    function newImg(currentContainerId, nextContainerId) {
+        document.getElementById(currentContainerId).style.display = 'none';
+        document.getElementById(nextContainerId).style.display = 'block';
+    }
+
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+</script>

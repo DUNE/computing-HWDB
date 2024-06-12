@@ -1,0 +1,140 @@
+<div id="ship-track-container" class="container2">
+    <img src="../fig/Using-iPad-app/ship-track.png" alt="ship-track">
+    <button class="rectangle-s-button" style="top: 6%; left: 66%;" onclick="newImg('ship-track-container', 'ship-sys-id-container')"></button>
+    <button class="rectangle-m-button" style="top: 18.5%; left: 42%;" onclick="showInfo('comp-qr-code')"></button>
+</div>
+
+<div id="ship-sys-id-container" class="container2" style="display: none;">
+    <img src="../fig/Using-iPad-app/ship-sys-id.png" alt="ship-sys-id">
+    <button class="button-l" style="top: 55.5%; left: 33%;" onclick="newImg('ship-sys-id-container', 'ship-subsys-id-container')"></button>
+    <button class="return-button" style="top: 0%; left: 25%;" onclick="newImg('ship-sys-id-container', 'ship-track-container')">Return</button>
+</div>
+
+<div id="ship-subsys-id-container" class="container2" style="display: none;">
+    <img src="../fig/Using-iPad-app/ship-subsys-id.png" alt="ship-subsys-id">
+    <button class="button-l" style="top: 75.2%; left: 33%;" onclick="newImg('ship-subsys-id-container', 'ship-type-container')"></button>
+    <button class="return-button" style="top: 0%; left: 25%;" onclick="newImg('ship-subsys-id-container', 'ship-track-container')">Return</button>
+</div>
+
+<div id="ship-type-container" class="container2" style="display: none;">
+    <img src="../fig/Using-iPad-app/ship-type-id.png" alt="ship-type">
+    <button class="button-l" style="top: 73%; left: 33%;" onclick="newImg('ship-type-container', 'ship-track-2-container')"></button>
+    <button class="return-button" style="top: 0%; left: 25%;" onclick="newImg('ship-type-container', 'ship-track-container')">Return</button>
+</div>
+
+<div id="ship-track-2-container" class="container2" style="display: none;">
+    <img src="../fig/Using-iPad-app/ship-track-2.png" alt="ship-track-2">
+    <button class="rectangle-s-button" style="top: 84.7%; left: 39.5%;" onclick="showInfo('ship-pid-list')"></button>
+    <button class="return-button" style="top: 0%; left: 25%;" onclick="newImg('ship-track-2-container', 'ship-track-container')">Return</button>
+</div>
+
+<div id="comp-qr-code" class="popup">
+    <span class="close" onclick="closePopup('comp-qr-code')">&times;</span>
+    <p>One way of selecting a component type is by scanning a QR code. </p>
+    <img src="../fig/Using-iPad-app/ship-track-qr.png" alt="qr code" style="max-height: 70%">
+</div>
+
+<div id="ship-pid-list" class="popup">
+    <span class="close" onclick="closePopup('ship-pid-list')">&times;</span>
+    <p>A list of PIDs for the selected Component Type. For this example Type = Shipping Crate, Item = 00001. You can also add new PIDs directly here, more information below. Tapping on the PID will send you to its location history pag which you can see more of below.</p>
+    <img src="../fig/Using-iPad-app/ship-pid-list.png" alt="pid-list" style="max-width: 70%">
+</div>
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .container2 {
+        position: relative;
+        display: inline-block;
+
+    }
+
+    .container2 img {
+        display: block;
+        width: 50%;
+        height: auto;
+    }
+
+    .button-l {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 400px; 
+        height: 27px; 
+        outline: none;
+    }
+
+    .rectangle-s-button {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 100px; 
+        height: 25px; 
+        outline: none;
+    }
+
+    .rectangle-m-button {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 180px; 
+        height: 30px; 
+        outline: none;
+    }
+
+    .return-button {
+        position: absolute;
+        background: lightblue ; 
+        border: 2px solid blue; 
+        cursor: pointer;
+        width: 60px; 
+        height: 30px; 
+        outline: none;
+    }
+
+
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        z-index: 1000;
+        max-height: 70vh;
+        overflow-y: auto; 
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    </style>
+
+<script>
+    function newImg(currentContainerId, nextContainerId) {
+        document.getElementById(currentContainerId).style.display = 'none';
+        document.getElementById(nextContainerId).style.display = 'block';
+    }
+
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+</script>

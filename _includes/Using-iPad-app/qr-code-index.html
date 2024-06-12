@@ -1,0 +1,86 @@
+<div id="qr-code-gen" class="container6">
+    <img src="../fig/Using-iPad-app/qr-code-gen.png" alt="qr-code-gen">
+    <button class="rectangle-s-button" style="top: 4%; left: 64.5%;" onclick="showInfo('qr-code-print')"></button>
+    <button class="big-button1" style="top: 62%; left: 27%;" onclick="showInfo('add-lines')"></button>
+</div>
+
+
+<div id="add-lines" class="popup">
+    <span class="close" onclick="closePopup('add-lines')">&times;</span>
+    <p>By default, it adds Type Name and PID.One could add extra lines, if wished.</p>
+</div>
+
+<div id="qr-code-print" class="popup">
+    <span class="close" onclick="closePopup('qr-code-print')">&times;</span>
+    <p>Can print directly with AirPrint-capable printers.</p>
+    <img src="../fig/Using-iPad-app/qr-code-print.png" alt="qr-code-print" style="max-width: 70%">
+</div>
+
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .container6 {
+        position: relative;
+        display: inline-block;
+
+    }
+
+    .container6 img {
+        display: block;
+        width: 50%;
+        height: auto;
+    }
+
+    .big-button1 {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 524px; 
+        height: 120px; 
+        outline: none;
+    }
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #ccc;
+        z-index: 1000;
+        max-height: 70vh;
+        overflow-y: auto; 
+    }
+
+    .popup .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    </style>
+
+<script>
+
+function newImg(currentContainerId, nextContainerId) {
+        document.getElementById(currentContainerId).style.display = 'none';
+        document.getElementById(nextContainerId).style.display = 'block';
+    }
+
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+</script>
