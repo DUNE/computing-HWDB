@@ -17,6 +17,17 @@ helper: ["mentor 1","mentor 2"]
 email: ["hmuramat@umn.edu","wagn0033@umn.edu"]
 collaborative_notes: "DUNE-Computing-HWDB"
 ---
+
+<br/><br/> 
+
+> ## Announcement of the 2nd HWDB tutorials 
+>
+> The 2nd HWDB tutorials will be held in June XX and YY.
+> See [HWDB Tutorials]({{ page.root }}/training-schedule/index.html) for more details.  
+{: .prereq}
+
+<br/><br/> 
+
 This tutorial will teach the basics of accessing and using the DUNE Hardware Database (HWDB).
 
 <!-- Ether pad: https://pad.carpentries.org/DUNE-Computing-HWDB or use a live Google doc -->
@@ -31,10 +42,11 @@ This tutorial will teach the basics of accessing and using the DUNE Hardware Dat
 {: .callout}
 
 By the end of this training, participants will know how to:
-* How to GET/POST things from/to the DUNE HWDB through both the WEB UI and the RESR API methods.
-* How to easily go up&down PID hierarchy, scan QR-codes, and GET/POST Item locations using the iPad app.
-* how to easily POST massive data to the HWDB using the Python API.
+* GET/POST things from/to the DUNE HWDB through both the WEB UI and the RESR API methods.
+* Easily go up&down PID hierarchy, scan QR-codes, and GET/POST Item locations using the iPad app.
+* Easily POST massive data to the HWDB using the Python API.
 
+<br/><br/> 
 
 <!--
 <h2 id="schedule">Schedule by Day</h2>
@@ -44,5 +56,6 @@ The official schedule for this event is listed on the [Indico site (59762)](http
 {% include sc/schedule.html %}
 
 -->
+
 
 {% include links.md %}
