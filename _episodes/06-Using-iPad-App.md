@@ -1,14 +1,15 @@
 ---
 title: Using the iPad App
-teaching: 60
+teaching: 30
 exercises: 0
 questions:
-- question 1
+- How do I go/down through PID hieratchy, scan QR codes, and post Locations via iPad?
 objectives:
-- objective 1
-- objective 2
+- To be able to go through the PID hieratchy with the PID Display
+- To be able to deal with Item Locations with the Shipment Tracker
 keypoints:
-- keypoint 1
+- Currently need to send an email to Hajime Muramatsu to register your iPad.
+- For the Mac version, you can directly download (a zip file). It runs with both Intel/Apple chips.
 ---
 
 ## Contents
@@ -21,9 +22,9 @@ keypoints:
 >| &emsp;[Deployment](#deployment)     |                  |
 >| &emsp;[Login Page](#login-page)     |                  |
 >|-------------------------------------+------------------|
->| [Shipment Tracker](#shipment-tracker) |               |
->|-------------------------------------+------------------|
 >| [PID Display](#pid-display)         |                  |
+>|-------------------------------------+------------------|
+>| [Shipment Tracker](#shipment-tracker) |               |
 >|-------------------------------------+------------------|
 >| [QR-Code](#qr-code)                 |                  |
 >|-------------------------------------+------------------|
@@ -53,9 +54,9 @@ The app also runs on Macs with both Intel and Apple M chips.
 
 ### Deployment
 
-**iPad app Deployment**: As of now, you must contact Hajime Muramatsu and send him your E-mail address.  You will then be sent an invitation, which includes a link to download an app called TestFlight. You can then intsall the app via TestFlight. This method is subject to change.
+**iPad app Deployment**: As of now, you must contact Hajime Muramatsu and send [send him](mailto: hmuramat@umn.edu?subject=Request to resgiter an iPad(s)) your E-mail address.  You will then be sent an invitation, which includes a link to download an app called TestFlight. You can then intsall the app via TestFlight. This method is subject to change.
 
-**Mac Deployment**: The latest version of the app can be downloaded [here](https://www-users.cse.umn.edu/~hmuramat/iOS/CPAProductionChecklists.zip). To do so you will need **Username**: `DUNE` and **Password**: `DUNEana`.
+**Mac Deployment**: The latest version of the app can be downloaded [https://www-users.cse.umn.edu/~hmuramat/iOS/CPAProductionChecklists.zip](https://www-users.cse.umn.edu/~hmuramat/iOS/CPAProductionChecklists.zip). To do so you will need **Username**: `DUNE` and **Password**: `DUNEana`.
 
 ### Login Page
 
@@ -66,6 +67,20 @@ When the app is launched, you will see the following page. You can either login 
 Once you have logged in, you will see the following:
 
 {% include Using-iPad-app/home-page-index.html %}
+
+
+## PID Display
+
+The PID Display is a PID viewer that is hierarchically structured, meaning you are first provided the highest-level category **System ID** from which you can specify until you reach the desired **PID**. If you have previously synced to the HWDB for that Component Type, the display orders the PIDs based on what are stored locally (SQLite). This is useful if you need PID lists (particularly long lists) with poor network connections.
+
+Below, you can click on the red boxes to simulate going through the PID display. You can click the blue "Return" box on the top left to return to the top level System ID list.
+
+{% include Using-iPad-app/pid-display-index.html %}
+
+You will notice that each level of the PID Display can be independently updated to sync with the HWDB, but it can also be done all at once using the "Sync All" button present on the top right of the System ID list page. It takes some time to sync them all. But it ultimately depends on the amount of the contents the DB currently holds.
+For now, it takes only ~2mins.
+
+![Sync all pid](../fig/Using-iPad-app/sync-all-pid.png){: width="50%"} 
 
 
 ## Shipment Tracker
@@ -89,21 +104,6 @@ As seen in the list of PIDs associated with certain component types, you can dir
 
 {% include Using-iPad-app/pid-add-index.html %}
 
-
-
-
-## PID Display
-
-The PID Display is a PID viewer that is hierarchically structured, meaning you are first provided the highest-level category **System ID** from which you can specify until you reach the desired **PID**. If you have previously synced to the HWDB for that Component Type, the display orders the PIDs based on what are stored locally (SQLite). This is useful if you need PID lists (particularly long lists) with poor network connections.
-
-Below, you can click on the red boxes to simulate going through the PID display. You can click the blue "Return" box on the top left to return to the top level System ID list.
-
-{% include Using-iPad-app/pid-display-index.html %}
-
-You will notice that each level of the PID Display can be independently updated to sync with the HWDB, but it can also be done all at once using the "Sync All" button present on the top right of the System ID list page. It takes some time to sync them all. But it ultimately depends on the amount of the contents the DB currently holds.
-For now, it takes only ~2mins.
-
-![Sync all pid](../fig/Using-iPad-app/sync-all-pid.png){: width="50%"} 
 
 ## QR-Code
 

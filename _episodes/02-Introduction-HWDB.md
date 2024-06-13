@@ -1,21 +1,26 @@
 ---
-title: Introduction to the DUNE HWDB
+title: HWDB Cenceptual Overview and the DUNE PID
 teaching: 30
 exercises: 0
 questions:
 - What is the HWDB?
 - What are its essential components?
+- The defintion of the DUNE Parts Identifier (PID)
 objectives:
-- objective 1
-- objective 2
+- To go over the overview of the DUNE HWDB
+- To understand the syntax of the DUNE Parts Identifier
 keypoints:
-- keypoint 1
+- Component Types, Items, and PartIDs.
+- Every item must have a PartID attached via a bar/QR-coded label.
+- A PartID is a unique identiﬁer deﬁned according to the DUNE speciﬁcations.
 ---
 
 >## Contents
 >
 >|-------------+------------------|
 >|    | Description  |
+>|-------------+------------------|
+>| [Hardware DB Conceptual Overview](#hardware-db-conceptual-overview) | |
 >|-------------+------------------|
 >| [PID](#pid) | |
 >|-------------+------------------|
@@ -36,9 +41,115 @@ keypoints:
 >| &emsp;[Important Reminder](#important-reminder) | |
 >|-------------+------------------|
 
+
+## Hardware DB Conceptual Overview
+
+### Hardware DB, A Bit of History
+
+- HWDB was originally developed and created for NOvA about 2008-ish.00
+  - by Dennis Box, Margherita Vittone and Steve White with guidance from Jon Paley.
+- It was created to track a speciﬁc set of parts for NOvA and some tests done on them.
+
+![NOvA](../fig/HWDBOverview/NOvA.png){: .image-with-shadow}{: width="35%"}
+
+
+- About 2015 it started being adopted by other experiments including:
+  - Mu2e, Icarus, SBND, Proto Dune, Ash River (currently under development)
+- Known Issues with HWDB
+  - Supporting a new experiment means creating a new schema from scratch.
+  - Adding a new type of part/test requires developing and adding a new, distinct table or columns to the schema.
+  - Good at tracking current state but little to no historical data was kept.
+  - Very limited API allowing uploading data only.
+  - Utilizes original, very early, web technology which will not last for the life of DUNE.
+
+### DUNE Expands the Requirements
+
+![DUNE](../fig/HWDBOverview/DUNE.png){: .image-with-shadow}{: width="35%"}
+
+- The full current state as well as past history must be available for each item.
+- Requires the complete test history for every item, not just the last one done on item or a history on a few items.
+- Robust html access for queries, inserts and updates.
+- Ability to see what an item is connected to or what is plugged into it.
+  - Both current and past history of all connections.
+- Support for storage of associated documentation and or photographs.
+- Create a unique physical identiﬁer (PID) for every item as well as provide for the generation of their labels. i.e. bar codes.
+- For a complete list of requirements: [https://docs.dunescience.org/cgi-bin/sso/ShowDocument?docid=23333]
+
+DUNE requires a very large set of discrete types of items to be tracked making creating individual tables for each item extremely diﬃcult. Well, impossible.
+
+### Hardware Database for DUNE
+
+Hardware Database supports the complete life cycle of each item in the DB for the experiment as a whole.
+
+The figure shows a simplified view of the DUNE HWDB schema (sorry for the fuzziness).
+For more details, please refer to: [https://cdcvs.fnal.gov/redmine/projects/components-db/wiki].
+![DBSchema](../fig/HWDBOverview/SimplifiedSchema.png){: .image-with-shadow}{: width="60%"}
+
+- Manufacturing / Procurement
+  - Manufacturer created a component
+  - Where it was created
+- You describe what items is to be stored in the DB, the data to be stored for it. As well as what items are allowed to be attached to it.
+  - No longer need a developer to add a table for each new type of item.
+  - You create a definition of what that item is, a pattern if you will.
+  - Item data is entered according to the pattern.
+- Versioning is fully supported with a history of all changes.
+  - Displays the item according to the version in effect at the item’s creation or last update.
+  - The entire history of “patterns” and each item is available.
+- Testing and Quality Control
+  - Create any number of tests for each type of item
+  - Run any test and store its data multiple times. There is no limit.
+  - View the entire test history.
+- Support for Documentation, Photographs, URLS.
+  - Can be tied to the Patterns, Items and Tests.
+- A complete, secure, REST API is available for most of what the forms do.
+
+### Accessing the System
+
+- The page the production link is on: [https://dbweb0.fnal.gov/cdb/login/sso]
+  - You can also access the development system : [https://dbweb0.fnal.gov/cdbdev/login/sso]
+- All DUNE analysis experimenters have read only access.
+  - Requires a FNAL services account.
+  - If you do not do analysis, you may need to be manually added.
+- Login using your Fermilab Services account/password.
+  - We support the lab’s Single Sign On (SSO).
+  - Non-FNAL accounts are not allowed.
+- Security is provided by
+  - Creating a role for one or more component types
+  - Adding users to roles.
+- Data can be entered through web forms or a REST API.
+  - The API requires a CILogin certificate for security.
+
+### The Big Three
+
+This system is built around the concept of
+
+- Component Types
+- Items
+- PartIDs
+
+This is integral to all web forms, APIs and database tables.
+
+#### Component Type
+
+- Component Type is simply a PATTERN, where you deﬁne what DATA will be collected for a type of item.
+  - This is a virtual construct.
+  - It is used to display a web form for speciﬁc to that type of item. It is also used by the APIs.
+  
+#### Items and PartIDs
+
+- An item is simply a physical piece of real world equipment.
+- Every item must have a PartID attached via a bar/QR-coded label.
+- A PartID is a unique identiﬁer deﬁned according to DUNE speciﬁcations ([LBNF/DUNE Parts Identifier: EDMS 2505353](https://edms.cern.ch/ui/#!master/navigator/document?D:101278257:101278257:subDocs)).
+
+
+ <br/><br/>
+ 
+
 ## PID
 
 The Parts Identifier (**PID**) is a 32-characters alphanumeric string that is used to uniquely identify all the LBNF and DUNE components that are used during the construction of the LBNF facility (including both the far site at the Sanford Underground Research Facility – SURF and the near site at Fermilab) and of all the corresponding detectors. The parts identifier forms a unique identifier for that part in the hardware database. Each part which has important information associated with it must have a parts identifier assigned so the data can be archived in the hardware database. The parts identifier is used for all equipment bar codes, QR codes, tags and other systems of identification. The PID is composed of 10 fields, of which 7 are required. More information about PIDs can be found under [LBNF/DUNE Parts Identifier: EDMS 2505353](https://edms.cern.ch/ui/#!master/navigator/document?D:101278257:101278257:subDocs).
+
+![PID](../fig/HWDBOverview/PID.png){: .image-with-shadow}{: width="75%"}
 
 The following is an example of a PID.
 ~~~
@@ -320,7 +431,11 @@ The responsible institution ID is a three-digit number (001-999) representing th
 
 ### Important Reminder
 
-When a PID is assigned, then the corresponding drawing should be associated (stored) with it. This will allow workers in the field to verify that the correct parts were used in the assemblies and installation. If/when a part is to be handled, transported, or assembled into other systems by other group, it must be marked with the PID.This will allow the workers to look up the relevant procedures, drawings, QC seps, and safety info at the installation location. Every shipment (box, crate) must be assigned with a PID. This is crucial in to be able to track the latest locations of parts and the number of parts at certain locations.
+When a PID is assigned, then the corresponding drawing should be associated (stored) with it. This will allow workers in the field to verify that the correct parts were used in the assemblies and installation. If/when a part is to be handled, transported, or assembled into other systems by other group, it must be marked with the PID.This will allow the workers to look up the relevant procedures, drawings, QC steps, and safety info at the installation location. Every shipment (box, crate) must be assigned with a PID. This is crucial in to be able to track the latest locations of parts and the number of parts at certain locations.
 
 {% include links.md %}
 
+[https://docs.dunescience.org/cgi-bin/sso/ShowDocument?docid=23333]: https://docs.dunescience.org/cgi-bin/sso/ShowDocument?docid=23333
+[https://cdcvs.fnal.gov/redmine/projects/components-db/wiki]: https://cdcvs.fnal.gov/redmine/projects/components-db/wiki
+[https://dbweb0.fnal.gov/cdb/login/sso]: https://dbweb0.fnal.gov/cdb/login/sso
+[https://dbweb0.fnal.gov/cdbdev/login/sso]: https://dbweb0.fnal.gov/cdbdev/login/sso
