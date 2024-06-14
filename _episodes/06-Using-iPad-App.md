@@ -63,6 +63,10 @@ When the app is launched, you will see the following page. You can either login 
 
 {% include Using-iPad-app/login-page-index.html %}
 
+You can also view the following video.
+
+{% include Using-iPad-app/iPad-video-index.html %}
+
 Once you have logged in, you will see the following:
 
 {% include Using-iPad-app/home-page-index.html %}
@@ -117,3 +121,4 @@ QR-codes are easy to generate on the iPad app.
 The info of the generated “Type List” is stored within the app folder. `CPAProductionChecklists -> Tracker -> _tracker_typeidlist` Pictures taken in the app and QR codes generated are also stored in the `Tracker` folder.
 
 {% include Using-iPad-app/local-storage-index.html %}
+
