@@ -3,12 +3,15 @@ title: Data Management using WEB UI
 teaching: 60
 exercises: 0
 questions:
-- How does one use the WEB UI?
+- How do I enter and retrieve Items with the WEB UI?
+- How do I perform searches over Items/Tests with the WEB UI?
 objectives:
-- objective 1
-- objective 2
+- To understand how one can POST and GET information of Item(s).
+- To understand how sub-component links could be made.
+- To understand how one can POST and GET information of Tests and images.
+- To be able to perform searches over Items and Tests.
 keypoints:
-- keypoint 1
+- Subcomponent links can only be made with Items, whose status = "available".
 ---
 ## Contents
 >
@@ -46,7 +49,6 @@ keypoints:
 {: .checklist}
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
-
 
 
 ## Component Types

@@ -1,9 +1,9 @@
 ---
-title: Setting up Types
-teaching: 30
+title: Setting up Component Types and Test Types
+teaching: 60
 exercises: 0
 questions:
-- How do we define a Component Type and a Test Type with the WEB UI?
+- How do I define a Component Type and a Test Type with the WEB UI?
 - How about through the REST API?
 objectives:
 - Users should be able to setup both Component Types and Test Types so that
@@ -11,8 +11,7 @@ objectives:
 - In setting up a Component Type, users should be also able to define lists of
   **Roles**, **Manufacturers**, and **Connectors** (Type IDs of sub-components).
 keypoints:
-- Keypoint 1
-- Keypoint 2
+- Two ways to communicate with the DUNE HWDB, with the WEB UI and the REST API.
 ---
 
 <br/><br/> 
@@ -705,6 +704,8 @@ There are some useful ones that you could easily try out:
 - Development version of the HWDB (WEB UI) : [https://dbweb0.fnal.gov/cdbdev/login/sso]
 - Online documentation of the REST API (Redoc) : [https://dbweb9.fnal.gov:8443/cdbdev/apidoc/redoc]
 - Where users can try API endpoints interactively (Swagger) : [https://dbweb9.fnal.gov:8443/cdbdev/apidoc/swagger]
+
+<br/><br/><br/><br/> 
 
 {% include links.md %}
 

@@ -222,7 +222,16 @@ The simplest way to upload hardware items to the HWDB is to create a spreadsheet
     </tr>
 </table>
 
-To test uploading this spreadsheet, enter:
+To do a mock test of uploading this spreadsheet, enter the following. This will not actually 
+commit the changes to the HWDB. It will only do a trial run to test for errors.  
+
+~~~
+hwdb-upload Items.xlsx
+~~~
+{: .language-bash}
+
+
+If this appears to run without errors, you may commit the update by using "--submit"
 
 ~~~
 hwdb-upload Items.xlsx --submit
@@ -232,9 +241,202 @@ hwdb-upload Items.xlsx --submit
 
 [back to top](#contents)
 
-## Lesson 2: Subcomponents
+### Example 1.2: Providing default values
+
+In the above example, every item had the exact same Institution and Manufacturer. A shortcut is available for this case. Additional fields may be provided in the header indicating default values for a column. The column itself may be omitted if there are no exceptions to the default values.
+
+<table border="2">
+    <tr>
+        <td></td>
+        <td>A</td>
+        <td>B</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Record Type</td>
+        <td>Item</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Part Type ID</td>
+        <td colspan="1">Z00100300012</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Part Type Name</td>
+        <td colspan="1">Z.Sandbox.HWDBUnitTest.doodad</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Institution</td>
+        <td colspan="1">(186) University of Minnesota Twin Cities</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Manufacturer</td>
+        <td colspan="1">(50) Acme Corporation</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td colspan="2"></td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Serial Number</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>SN000001</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>SN000002</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>SN000003</td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td>11</td>
+        <td>SN000004</td>
+        <td></td>
+    </tr>
+  
+    <tr>
+        <td>12</td>
+        <td>SN000005</td>
+        <td></td>
+    </tr>
+    
+    <tr>
+        <td colspan="3"><i>Items.xlsx</i></td>
+    </tr>
+</table>
 
 [back to top](#contents)
+
+
+### Example 1.3: Providing values on the command line
+
+If you do not wish to provide a header inside a spreadsheet, you may provide values on the command line.
+
+<table border="2">
+<tr><td></td><td>A</td></tr>
+<tr><td>1</td><td>Serial Number</td></tr>
+<tr><td>2</td><td>SN000001</td></tr>
+<tr><td>3</td><td>SN000002</td></tr>
+<tr><td>4</td><td>SN000003</td></tr>
+<tr><td>5</td><td>SN000004</td></tr>
+<tr><td>6</td><td>SN000005</td></tr>
+<tr><td colspan="2"><i>Items.xlsx</i></td></tr>
+</table>
+
+To upload this example:
+~~~
+hwdb-upload \
+    --part-type-id=Z00100300012 \
+    --record-type=Item \
+    --value "Manufacturer ID" 50 \
+    --value "Institution ID" 186 \
+    Items.xlsx \
+    --submit
+~~~
+{: .language-bash}
+
+[back to top](#contents)
+
+### Example 1.4: Specification fields
+
+The type “doodad” has a specification field named “DATA.” (Ignore the “_meta” field. It is
+for internal use by the application.) Top-level specification fields such as “DATA” can be
+provided the same way as Institution or Manufacturer.
+
+
+<table border="2">
+<tr><td></td><td>A</td><td>B</td></tr>
+<tr><td>1</td><td>Record Type</td><td>Item</td></tr>
+<tr><td>2</td><td>Part Type ID</td><td>Z00100300012</td></tr>
+<tr><td>3</td><td>Part Type Name</td><td>Z.Sandbox.HWDBUnitTest.doodad</td></tr>
+<tr><td>4</td><td>Institution</td><td>(186) University of Minnesota Twin Cities</td></tr>
+<tr><td>5</td><td>Manufacturer</td><td>(50) Acme Corporation</td></tr>
+<tr><td>6</td><td colspan="2"></td></tr>
+<tr><td>7</td><td>Serial Number</td><td>DATA</td></tr>
+<tr><td>8</td><td>SN000001</td><td>apple</td></tr>
+<tr><td>9</td><td>SN000002</td><td>orange</td></tr>
+<tr><td>10</td><td>SN000003</td><td>banana</td></tr>
+<tr><td>11</td><td>SN000004</td><td>pear</td></tr>
+<tr><td>12</td><td>SN000005</td><td>cherry</td></tr>
+<tr><td colspan="3"><i>Items.xlsx</i></td></tr>
+</table>
+
+[back to top](#contents)
+
+## Lesson 2: Subcomponents
+
+### HWDB Setup
+
+For this lesson, we want to create a hierarchy of components. We will therefore need a second component type.
+The examples below assume that the following configuration has been set up in the HWDB, in addition to the configuration from Lesson 1:
+    • A component type named “Z.Sandbox.HWDBUnitTest.doohickey” has been created, which has a type ID of Z00100300013.
+    • The component is managed by (at least) the group “tester,” and the user running the examples is a member of this group.
+    • The component has “Acme Corporation” listed as one of its available manufacturers.
+    • The component’s specifications are:
+{ “DATA”: {}, “_meta”: {} }
+    • The component type has a single subcomponent slot named “Doodad” of type “Z.Sandbox.HWDBUnitTest.doodad”
+
+[back to top](#contents)
+
+### Example 2.1: Linking a subcomponent
+
+For this example, we need to upload items of two different component types. We can do this
+by adding multiple worksheets to our Excel file.
+
+<table border="2">
+<tr><td></td><td>A</td><td>B</td></tr>
+<tr><td>1</td><td>Record Type</td><td>Item</td></tr>
+<tr><td>2</td><td>Part Type ID</td><td>Z00100300012</td></tr>
+<tr><td>3</td><td>Part Type Name</td><td>Z.Sandbox.HWDBUnitTest.doodad</td></tr>
+<tr><td>4</td><td>Institution</td><td>(186) University of Minnesota Twin Cities</td></tr>
+<tr><td>5</td><td>Manufacturer</td><td>(50) Acme Corporation</td></tr>
+<tr><td>6</td><td colspan="2"></td></tr>
+<tr><td>7</td><td>Serial Number</td><td>DATA</td></tr>
+<tr><td>8</td><td>SN000006</td><td>donut</td></tr>
+<tr><td colspan="3"><i>Items.xlsx, sheet "Doodad"</i></td></tr>
+</table>
+ 
+<table border="2">
+<tr><td></td><td>A</td><td>B</td><td>C</td></tr>
+<tr><td>1</td><td>Record Type</td><td colspan="2">Item</td></tr>
+<tr><td>2</td><td>Part Type ID</td><td colspan="2">Z00100300013</td></tr>
+<tr><td>3</td><td>Part Type Name</td><td colspan="2">Z.Sandbox.HWDBUnitTest.doohickey</td></tr>
+<tr><td>4</td><td>Institution</td><td colspan="2">(186) University of Minnesota Twin Cities</td></tr>
+<tr><td>5</td><td>Manufacturer</td><td colspan="2">(50) Acme Corporation</td></tr>
+<tr><td>6</td><td colspan="3"></td></tr>
+<tr><td>7</td><td>Serial Number</td><td>DATA</td><td>Doodad</td></tr>
+<tr><td>8</td><td>SN000006</td><td>donut</td><td>SN000006</td></tr>
+<tr><td colspan="4"><i>Items.xlsx, sheet "Doohickey"</i></td></tr>
+</table>
+
+To upload this example:
+~~~
+hwdb-upload Items.xlsx --submit
+~~~
+
+Some notes on linking subcomponents:
+
+• The “Doodad” column may contain the serial number of the item to be connected, or the Part ID if the item already exists in the database.
+
+• If the subcomponent item is already in the database, it is not strictly necessary to include a sheet defining the item.
+
+• The subcomponent to be linked must not have its “status” set to anything besides “available.” (“Available” is the default status for an item, so an item will not have a different status unless deliberately changed.)
+
+
+{: .language-bash}
 
 ## Lesson 3: Item Tests
 
