@@ -1,0 +1,77 @@
+
+<body>
+    <div class="container-special"> 
+        <div class="relative-container">
+            <button class="small-button" onclick="showInfo('pid-dis')">info</button>
+            <div class="video-container">
+                <video width="45%" controls>
+                    <source src="../fig/Using-iPad-app/iPad_PIDDisplay.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="pid-dis" class="popup">
+                <span class="close" onclick="closePopup('pid-dis')">&times;</span>
+                <p>This video shows the use of the PID Display. The PID Display is set up in a heirachical
+                    manner, where the most broad categories are at the highest level and is specified at each subsequent level.
+
+                    In particular: System -> Subsystem -> Component Type -> PID. 
+                    Once you are at the PID, you have several options: info, test, and qr-code. 
+                    With info you can get more information about the part including subcomponents. With test you can check the test
+                    types associated with the item, as well as the history of those test types. With qr you can generate a qr code 
+                    for the part and save it.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    dragElement(document.getElementById("pid-dis"))
+
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        const header = elmnt.querySelector('.popup-header');
+        if (header) {
+            header.onmousedown = dragMouseDown;
+        } else {
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+});
+
+
+</script>

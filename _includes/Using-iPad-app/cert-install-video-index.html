@@ -1,0 +1,123 @@
+<body>
+    <div class="container-special"> 
+        
+        <div class="relative-container">
+            <button class="small-button" onclick="showInfo('cert-info')">info</button>
+            <div class="video-container">
+                <video width="45%" controls>
+                    <source src="../fig/Using-iPad-app/iPad_cert_installation.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="cert-info" class="popup">
+                <span class="close" onclick="closePopup('cert-info')">&times;</span>
+                <p>This video shows the step by step proceduce of obtaining a certificate through CILogin. In particular
+                    you set a go to CILogin, select FermiLab, sign in, set the password for the certificate, download it, and move
+                    it to the App folder. You are then able to attach the certificate with the set username and password.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<style>
+    .relative-container {
+        position: relative;
+        display: inline-block; 
+    }
+
+    .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .small-button {
+    position: absolute;
+    top: 0;
+    left: 24%;
+    z-index: 10;
+    border: 1px solid black; 
+    border-radius: 5px; 
+    background-color: white; 
+    cursor: pointer; 
+}
+
+.popup {
+    display: none;
+    position: absolute; 
+    top: 10%;
+    right: 5%;
+    left: auto;
+    transform: none;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    width: 400px;
+    
+    overflow-y: auto;
+
+
+}
+
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    dragElement(document.getElementById("cert-info"))
+
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        const header = elmnt.querySelector('.popup-header');
+        if (header) {
+            header.onmousedown = dragMouseDown;
+        } else {
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+});
+
+
+</script>
