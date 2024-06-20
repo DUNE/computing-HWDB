@@ -1,0 +1,73 @@
+=
+<body>
+    <div class="container-special"> 
+        <div class="relative-container">
+            <button class="small-button" onclick="showInfo('shiptrack-addpid')">info</button>
+            <div class="video-container">
+                <video width="45%" controls>
+                    <source src="../fig/Using-iPad-app/iPad_ShipmentTracker_AddPID.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="shiptrack-addpid" class="popup">
+                <span class="close" onclick="closePopup('shiptrack-addpid')">&times;</span>
+                <p>Through this you can add PIDs to a specific component type. You can also add available subcomponents to 
+                    the PID based on its definition.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    dragElement(document.getElementById("shiptrack-addpid"))
+
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        const header = elmnt.querySelector('.popup-header');
+        if (header) {
+            header.onmousedown = dragMouseDown;
+        } else {
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+});
+
+
+</script>

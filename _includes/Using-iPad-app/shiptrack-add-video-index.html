@@ -1,0 +1,147 @@
+<body>
+    <div class="container-special">
+        <div class="content1">
+            <div class="media-container">
+                <button class="small-button_1" onclick="showInfo('qr-shiptrack')">info</button>
+                <video class="media" controls>
+                    <source src="../fig/Using-iPad-app/iPad_ShipmentTracker_QRcodeScan.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="media-container">
+                <button class="small-button_1" onclick="showInfo('add-type-shiptrack')">info</button>
+                <video class="media" controls>
+                    <source src="../fig/Using-iPad-app/iPad_ShipmentTracker_AddTypeID.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div id="qr-shiptrack" class="popup">
+            <span class="close" onclick="closePopup('qr-shiptrack')">&times;</span>
+            <p>This video shows one of the two ways to add component types to the shipment tracker. This is the 
+                easier of the two, allowing you to simply scan the qr code. Clicking on the item scanned sends you 
+                to the location history of that particular item.
+            </p>
+        </div>
+
+        <div id="add-type-shiptrack" class="popup">
+            <span class="close" onclick="closePopup('add-type-shiptrack')">&times;</span>
+            <p>This video shows one of the two ways to add component types to the shipment tracker. In the case you do not have 
+                the qr code you can add the component type through the PID Display. Once you have selected a component type, you can 
+                select it on the shipment tracker home page and directly add PIDs to it.
+            </p>
+        </div>
+    </div>
+</body>
+
+
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+}
+
+.container-special {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.content1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.media {
+    width: 75%;
+    height: auto;
+}
+
+
+
+.media-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.register-button {
+    position: absolute;
+    background: rgba(0, 0, 0, 0); 
+    border: 2px solid red; 
+    cursor: pointer;
+    width: 193px; 
+    height: 30px; 
+    outline: none;
+}
+
+
+.small-button_1 {
+    position: absolute;
+    top: 2%;
+    left: 5%;
+    z-index: 10;
+    border: 1px solid black; 
+    border-radius: 5px; 
+    background-color: white; 
+    cursor: pointer; 
+}
+
+
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    dragElement(document.getElementById("add-type-shiptrack"))
+    dragElement(document.getElementById("qr-shiptrack"))
+
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        const header = elmnt.querySelector('.popup-header');
+        if (header) {
+            header.onmousedown = dragMouseDown;
+        } else {
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+});
+
+
+</script>

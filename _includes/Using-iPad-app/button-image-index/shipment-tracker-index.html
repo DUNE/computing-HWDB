@@ -1,7 +1,7 @@
 <div id="ship-track-container" class="container2">
     <img src="../fig/Using-iPad-app/ship-track.png" alt="ship-track">
     <button class="rectangle-s-button" style="top: 6%; left: 66%;" onclick="newImg('ship-track-container', 'ship-sys-id-container')"></button>
-    <button class="rectangle-m-button" style="top: 18.5%; left: 42%;" onclick="showInfo('comp-qr-code')"></button>
+    <button class="rectangle-m-button" style="top: 18.5%; left: 42%;" onclick="newImg('ship-track-container', 'comp-qr-code-container')"></button>
 </div>
 
 <div id="ship-sys-id-container" class="container2" style="display: none;">
@@ -28,16 +28,27 @@
     <button class="return-button" style="top: 0%; left: 25%;" onclick="newImg('ship-track-2-container', 'ship-track-container')">Return</button>
 </div>
 
-<div id="comp-qr-code" class="popup">
-    <span class="close" onclick="closePopup('comp-qr-code')">&times;</span>
-    <p>One way of selecting a component type is by scanning a QR code. </p>
-    <img src="../fig/Using-iPad-app/ship-track-qr.png" alt="qr code" style="max-height: 70%">
+<div id="comp-qr-code-container" class="container2" style="display: none;">
+    <img src="../fig/Using-iPad-app/ship-track-qr.png" alt="qr code">
+    <button class="rectangle-s-button" style="top: 5%; left: 28%;" onclick="newImg('comp-qr-code-container', 'scan-qr-container')"></button>
+    <button class="return-button" style="top: 0%; left: 25%;" onclick="newImg('comp-qr-code-container', 'ship-track-container')">Return</button>
+</div>
+
+<div id="scan-qr-container" class="container2" style="display: none;">
+    <img src="../fig/Using-iPad-app/scan-qr.png" alt="scanned qr">
+    <button class="rectangle-m-button" style="top: 51%; left: 42%;" onclick="showInfo('pid-scan-info')"></button>
+    <button class="return-button" style="top: 0%; left: 25%;" onclick="newImg('scan-qr-container', 'ship-track-container')">Return</button>
 </div>
 
 <div id="ship-pid-list" class="popup">
     <span class="close" onclick="closePopup('ship-pid-list')">&times;</span>
     <p>A list of PIDs for the selected Component Type. For this example Type = Shipping Crate, Item = 00001. You can also add new PIDs directly here, more information below. Tapping on the PID will send you to its location history pag which you can see more of below.</p>
     <img src="../fig/Using-iPad-app/ship-pid-list.png" alt="pid-list" style="max-width: 70%">
+</div>
+
+<div id="pid-scan-info" class="popup">
+    <span class="close" onclick="closePopup('pid-scan-info')">&times;</span>
+    <p>Clicking on the PID will send you to its location history page. see more in the image below.</p>
 </div>
 
 
@@ -49,7 +60,6 @@
     .container2 {
         position: relative;
         display: inline-block;
-
     }
 
     .container2 img {
@@ -88,9 +98,19 @@
         outline: none;
     }
 
+    .square-button {
+        position: absolute;
+        background: rgba(0, 0, 0, 0); 
+        border: 2px solid red; 
+        cursor: pointer;
+        width: 100px; 
+        height: 100px; 
+        outline: none;
+    }
+
     .return-button {
         position: absolute;
-        background: lightblue ; 
+        background: lightblue; 
         border: 2px solid blue; 
         cursor: pointer;
         width: 60px; 
@@ -98,11 +118,9 @@
         outline: none;
     }
 
-
-
     .popup {
         display: none;
-        position: fixed;
+        position: fixed; 
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -122,7 +140,8 @@
         cursor: pointer;
     }
 
-    </style>
+
+</style>
 
 <script>
     function newImg(currentContainerId, nextContainerId) {

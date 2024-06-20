@@ -1,0 +1,98 @@
+<body>
+    <div class="container-special">
+        <div class="content1">
+            <div class="media-container">
+                <img class="media" src="../fig/Using-iPad-app/login-page.png" alt="login-page">
+                <button class="register-button" style="top: 83.5%; left: 32.5%;" onclick="showInfo('register-cert')"></button>
+            </div>
+            <div class="media-container">
+                <video class="media" controls>
+                    <source src="../fig/Using-iPad-app/iPad_cert_installation.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <div id="register-cert" class="popup">
+        <span class="close" onclick="closePopup('register-cert')">&times;</span>
+        <p>Gives a step-by-step p12 file installation procedure. At the end, your FNAL certificate is installed on your iPad.</p>
+        <img src="../fig/Using-iPad-app/register-cert.png" alt="register-cert" style="max-height: 70%">
+    </div>
+
+    <script>
+        function showInfo(infoId) {
+            document.getElementById(infoId).style.display = 'block';
+        }
+
+        function closePopup(infoId) {
+            document.getElementById(infoId).style.display = 'none';
+        }
+    </script>
+</body>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+}
+
+.container-special {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.content1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.media {
+    width: 75%;
+    height: auto;
+}
+
+
+
+.media-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.register-button {
+    position: absolute;
+    background: rgba(0, 0, 0, 0); 
+    border: 2px solid red; 
+    cursor: pointer;
+    width: 193px; 
+    height: 30px; 
+    outline: none;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    max-height: 70vh;
+    overflow-y: auto; 
+}
+
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+</style>

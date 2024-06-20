@@ -1,0 +1,71 @@
+
+<body>
+    <div class="container-special"> 
+        <div class="relative-container">
+            <button class="small-button" onclick="showInfo('shiptrack-qrprint')">info</button>
+            <div class="video-container">
+                <video width="45%" controls>
+                    <source src="../fig/Using-iPad-app/iPad_ShipmentTracker_QRcodePrint.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div id="shiptrack-qrprint" class="popup">
+                <span class="close" onclick="closePopup('shiptrack-qrprint')">&times;</span>
+                <p>Returning to the History log of a particular PID, we can also generate a qr-code for the PID.
+                    Additional lines can also be added if desired and the qr-code can be saved in a variety of formats.
+                    The qr-code can also be directly printed through the app using AirPrint.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    dragElement(document.getElementById("shiptrack-qrprint"))
+
+    function showInfo(infoId) {
+        document.getElementById(infoId).style.display = 'block';
+    }
+
+    function closePopup(infoId) {
+        document.getElementById(infoId).style.display = 'none';
+    }
+
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        const header = elmnt.querySelector('.popup-header');
+        if (header) {
+            header.onmousedown = dragMouseDown;
+        } else {
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+});
+
+</script>
