@@ -62,13 +62,15 @@ The app also runs on Macs with both Intel and Apple M chips.
 ### Login Page
 
 When the app is launched, you will see the following page. You can either login using your credentials or run a "guest" session, which allows you to use all the capabilities of the app except for communicating with the HWDB. You can also choose between the "Production" version or "Development" version of the app. When opening the app for the first time after download, you must register your FNAL certification. The proceduce is shown in the video below. Click the info button to get a moveable popup window for more information.
-
+<br/> <br/>
 
 {% include Using-iPad-app/cert-install-video-index.html %}
 
-
+<br/> <br/>
 
 Once you have logged in, you will see the following:
+
+<br/> <br/>
 
 {% include Using-iPad-app/button-image-index/home-page-index.html %}
 
@@ -79,8 +81,11 @@ The PID Display is a PID viewer that is hierarchically structured, meaning you a
 
 The proceduce is shown in the video below. Click the info button to get a moveable popup window for more information.
 
+<br/> <br/>
 
 {% include Using-iPad-app/pid-display-video-index.html %} 
+
+<br/> <br/>
 
 You will notice that each level of the PID Display can be independently updated to sync with the HWDB, but it can also be done all at once using the "Sync All" button present on the top right of the System ID list page. It takes some time to sync them all. But it ultimately depends on the amount of the contents the DB currently holds.
 For now, it takes only ~2mins.
@@ -96,29 +101,38 @@ You pick a particular Component Type to start.  E.g., a Component Type, DUNE CPA
 
 The proceduce is shown in the video below. Click the info button to get a moveable popup window for more information.
 
+<br/> <br/>
 
 {% include Using-iPad-app/shiptrack-add-video-index.html %} 
 
+<br/> <br/>
+
 The location history is shown in the order of “Time(CST)”. You can add a new log or look at the individual entry more in detail. The proceduce is shown in the video below. Click the info button to get a moveable popup window for more information.
 
+<br/> <br/>
+
 {% include Using-iPad-app/pid-history-video-index.html %}
+
+<br/> <br/>
 
 Currently, the HWDB does not have the capability to link an image to a location entry. The information, therefore, is stored as a Test of the PID with Test Type Name = _location_info.
 
 Upon adding a component type to the shipment tracker, you can directly add PIDs . You can also assign subcomponents here. The proceduce is shown in the video below. Click the info button to get a moveable popup window for more information.
-
+<br/> <br/>
 
 {% include Using-iPad-app/shiptrack-addpid-video-index.html %}
 
-
+<br/> <br/>
 
 ## QR-Code
 
 QR-codes are easy to generate on the iPad app. The proceduce is shown in the video below. Click the info button to get a moveable popup window for more information.
 
+<br/> <br/>
 
 {% include Using-iPad-app/shiptrack-qr-video-index.html %}
 
+<br/> <br/>
 
 ## Local Storage
 
