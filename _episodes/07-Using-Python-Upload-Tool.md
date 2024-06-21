@@ -155,64 +155,64 @@ worthwhile to follow all the item examples before moving on to tests.
 
 The simplest way to upload hardware items to the HWDB is to create a spreadsheet where the top several rows form a “header” that indicates, at minimum, that the “Record Type” being uploaded is “Item,” and either the “Part Type ID” or the “Part Type Name.” (Both may be given, but they must indicate the exact same component type. There must be an empty row between the header and the section containing the actual data.
 
-<table border="2">
+<table class="spreadsheet">
     <tr>
-        <td></td>
-        <td>A</td>
-        <td>B</td>
-        <td>C</td>
+        <th style="width: 1em"></th>
+        <th style="width: 10em">A</th>
+        <th style="width: 20em">B</th>
+        <th style="width: 20em">C</th>
     </tr>
     <tr>
-        <td>1</td>
-        <td>Record Type</td>
+        <th>1</th>
+        <td><b>Record Type</b></td>
         <td colspan="2">Item</td>
     </tr>
     <tr>
-        <td>2</td>
-        <td>Part Type ID</td>
+        <th>2</th>
+        <td><b>Part Type ID</b></td>
         <td colspan="2">Z00100300012</td>
     </tr>
     <tr>
-        <td>3</td>
-        <td>Part Type Name</td>
+        <th>3</th>
+        <td><b>Part Type Name</b></td>
         <td colspan="2">Z.Sandbox.HWDBUnitTest.doodad</td>
     </tr>
     <tr>
-        <td>4</td>
+        <th>4</th>
         <td colspan="3"></td>
     </tr>
     <tr>
-        <td>5</td>
-        <td>Serial Number</td>
-        <td>Institution</td>
-        <td>Manufacturer</td>
+        <th>5</th>
+        <td><b>Serial Number</b></td>
+        <td><b>Institution</b></td>
+        <td><b>Manufacturer</b></td>
     </tr>
     <tr>
-        <td>6</td>
+        <th>6</th>
         <td>SN000001</td>
         <td>(186) University of Minnesota Twin Cities</td>
         <td>(50) Acme Corporation</td>
     </tr>
     <tr>
-        <td>7</td>
+        <th>7</th>
         <td>SN000002</td>
         <td>(186) University of Minnesota Twin Cities</td>
         <td>(50) Acme Corporation</td>
     </tr>
     <tr>
-        <td>8</td>
+        <th>8</th>
         <td>SN000003</td>
         <td>(186) University of Minnesota Twin Cities</td>
         <td>(50) Acme Corporation</td>
     </tr>
     <tr>
-        <td>9</td>
+        <th>9</th>
         <td>SN000004</td>
         <td>(186) University of Minnesota Twin Cities</td>
         <td>(50) Acme Corporation</td>
     </tr>
     <tr>
-        <td>10</td>
+        <th>10</th>
         <td>SN000005</td>
         <td>(186) University of Minnesota Twin Cities</td>
         <td>(50) Acme Corporation</td>
@@ -238,6 +238,10 @@ hwdb-upload Items.xlsx --submit
 ~~~
 {: .language-bash}
 
+<br/>
+#### About Field Names
+
+TBD
 
 [back to top](#contents)
 
@@ -245,70 +249,70 @@ hwdb-upload Items.xlsx --submit
 
 In the above example, every item had the exact same Institution and Manufacturer. A shortcut is available for this case. Additional fields may be provided in the header indicating default values for a column. The column itself may be omitted if there are no exceptions to the default values.
 
-<table border="2">
+<table class="spreadsheet">
     <tr>
-        <td></td>
-        <td>A</td>
-        <td>B</td>
+        <th style="width: 1em"></th>
+        <th style="width: 10em">A</th>
+        <th style="width: 20em">B</th>
     </tr>
     <tr>
-        <td>1</td>
-        <td>Record Type</td>
+        <th>1</th>
+        <td><b>Record Type</b></td>
         <td>Item</td>
     </tr>
     <tr>
-        <td>2</td>
-        <td>Part Type ID</td>
+        <th>2</th>
+        <td><b>Part Type ID</b></td>
         <td colspan="1">Z00100300012</td>
     </tr>
     <tr>
-        <td>3</td>
-        <td>Part Type Name</td>
+        <th>3</th>
+        <td><b>Part Type Name</b></td>
         <td colspan="1">Z.Sandbox.HWDBUnitTest.doodad</td>
     </tr>
     <tr>
-        <td>4</td>
-        <td>Institution</td>
+        <th>4</th>
+        <td><b>Institution</b></td>
         <td colspan="1">(186) University of Minnesota Twin Cities</td>
     </tr>
     <tr>
-        <td>5</td>
-        <td>Manufacturer</td>
+        <th>5</th>
+        <td><b>Manufacturer</b></td>
         <td colspan="1">(50) Acme Corporation</td>
     </tr>
     <tr>
-        <td>6</td>
+        <th>6</th>
         <td colspan="2"></td>
     </tr>
     <tr>
-        <td>7</td>
-        <td>Serial Number</td>
+        <th>7</th>
+        <td><b>Serial Number</b></td>
         <td></td>
     </tr>
     <tr>
-        <td>8</td>
+        <th>8</th>
         <td>SN000001</td>
         <td></td>
     </tr>
     <tr>
-        <td>9</td>
+        <th>9</th>
         <td>SN000002</td>
         <td></td>
     </tr>
     <tr>
-        <td>10</td>
+        <th>10</th>
         <td>SN000003</td>
         <td></td>
     </tr>
 
     <tr>
-        <td>11</td>
+        <th>11</th>
         <td>SN000004</td>
         <td></td>
     </tr>
   
     <tr>
-        <td>12</td>
+        <th>12</th>
         <td>SN000005</td>
         <td></td>
     </tr>
@@ -325,14 +329,21 @@ In the above example, every item had the exact same Institution and Manufacturer
 
 If you do not wish to provide a header inside a spreadsheet, you may provide values on the command line.
 
-<table border="2">
-<tr><td></td><td>A</td></tr>
-<tr><td>1</td><td>Serial Number</td></tr>
-<tr><td>2</td><td>SN000001</td></tr>
-<tr><td>3</td><td>SN000002</td></tr>
-<tr><td>4</td><td>SN000003</td></tr>
-<tr><td>5</td><td>SN000004</td></tr>
-<tr><td>6</td><td>SN000005</td></tr>
+<table class="spreadsheet">
+<tr>
+    <th style="width: 1em"></th>
+    <th style="width: 20em">A</th>
+</tr>
+
+<tr><th>1</th><td><b>Serial Number</b></td></tr>
+<tr><th>2</th><td>SN000001</td></tr>
+<tr><th>3</th><td>SN000002</td></tr>
+<tr><th>4</th><td>SN000003</td></tr>
+<tr><th>5</th><td>SN000004</td></tr>
+<tr><th>6</th><td>SN000005</td></tr>
+<tr><th>7</th><td>SN000006</td></tr>
+<tr><th>8</th><td>SN000007</td></tr>
+<tr><th>9</th><td>SN000008</td></tr>
 <tr><td colspan="2"><i>Items.xlsx</i></td></tr>
 </table>
 
@@ -357,20 +368,24 @@ for internal use by the application.) Top-level specification fields such as “
 provided the same way as Institution or Manufacturer.
 
 
-<table border="2">
-<tr><td></td><td>A</td><td>B</td></tr>
-<tr><td>1</td><td>Record Type</td><td>Item</td></tr>
-<tr><td>2</td><td>Part Type ID</td><td>Z00100300012</td></tr>
-<tr><td>3</td><td>Part Type Name</td><td>Z.Sandbox.HWDBUnitTest.doodad</td></tr>
-<tr><td>4</td><td>Institution</td><td>(186) University of Minnesota Twin Cities</td></tr>
-<tr><td>5</td><td>Manufacturer</td><td>(50) Acme Corporation</td></tr>
-<tr><td>6</td><td colspan="2"></td></tr>
-<tr><td>7</td><td>Serial Number</td><td>DATA</td></tr>
-<tr><td>8</td><td>SN000001</td><td>apple</td></tr>
-<tr><td>9</td><td>SN000002</td><td>orange</td></tr>
-<tr><td>10</td><td>SN000003</td><td>banana</td></tr>
-<tr><td>11</td><td>SN000004</td><td>pear</td></tr>
-<tr><td>12</td><td>SN000005</td><td>cherry</td></tr>
+<table class="spreadsheet">
+<tr>
+    <th style="width: 1em"></th>
+    <th style="width: 10em">A</th>
+    <th style="width: 20em">B</th>
+</tr>
+<tr><th>1</th><td><b>Record Type</b></td><td>Item</td></tr>
+<tr><th>2</th><td><b>Part Type ID</b></td><td>Z00100300012</td></tr>
+<tr><th>3</th><td><b>Part Type Name</b></td><td>Z.Sandbox.HWDBUnitTest.doodad</td></tr>
+<tr><th>4</th><td><b>Institution</b></td><td>(186) University of Minnesota Twin Cities</td></tr>
+<tr><th>5</th><td><b>Manufacturer</b></td><td>(50) Acme Corporation</td></tr>
+<tr><th>6</th><td colspan="2"></td></tr>
+<tr><th>7</th><td><b>Serial Number</b></td><td><b>DATA</b></td></tr>
+<tr><th>8</th><td>SN000001</td><td>apple</td></tr>
+<tr><th>9</th><td>SN000002</td><td>orange</td></tr>
+<tr><th>10</th><td>SN000003</td><td>banana</td></tr>
+<tr><th>11</th><td>SN000004</td><td>pear</td></tr>
+<tr><th>12</th><td>SN000005</td><td>cherry</td></tr>
 <tr><td colspan="3"><i>Items.xlsx</i></td></tr>
 </table>
 
@@ -396,31 +411,40 @@ The examples below assume that the following configuration has been set up in th
 For this example, we need to upload items of two different component types. We can do this
 by adding multiple worksheets to our Excel file.
 
-<table border="2">
-<tr><td></td><td>A</td><td>B</td></tr>
-<tr><td>1</td><td>Record Type</td><td>Item</td></tr>
-<tr><td>2</td><td>Part Type ID</td><td>Z00100300012</td></tr>
-<tr><td>3</td><td>Part Type Name</td><td>Z.Sandbox.HWDBUnitTest.doodad</td></tr>
-<tr><td>4</td><td>Institution</td><td>(186) University of Minnesota Twin Cities</td></tr>
-<tr><td>5</td><td>Manufacturer</td><td>(50) Acme Corporation</td></tr>
-<tr><td>6</td><td colspan="2"></td></tr>
-<tr><td>7</td><td>Serial Number</td><td>DATA</td></tr>
-<tr><td>8</td><td>SN000006</td><td>donut</td></tr>
+<table class="spreadsheet">
+<tr>
+    <th style="width: 1em"></th>
+    <th style="width: 10em">A</th>
+    <th style="width: 20em">B</th>
+</tr>
+<tr><th>1</th><td><b>Record Type</b></td><td>Item</td></tr>
+<tr><th>2</th><td><b>Part Type ID</b></td><td>Z00100300012</td></tr>
+<tr><th>3</th><td><b>Part Type Name</b></td><td>Z.Sandbox.HWDBUnitTest.doodad</td></tr>
+<tr><th>4</th><td><b>Institution</b></td><td>(186) University of Minnesota Twin Cities</td></tr>
+<tr><th>5</th><td><b>Manufacturer</b></td><td>(50) Acme Corporation</td></tr>
+<tr><th>6</th><td colspan="2"></td></tr>
+<tr><th>7</th><td><b>Serial Number</b></td><td><b>DATA</b></td></tr>
+<tr><th>8</th><td>SN000006</td><td>donut</td></tr>
 <tr><td colspan="3"><i>Items.xlsx, sheet "Doodad"</i></td></tr>
 </table>
- 
-<table border="2">
-<tr><td></td><td>A</td><td>B</td><td>C</td></tr>
-<tr><td>1</td><td>Record Type</td><td colspan="2">Item</td></tr>
-<tr><td>2</td><td>Part Type ID</td><td colspan="2">Z00100300013</td></tr>
-<tr><td>3</td><td>Part Type Name</td><td colspan="2">Z.Sandbox.HWDBUnitTest.doohickey</td></tr>
-<tr><td>4</td><td>Institution</td><td colspan="2">(186) University of Minnesota Twin Cities</td></tr>
-<tr><td>5</td><td>Manufacturer</td><td colspan="2">(50) Acme Corporation</td></tr>
-<tr><td>6</td><td colspan="3"></td></tr>
-<tr><td>7</td><td>Serial Number</td><td>DATA</td><td>Doodad</td></tr>
-<tr><td>8</td><td>SN000006</td><td>donut</td><td>SN000006</td></tr>
+<br/> 
+<table class="spreadsheet">
+<tr>
+    <th style="width: 1em"></th>
+    <th style="width: 10em">A</th>
+    <th style="width: 14em">B</th>
+    <th style="width: 14em">C</th></tr>
+<tr><th>1</th><td><b>Record Type</b></td><td colspan="2">Item</td></tr>
+<tr><th>2</th><td><b>Part Type ID</b></td><td colspan="2">Z00100300013</td></tr>
+<tr><th>3</th><td><b>Part Type Name</b></td><td colspan="2">Z.Sandbox.HWDBUnitTest.doohickey</td></tr>
+<tr><th>4</th><td><b>Institution</b></td><td colspan="2">(186) University of Minnesota Twin Cities</td></tr>
+<tr><th>5</th><td><b>Manufacturer</b></td><td colspan="2">(50) Acme Corporation</td></tr>
+<tr><th>6</th><td colspan="3"></td></tr>
+<tr><th>7</th><td><b>Serial Number</b></td><td><b>DATA</b></td><td><b>Doodad</b></td></tr>
+<tr><th>8</th><td>SN000006</td><td>donut</td><td>SN000006</td></tr>
 <tr><td colspan="4"><i>Items.xlsx, sheet "Doohickey"</i></td></tr>
 </table>
+<br/>
 
 To upload this example:
 ~~~

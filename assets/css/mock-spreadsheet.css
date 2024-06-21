@@ -1,0 +1,74 @@
+table.spreadsheet,
+table.spreadsheet > tbody > tr,
+table.spreadsheet > tbody > tr:nth-of-type(odd),
+table.spreadsheet tr td
+{
+    all: revert;
+}
+
+table.spreadsheet
+{
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+
+table.spreadsheet > tbody > tr > td,
+table.spreadsheet > tbody > tr > th
+{
+    all: revert;
+    border: 1px solid;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+table.spreadsheet > tbody > tr > th
+{
+    background-color: #cccccc;
+}
+
+table.spreadsheet > tbody > tr > td
+{
+    background-color: #eef3ff;
+}
+
+/*
+table.spreadsheet > tbody > tr:nth-of-type(odd)
+{
+    all: revert;
+}
+*/
+
+/*
+table.spreadsheet > tbody > tr:nth-child(1) > th,
+table.spreadsheet > tbody > tr > th:nth-child(1)
+{
+    background-color: #6699ff;
+}
+*/
+
+/*
+table.spreadsheet tr td
+{
+    border: 1px solid;
+}
+
+
+table.spreadsheet > tbody > tr:nth-of-type(3n+2) 
+{ 
+    background-color: #ff9966;
+}
+
+table.spreadsheet tr td:nth-child(1),
+table.spreadsheet tr th:nth-child(1)
+{
+    background-color: #9966ff;
+}
+
+*/
+
+/* .table > tr:nth-of-type(odd) { background-color: #ffcc88; } */
+
+/*
+.Spreadsheet td, .Spreadsheet th { all: unset; color: red; }
+*/
