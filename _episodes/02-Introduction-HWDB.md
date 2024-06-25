@@ -1,5 +1,5 @@
 ---
-title: HWDB Cenceptual Overview and the DUNE PID
+title: HWDB Conceptual Overview and the DUNE PID
 teaching: 30
 exercises: 0
 questions:
@@ -15,12 +15,24 @@ keypoints:
 - A PartID is a unique identiﬁer deﬁned according to the DUNE speciﬁcations.
 ---
 
+<br/><br/> 
+
 >## Contents
 >
 >|-------------+------------------|
 >|    | Description  |
 >|-------------+------------------|
 >| [Hardware DB Conceptual Overview](#hardware-db-conceptual-overview) | |
+>|-------------+------------------|
+>| &emsp; [Hardware DB, A Bit of History](#hardware-db-a-bit-of-history) | |
+>|-------------+------------------|
+>| &emsp; [DUNE Expands the Requirements](#dune-expands-the-requirements) | |
+>|-------------+------------------|
+>| &emsp; [Hardware Database for DUNE](#hardware-database-for-dune) | |
+>|-------------+------------------|
+>| &emsp;[Accessing the System](#accessing-the-system) | |
+>|-------------+------------------|
+>| &emsp; [Dealing with HWDB data via Parts Identifiers](#dealing-with-hwdb-data-via-parts-identifiers) | |
 >|-------------+------------------|
 >| [PID](#pid) | |
 >|-------------+------------------|
@@ -40,13 +52,17 @@ keypoints:
 >|-------------+------------------|
 >| &emsp;[Important Reminder](#important-reminder) | |
 >|-------------+------------------|
-
+>| [PID hierarchy](#pid-hierarchy) | |
+>|-------------+------------------|
+>| &emsp; [User Privileges](#user-privileges) | |
+>|-------------+------------------|
+{: .checklist}
 
 ## Hardware DB Conceptual Overview
 
 ### Hardware DB, A Bit of History
 
-- HWDB was originally developed and created for NOvA about 2008-ish.00
+- Hardware Database (HWDB) was originally developed and created for NOvA about 2008-ish.00
   - by Dennis Box, Margherita Vittone and Steve White with guidance from Jon Paley.
 - It was created to track a speciﬁc set of parts for NOvA and some tests done on them.
 
@@ -62,6 +78,8 @@ keypoints:
   - Very limited API allowing uploading data only.
   - Utilizes original, very early, web technology which will not last for the life of DUNE.
 
+[back to top](#contents)
+
 ### DUNE Expands the Requirements
 
 ![DUNE](../fig/HWDBOverview/DUNE.png){: .image-with-shadow}{: width="35%"}
@@ -76,6 +94,8 @@ keypoints:
 - For a complete list of requirements: [https://docs.dunescience.org/cgi-bin/sso/ShowDocument?docid=23333]
 
 DUNE requires a very large set of discrete types of items to be tracked making creating individual tables for each item extremely diﬃcult. Well, impossible.
+
+[back to top](#contents)
 
 ### Hardware Database for DUNE
 
@@ -103,6 +123,8 @@ For more details, please refer to: [https://cdcvs.fnal.gov/redmine/projects/comp
   - Can be tied to the Patterns, Items and Tests.
 - A complete, secure, REST API is available for most of what the forms do.
 
+[back to top](#contents)
+
 ### Accessing the System
 
 - The page the production link is on: [https://dbweb0.fnal.gov/cdb/login/sso]
@@ -119,28 +141,22 @@ For more details, please refer to: [https://cdcvs.fnal.gov/redmine/projects/comp
 - Data can be entered through web forms or a REST API.
   - The API requires a CILogin certificate for security.
 
-### The Big Three
-
-This system is built around the concept of
-
-- Component Types
-- Items
-- PartIDs
-
-This is integral to all web forms, APIs and database tables.
-
-#### Component Type
-
-- Component Type is simply a PATTERN, where you deﬁne what DATA will be collected for a type of item.
-  - This is a virtual construct.
-  - It is used to display a web form for speciﬁc to that type of item. It is also used by the APIs.
+[back to top](#contents)
   
-#### Items and PartIDs
+### Dealing with HWDB data via Parts Identifiers
 
-- An item is simply a physical piece of real world equipment.
-- Every item must have a PartID attached via a bar/QR-coded label.
-- A PartID is a unique identiﬁer deﬁned according to DUNE speciﬁcations ([LBNF/DUNE Parts Identifier: EDMS 2505353](https://edms.cern.ch/ui/#!master/navigator/document?D:101278257:101278257:subDocs)).
+Every entry in the DUNE HWDB is associated with a Parts Identifier (PID), which is uniquely defined and assigned by the HWDB,
+according to DUNE speciﬁcations ([LBNF/DUNE Parts Identifier: EDMS 2505353](https://edms.cern.ch/ui/#!master/navigator/document?D:101278257:101278257:subDocs)).
+Thus PID allows a user to retrieve and sort the all entries there.
 
+Each entry can be also linked to other entries through PIDs. This provides a concept of **PID hierarchy**,
+such as a relation between a parent hardware component and daughter components. E.g., for a given shipping crate PID, one could retrieve
+its contents as PIDs of the components insides are linked to the shipping crate PID. Or one could have a PID that corresponds to the entire HVS, which
+is linked to PIDs of CPA+FC+EW modules. And one of those PIDs is then linked to a CPA Plane and so on.. eventually could link down to a raw CPA part.
+
+We'll start to describe how the DUNE PID is defined below.
+
+[back to top](#contents)
 
  <br/><br/>
  
@@ -163,6 +179,8 @@ D00502301200-00050-US125
       125   = Argonne National Laboratory
 ~~~
 
+[back to top](#contents)
+
 ### Project Identifier (required)
 
 The project identifier is a single character in the range A-Z representing the major divisions in the DUNE/LBNF enterprise. The designations are as follows:
@@ -170,6 +188,8 @@ The project identifier is a single character in the range A-Z representing the m
 - **I**: Integration (includes cryostats, cryogenic plants, system engineering, installation …..)
 - **L**: LBNF (includes Conventional facilities, cavern services, …..)
 - **P**: Future project.
+
+[back to top](#contents)
 
 ### System Identifier (required)
 
@@ -392,19 +412,25 @@ The system identifier is a three-digit (001-999) number representing the major s
 
 </details>
 
+[back to top](#contents)
+
 ### Subsystem Identifier (required)
 
 The subsystem ID is a three-digit number (001-999) defined by the consortium or responsible group. Its purpose is to allow the consortia to separate the major components under their responsibility into subsystems.
+
+[back to top](#contents)
 
 ### Component Type Identifier (required)
 
 The component Type ID is a 5-digit number (00001-99999) used to identify the specific parts in a subsystem. Together with the subsystem ID the component Type ID defines the part inside the consortium scope.
 
+[back to top](#contents)
 
 ### Item Number (required)
 
 The item number is a five-digit number used to specify the exact part in a series and is assigned by the HWDB. It serves the typical role of the serial number in commercial fabrication. Five digits was chosen as the vast majority of components will have less than 100,000 units fabricated. In the handful of situations where this is not the case, different Component Type IDs will be needed for batches. 
 
+[back to top](#contents)
 
 ### Country of Origin (required)
 
@@ -422,6 +448,7 @@ The country of origin is a two-character string representing the country respons
 | Iran             | IR   | United Kingdom   | GB   | Italy            | IT   | USA              | US   |
 | Japan            | JP   | Korea, South     | KR   |                  |      |                  |      |
 
+[back to top](#contents)
 
 ### Responsible Institution ID (required)
 
@@ -429,9 +456,51 @@ The responsible institution ID is a three-digit number (001-999) representing th
 
 {% include country-code-table/index.html %}
 
+
+[back to top](#contents)
+
 ### Important Reminder
 
 When a PID is assigned, then the corresponding drawing should be associated (stored) with it. This will allow workers in the field to verify that the correct parts were used in the assemblies and installation. If/when a part is to be handled, transported, or assembled into other systems by other group, it must be marked with the PID.This will allow the workers to look up the relevant procedures, drawings, QC steps, and safety info at the installation location. Every shipment (box, crate) must be assigned with a PID. This is crucial in to be able to track the latest locations of parts and the number of parts at certain locations.
+
+[back to top](#contents)
+
+## PID hierarchy
+
+As you will see in [the next session]({{ page.root }}/03-Setting-up-Types/index.html), there is a list of **Projects** in the HWDB.
+For a given **Project**, there is a list of **System IDs**.
+And then for a given **System ID**, there is a list of **Subsystem IDs**. For a given **Subsystem ID**,
+there is a list of **Component Type IDs**. Finally for a given **Component Type ID**,
+there is a list of **Items**. These form the **PID hierarchy** and you will learn how to go up and down through these lists in [the next session]({{ page.root }}/03-Setting-up-Types/index.html).
+
+Obviously, if a **Component Type** doesn't exist, you can't have the corresponding **Items**. Similarly, if a **Subsystem** is not there,
+there is no way to create the corresponding **Component Type**. All of these, except **Items**, need to be created and well defined before a user starts to
+enter data.
+
+[back to top](#contents)
+
+### User Privileges
+
+The list of Projects and the list of System IDs have been already created in the HWDB by default. However one needs to define the rest,
+depending on needs of individual consortium. And not all users are allowed to do such tasks.
+
+There are 3 types of privileges in the HWDB: **active**, **administrator**, and **architect**.
+
+ 1. In general, all users of the HWDB should be **active**. They are allowed to read and input data.
+ 2. Users with **administrator** privileges can update Component Types, but not allowed to create them.
+ 3. **Architects** can create Subsystems and Component Types.
+
+Among these privileges,  **administrator** and **Architects** should be assigned to the liaisons from each consortia
+who are listed [here]({{ page.root }}/index.html#questions,-requests,-and-the-liaisons).
+These liaisons should determine and create necessary Subsystem IDs and Component Types for their own consortia
+and then provide proper definitions to each of the created Component Types.
+Please refer to [the 8th session]({{ page.root }}/08-Inserting-Component-Types/index.html) on how to create Component Types.
+In [the next session]({{ page.root }}/03-Setting-up-Types/index.html), we will go through how to define  Component Types in detail.
+
+[back to top](#contents)
+
+<br/><br/>
+
 
 {% include links.md %}
 

@@ -12,11 +12,11 @@ keypoints:
 - The goals are to give you the computing basis to communicate with the DUNE Hardware Database.
 ---
 
-## Overall structure of the training site
+## Structure of the training site
 
-It composes of 8 main sections.
+It composes of 8 main sessions.
 
-1. `Intro. to DUNE HWDB Training site` : This page.
+1. `Intro. to DUNE HWDB Training site` : This page. 
 2. `HWDB Conceptual Overview and the DUNE PID` : It goes over briefly a history of Hardware Database, conceptual overview,
    and introduce the definiton of the **DUNE Parts Identifier (PID)**.
 3. `Setting up Component Types and Test Types` : Introduces the **PID hierarchy**. Then teaches you how to define **Component** and **Test Types**,
