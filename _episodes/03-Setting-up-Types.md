@@ -21,6 +21,14 @@ keypoints:
 >|-------------+------------------|
 >|    | Description  |
 >|-------------+------------------|
+>|[Tasks for Administrators and very simplified DB schema](#tasks-for-administrators-and-very-simplified-db-schema) | |
+>|-------------+------------------|
+>| &emsp; [Sub-components](#sub-components) | |
+>|-------------+------------------|
+>| &emsp; [Tests](#tests) | |
+>|-------------+------------------|
+>| &emsp; [Very simplified DB schema](#very-simplified-db-schema) | |
+>|-------------+------------------|
 >| [WEB UI](#web-ui)  |   |
 >|-------------+------------------|
 >| &emsp;[Going through the hierarchy of IDs](#going-through-the-hierarchy-of-ids) | List of Projects, Systems, Subsystems, and Component Types |
@@ -57,18 +65,69 @@ keypoints:
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
 
+# Tasks for Administrators and very simplified DB schema
+
+We now know how a PID is formed and there are three types of user privileges.
+One of the privileges, Administrator, allows to edit Component Types.
+In this session, we will go through what Administrators need to do before active users can start to enter data.
+
+[back to top](#contents)
+
+## Sub-components
+
+While editing a Component Type, Administrator can also define sub-component Types. 
+A sub-component is a component (Item) that is linked to another component (Item).
+This is a very powerful functionality, allowing user to trace various related Items for a given single PID.
+We will show how this is done later in this session.
+
+[back to top](#contents)
+
+## Tests
+
+For a given Item, there is a place to store Test results.
+Actually it doesn’t have to be a Test result. One could store there anything that is associated with that Item. 
+It is Administrator’s job to create/define Test Types for each of your Component Types.
+And for a given Component Type, one could create multiple Test Types.
+Again we will go over how this is done later in this session.
+
+[back to top](#contents)
+
+## Very simplified DB schema
+
+The picture below shows a very simplified DB schema, in which one can see that Administrators define Component Types,
+Sub-component Types, and Test Types, while ordinary (active) users enter data and Test data.
+
+<br/><br/>
+
+![SimpleSchema](../fig/Setting-up-Types/SimplifiedDBSchema.png){: .image-with-shadow}{: width="65%"}
+
+<br/><br/>
+
+For the remaining of this session, we will go through how Administrators achieve these tasks
+in two different ways:
+- WEB UI: user-friendly, intuitive, probably one wouldn’t want to use this method for repetitive tasks. 
+- REST API: executed from command-line or communicated directly from your preferred programs.
+
+[back to top](#contents)
+
+<br/><br/><br/><br/>
+
 # WEB UI
 
 <!--slides are 1024 x 768 px-->
 
- Before inserting Items and their corresponding Tests, we need to define a Component Type and Test Type, respectively.
- We will do so, first with the WEB UI, and then through the REST API in the 2nd half of this session.
+<!-- Before inserting Items and their corresponding Tests, we need to define a Component Type and Test Type, respectively.
+ We will do so, first with the WEB UI, and then through the REST API in the 2nd half of this session. -->
 
  One can access to the two versions of the HWDB from these addresses.We will use the development version in this session.
 
  Production version : [https://dbweb0.fnal.gov/cdb/login/sso]
 
  Development version: [https://dbweb0.fnal.gov/cdbdev/login/sso]
+
+Go ahead to log into the development version. Once logged in, you should be seeing the opening page like below:
+
+![HWDB Opening](../fig/Setting-up-Types/HWDBopening.png){: .image-with-shadow}{: width="85%"}
 
 [back to top](#contents)
 
