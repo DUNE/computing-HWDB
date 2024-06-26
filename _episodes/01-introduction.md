@@ -13,21 +13,39 @@ keypoints:
 - The goals are to give you the computing basis to communicate with the DUNE Hardware Database.
 ---
 
+## What is this website for?
+
+The DUNE Hardware Database (HWDB) stores all the information related to a piece of DUNE hardware.
+It is foreseen as the primary archive of hardware related data. This web site trains you so that
+you can communicate (read & write) with the HWDB with ease.
+Towards the end of the trainings ([the 6th]({{ page.root }}/06-Using-iPad-App/index.html) and
+[the 7th]({{ page.root }}/07-Using-Python-Upload-Tool/index.html) sessions) we also introduce
+two apps that would help users in communicating with the HWDB as well.
+
+
 ## Structure of the training site
 
 It composes of 8 main sessions.
 
-1. `Intro. to DUNE HWDB Training site` : This page. 
-2. `HWDB Conceptual Overview and the DUNE PID` : It goes over briefly a history of Hardware Database, conceptual overview,
-   and introduce the definiton of the **DUNE Parts Identifier (PID)**.
-3. `Setting up Component Types and Test Types` : Introduces the **PID hierarchy**. Then teaches you how to define **Component** and **Test Types**,
-   which are something you must do before inserting actual data to the database.
-   **User Roles** are also introduced, which restrict which users could edit/create what Types. It goes through these how-tos with both the WEB-UI and the REST API.
-4. `Data Management using WEB UI` : Teaches you how to **POST/PATCH/GET Items**, **sub-components**, **Locations** of Items, **Tests**, as well as **images**, including **bar/QR-codes**, through the **WEB-UI** method. Also provides some examples of how one could perform searches for Items and Tests.
-5. `Data Management using REST API` : Teaches the identical materials to the 4^th section above, but through the **REST API** method.
-6. `Using the iPad App` : Introduces the **iPad app**, its requirements, how to obtain it. Shows how easily one could go through the **PID hierarchy**, scan/generate/print **QR-codes**, while dealing with information of individual **Item Locations**.
-7. `Using the Python HWDB Upload Tool` : Introduces the **Python-based app**, its requirements, how to obtain it. Shows how easily one could upload massive data to the database, even with some **complicated DB schema**.
-8. `Inserting Component Types` : This page is only for users with the Architect privilege. Describes how to **newly create Component Types** in the database.
+|-------------+------------------|
+| Session   | Description  |
+|-------------+------------------|
+| 1. [Intro. to DUNE HWDB Training site]({{ page.root }}/01-introduction/index.html) | This page. |
+|-------------+------------------|
+| 2. [HWDB Conceptual Overview and the DUNE PID]({{ page.root }}/02-Introduction-HWDB/index.html) | It goes over briefly a history of Hardware Database, conceptual overview, and introduce the definiton of the **DUNE Parts Identifier (PID)**, a concept of **PID hierarchy**, and the three privileges of user account|
+|-------------+------------------|
+| 3. [Setting up Component Types and Test Types]({{ page.root }}/03-Setting-up-Types/index.html) | Goes through the **PID hierarchy** with the WEB UI. Then teaches you how to define **Component** and **Test Types**, which must be done before inserting actual data to the database. **User Roles** are also introduced, which restrict which users could edit/create what Types. It goes through these how-tos with both the WEB-UI and the REST API.|
+|-------------+------------------|
+|4. [Data Management using WEB UI]({{ page.root }}/04-Data-Management-WEB-UI/index.html) | Teaches you how to **POST/PATCH/GET Items**, **sub-components**, **Locations** of Items, **Tests**, as well as **images**, including **bar/QR-codes**, through the **WEB-UI** method. Also provides some examples of how one could perform searches for Items and Tests.|
+|-------------+------------------|
+| 5. [Data Management using REST API]({{ page.root }}/05-Data-Management-REST-API/index.html) | Teaches the identical materials to [the 4th session]({{ page.root }}/04-Data-Management-WEB-UI/index.html) above, but through the **REST API** method. |
+|-------------+------------------|
+| 6. [Using the iPad App]({{ page.root }}/06-Using-iPad-App./index.html) | Introduces the **iPad app**, its requirements, how to obtain it. Shows how easily one could go through the **PID hierarchy**, scan/generate/print **QR-codes**, while dealing with information of individual **Item Locations**. |
+|-------------+------------------|
+| 7. [Using the Python HWDB Upload Tool]({{ page.root }}/07-Using-Python-Upload-Tool/index.html) | Introduces the **Python-based app**, its requirements, how to obtain it. Shows how easily one could upload massive data to the database, even with some **complicated DB schema**. |
+|-------------+------------------|
+| 8. [Inserting Component Types]({{ page.root }}/08-Inserting-Component-Types/index.html) | This page is only for users with the Architect privilege. Describes how to **newly create Component Types** in the database. |
+|-------------+------------------|
 
 ## The 2nd DUNE HWDB Tutorials
 
