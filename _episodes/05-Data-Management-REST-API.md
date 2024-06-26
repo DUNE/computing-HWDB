@@ -3,6 +3,7 @@ title: Data Management using REST API
 teaching: 60
 exercises: 0
 questions:
+- Active user privilage is required.
 - How do I enter and retrieve Items with the REST API?
 - How do I perform searches over Items/Tests with the REST API?
 objectives:

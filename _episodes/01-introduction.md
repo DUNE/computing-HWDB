@@ -3,6 +3,7 @@ title: Introduction to DUNE HWDB Training site
 teaching: 0
 exercises: 0
 questions:
+- No privilage is required.
 - What is this website?
 objectives:  
 - Introduce instructors and mentors.

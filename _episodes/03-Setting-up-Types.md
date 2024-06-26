@@ -3,6 +3,7 @@ title: Setting up Component Types and Test Types
 teaching: 60
 exercises: 0
 questions:
+- Administrator privilage is required.
 - How do I define a Component Type and a Test Type with the WEB UI?
 - How about through the REST API?
 objectives:

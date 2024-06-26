@@ -3,6 +3,7 @@ title: Using the iPad App
 teaching: 30
 exercises: 0
 questions:
+- Active user privilage is required.
 - How do I go/down through PID hieratchy, scan QR codes, and post Locations via iPad?
 objectives:
 - To be able to go through the PID hieratchy with the PID Display

@@ -3,6 +3,7 @@ title: Using the Python HWDB Upload Tool
 teaching: 60
 exercises: 0
 questions:
+- Active user privilage is required.
 - How does one upload bulk data with the Python HWDB Upload Tool?
 objectives:
 - objective 1

@@ -3,6 +3,7 @@ title: HWDB Conceptual Overview and the DUNE PID
 teaching: 30
 exercises: 0
 questions:
+- No privilage is required.
 - What is the HWDB?
 - What are its essential components?
 - The defintion of the DUNE Parts Identifier (PID)
