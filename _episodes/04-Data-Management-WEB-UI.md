@@ -125,7 +125,8 @@ with a list of items for this component type.
 
 To add a single item:
 
-- Click on "Add New". The UI will respond with the "Edit Item" screen. (Note that this screen
+- Click on the "ADD NEW..." button towards the top of the screen. The UI will respond with the 
+"Edit Item" screen. (Note that this screen
 will show both for adding and editing items. However, when editing an item, there will be more
 options available on the screen.
 - At minimum, you must select a "Country of Origin" and "Resp. Institution." The remaining fields
@@ -142,7 +143,6 @@ Part ID that was assigned after saving!
 
 {% include data-management-web-ui/add-item-index.html %}
 
-You can use this interface to create a new item and save it. If you wish to add subcomponents to this item, record the PID. In this case the PID is `Z00100400005-00030`. 
 
 [back to top](#contents)
 
@@ -150,7 +150,23 @@ You can use this interface to create a new item and save it. If you wish to add 
 
 #### Bulk Adding Items
 
-Bulk Adding allows you to add a number of items simultaneously. This is handy if you have a number of Items you wish to reserve Part IDs for, but you’re not ready to enter all the information for those Items yet. We can click on "Bulk Add" which will produce the following.
+Bulk Adding allows you to add a number of items simultaneously. This is handy if you have a 
+number of Items you wish to reserve Part IDs for, but you’re not ready to enter all the 
+information for those Items yet.
+
+To bulk add items:
+
+- Use the back button on your broser to return to the list of items for "Front Axle". (You may
+wish to hit the refresh button on your browser to pick up any items you have added since you were
+last on that screen.)
+- Click on the "BULK ADD..." button towards the top of the screen. The UI will display the
+"Item Bulk Add" Screen.
+- Select the appropriate values in the "Country of Origin" and "Resp. Institution" fields.
+- Manufacturer is optional.
+- Enter the number of items you wish to add in the "Count" field.
+- Click the "SAVE" button. The UI will respond with a page in a new tab containing bar codes
+and QR codes for the items you have added. You may print these out and apply them to your 
+physical items.
 
 {% include data-management-web-ui/bulk-add-index.html %}
 
@@ -160,7 +176,27 @@ Bulk Adding allows you to add a number of items simultaneously. This is handy if
 
 #### Adding Subcomponents
 
-Suppose we wish to add subcomponents to the previously added item `Z00100400005-00030`. Since this item has component type "Front Axle", the component type definition requires that the subcomponents be of component type "Left Wheel" and "Right Wheel". Return to the list of component types and as seen at the beginning of this section. Then utilize the method shown to add single items to both "Left Wheel" and "Right Wheel" and record the PIDs. It is essential to make sure that the "status" = "available", which is the default when creating items. In this case the PIDs are `Z00100400007-00013` and `Z00100400008-00014` respectively. Now return to the item you wish to attach the subcomponents to, this can be done through directly filtering the list of items or by going to the specific component type and listing the items which belong to it.
+Suppose we wish to add subcomponents to the previously added item `Z00100400005-00030`. 
+Since this item has component type "Front Axle", the component type definition requires that the
+subcomponents be of component type "Left Wheel" and "Right Wheel". Suppose we have added items
+for both of these types, and their Part IDs are `Z00100400007-00013` and `Z00100400008-00014`.
+Both of these items must have their status set to "Available."
+
+To add these subcomponents:
+
+- Use the back button on your browser to return to the list of items for "Front Axle." Refresh the 
+page to update the list.
+- Click on the link for "Z00100400005-00030". The UI will display the "Edit Item" screen for this
+item.
+- Under "Sub-components," click the "+" button to expand. The UI will now show the subcomponent
+functional positions that need to be filled.
+- Click the drop-down box for "My L Wheel: Left Wheel". The box will expand to show a text field
+and the message "Please enter 2 or more characters."
+- Enter two or more characters for any substring of the Part ID that you want. In this case, "13"
+will suffice. The UI will display a list of Part IDs matching this substring.
+- Click on "Z00100400007-13" to select it.
+- Repeat this process for "My R Wheel:Right Wheel."
+
 
 {% include data-management-web-ui/add-subcomp-index.html %}
 
