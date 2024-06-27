@@ -51,27 +51,55 @@ keypoints:
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
 
+This tutorial will walk you through using the Web UI for the Hardware Database.
 
-## Component Types
+The development version of the HWDB can be accessed via http://dbweb0.fnal.gov:8443/cdbdev/login.
 
-You can utilize the WEB UI directly access specific component types. Say you wish to find the "Front Axle" we have previously discussed. You can find it via the following process:
+The production version of the HWDB can be accessed via http://dbweb0.fnal.gov:8443/cdbdev/login.
+
+## Accessing Component Types
+
+Note: Adding component types requires the user to have "Architect" priveleges for the HWDB. This 
+is covered by the previous tutorial, "Setting up Component Types and Test Types." This tutorial 
+assumes that component types being managed already exist in the HWDB, and the user has been added
+to the appropriate Roles defined for that component type.
+
+Let's try accessing a component type from the previous tutorial: "Z.Sandbox.Tutorials.Front Axle":
+
+- Open the Web UI in your browser and log in.
+- Select "Component Types" from the left menu. The UI will display a list of all component types
+in the HWDB. This list will be many pages long. 
+- We should filter this list so that we can find our component type more easily. Find the 
+"Filter..." button towards the top of the page and click on it. The UI should display a pop-up
+box titled "Apply filters."
+- In the "Name" field, type part or all of the component type's name and click "Search." For this
+example, let's type "Tutorial," although you could also try variations like "Sandbox.Tutorial" or 
+"Front Axle". You may use wildcards to omit a middle portion, e.g. "Sand%.Tut%.Front". (Wildcards
+are already assumed at the beginning and end.) The UI will respond with a list of component
+types that only match the filter criteria.
+ 
+
 
 ![component-type-filtering](../fig/Data-management-WEB-UI/comp-type-filter.png){: width="85%"}
 
-The component types are displayed in list view. This provides a variety of options as seen below. In particular you may access the Component Type definition, the Test Types, and the list of Items of that component type. Click on the red boxes.
+The component types are displayed in list view. This provides a variety of options as seen below. 
+In particular you may access the Component Type definition, the Test Types, and the list of Items 
+of that component type. 
+
+Click on the red boxes in the image below for more information.
 
 {% include data-management-web-ui/component-type-index.html %}
 
+Let's take a look at "Front Axle."
 
-[back to top](#contents)
+- Click on the "Z.Sandbox.Tutorials.Front Axle" link.
 
-<br/><br/>
-
-## Items
-
-### Preparing Items to be Added
-
-Let’s assume that “Front Axle” has already been defined in the database, and that it should contain a “Left Wheel” and a “Right Wheel” as Subcomponents, and these have also been defined in the database. Let’s take a quick look at the definition for “Front Axle.”
+We can see in the image below that the Specifications Datasheet contains two fields: "Last Name"
+and "First Name". These have been given default values of "Muramatsu" and "Hajime". (If you wish
+to have no default values, you may use the value "null".
+ 
+We also see that the component type has two subcomponents ("connectors"): "My L Wheel" and 
+"My R Wheel", each of which has been assigned a Part Type ID.
 
 {% include data-management-web-ui/preparing-items-added-index.html %}
 
@@ -81,8 +109,11 @@ Let’s assume that “Front Axle” has already been defined in the database, a
 
 ### Adding Item(s)
 
+Now that we've examined the component type, let's add some items!
 
-We can also add items to component types through the WEB UI. Suppose we wish to add an item to the "Front Axle" component type. As shown above, you can view the list of items associated with a particular component type by clicking on the particular icon in the component type list. Doing so will provide the following.
+- Use the back button on your browser to return to the filtered list of component types.
+- Click on the folder icon in the "ITEMS" column in the row for "Front Axle." The UI will respond
+with a list of items for this component type.
 
 {% include data-management-web-ui/view-items-index.html %}
 
@@ -92,7 +123,22 @@ We can also add items to component types through the WEB UI. Suppose we wish to 
 
 #### Adding Single Item
 
-We can click on "Add New" in order to add a single new item. The following page will show up.
+To add a single item:
+
+- Click on "Add New". The UI will respond with the "Edit Item" screen. (Note that this screen
+will show both for adding and editing items. However, when editing an item, there will be more
+options available on the screen.
+- At minimum, you must select a "Country of Origin" and "Resp. Institution." The remaining fields
+are optional. IMPORTANT: Once the Country and 
+Institution have been set, they may not be edited!
+- The "Part ID" field displays the next available Part ID, which will be assigned to this item
+when it is added. Note that the Part ID is not reserved until you save the item, so if multiple
+users are adding items at the same time, that Part ID might get assigned to another user's item
+before you finish adding it! If you need to make a note of the Part ID for later use, look for the
+Part ID that was assigned after saving!
+- Location may not be set until after the item has been created.
+- Sub-components may not be assigned until after the item has been created.
+- Click the "Save" button to add the item.
 
 {% include data-management-web-ui/add-item-index.html %}
 
