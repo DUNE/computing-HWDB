@@ -44,7 +44,7 @@ collaborative_notes: "DUNE-Computing-HWDB"
 {: .callout}
 
 #### By the end of this training, participants will know how to:
-* GET/POST things from/to the DUNE HWDB through both the WEB UI and the RESR API methods.
+* GET/POST things from/to the DUNE HWDB through both the WEB UI and the REST API methods.
 * Easily go up&down PID hierarchy, scan QR-codes, and GET/POST Item locations using the iPad app.
 * Easily POST massive data to the HWDB using the Python API.
 
