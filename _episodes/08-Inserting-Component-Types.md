@@ -3,6 +3,7 @@ title: Inserting Component Types
 teaching: 30
 exercises: 0
 questions:
+- Architect privilage is required.
 - How do I newly create Components (only available with the WEB UI)?
 objectives:
 - Users with the **Architect** privilege should be able to insert new Component Types.

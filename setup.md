@@ -3,7 +3,20 @@ title: Obtaining a FNAL certificate
 teaching: 60
 exercises: 0
 questions:
+- Active user privilage is required.
+- Get ready for the training.
 ---
+
+<br/><br/>
+
+>## Questions, Requests, and the Liaisons
+>Any question/comments, including requests of examples to be added as training materials, should be directed to the liaison of your consortium (click the button below) as well as
+>the followings: [Norm Buchanan](mailto: norm.buchanan@colostate.edu?),
+>[Ana Paula](mailto: Ana.Vizcaya_Hernandez@colostate.edu?), and
+>[Hajime Muramatsu](mailto: hmuramat@umn.edu?). For issues of the HWDB itself, also inform [here](https://fermi.servicenowservices.com/wp?id=evg-service-item&sys_id=89848f4bdb8c9b00da5174131f961994).
+{: .keypoints}
+{% include liaison-list/index.html %}
+
 ## Objectives
 
 - Get ready to do the tutorials
@@ -14,6 +27,25 @@ questions:
 - You must have a FNAL Services account and be on the DUNE Collaboration member list.
 - You also need to have your terminal ready.
 - During our "REST API" sessions, we will extensively use the command, cURL (client URL, pronounced “curl”, [https://curl.se/]).
+
+## Do you have your account in the HWDB?
+
+Anybody with a FNAL Services account should have their account ready in the HWDB.
+
+Perhaps, the best way to check this to try to log into one of the HWDB versions available. There are two versions of the DUNE HWDB,
+the development version and the production version. You can *practice* in the development version (e.g., to go through this training site),
+while the production version is the official DUNE Hardware Database. Go ahead to try log into one of them with your Web browser:
+
+ Production version : [https://dbweb0.fnal.gov/cdb/login/sso]
+
+ Development version: [https://dbweb0.fnal.gov/cdbdev/login/sso]
+
+If you can login, that confirms that you have your account ready in the HWDB. And let us know if you cannot.
+
+There are two ways to communicate with the DUNE HWDB, through the WEB UI and the REST API (more on these methods later!).
+If you can login there, you are ready to go through the training with the WEB UI.
+
+To communicate through the REST API, however, you would need a FNAL certificate. The followings describe how to obtain yours.
 
 ## Obtaining your certificate
 
@@ -134,3 +166,5 @@ So let us define the followings:
 
 [https://curl.se/]: https://curl.se/
 [https://www.cilogon.org]: https://www.cilogon.org
+[https://dbweb0.fnal.gov/cdb/login/sso]: https://dbweb0.fnal.gov/cdb/login/sso
+[https://dbweb0.fnal.gov/cdbdev/login/sso]: https://dbweb0.fnal.gov/cdbdev/login/sso
