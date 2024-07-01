@@ -11,7 +11,7 @@
 
             <div id="cert-info" class="popup">
                 <span class="close" onclick="closePopup('cert-info')">&times;</span>
-                <p>This video shows the step by step proceduce of obtaining a certificate through CILogin. In particular
+                <p>This video shows the step by step proceduce of obtaining a certificate through CILogin. <br> In particular
                     you set a go to CILogin, select FermiLab, sign in, set the password for the certificate, download it, and move
                     it to the App folder. You are then able to attach the certificate with the set username and password.
                 </p>
@@ -45,7 +45,7 @@
 
 .popup {
     display: none;
-    position: absolute; 
+    position: fixed; 
     top: 10%;
     right: 5%;
     left: auto;
@@ -55,10 +55,7 @@
     border: 1px solid #ccc;
     z-index: 1000;
     width: 400px;
-    
     overflow-y: auto;
-
-
 }
 
 .popup .close {

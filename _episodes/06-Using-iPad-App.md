@@ -17,18 +17,18 @@ keypoints:
 >|-------------------------------------+------------------|
 >| Section                             | Description      |
 >|-------------------------------------+------------------|
->| [Basics](#basics)                   |                  |
->| &emsp;[Requirements](#requirements) |                  |
->| &emsp;[Deployment](#deployment)     |                  |
->| &emsp;[Login Page](#login-page)     |                  |
+>| [Basics](#basics)                   |  General overview of the iPad app. |
+>| &emsp;[Requirements](#requirements) |  Device requirements  |
+>| &emsp;[Deployment](#deployment)     |  How to download the app  |
+>| &emsp;[Login Page](#login-page)     |   How to login  |
 >|-------------------------------------+------------------|
->| [PID Display](#pid-display)         |                  |
+>| [PID Display](#pid-display)         |  PID management system |
 >|-------------------------------------+------------------|
->| [Shipment Tracker](#shipment-tracker) |               |
+>| [Shipment Tracker](#shipment-tracker) |  Utilizing the pid system to keep track of shipment crates   |
 >|-------------------------------------+------------------|
->| [QR-Code](#qr-code)                 |                  |
+>| [QR-Code](#qr-code)                 | Scanning and generating QR codes |
 >|-------------------------------------+------------------|
->| [Local Storage](#local-storage)     |                  |
+>| [Local Storage](#local-storage)     |  storage location  |
 >|-------------------------------------+------------------|
 
 ## Basics
@@ -57,7 +57,7 @@ The app also runs on Macs with both Intel and Apple M chips.
 
 **iPad app Deployment**: As of now, you must contact Hajime Muramatsu and send [send him](mailto: hmuramat@umn.edu?subject=Request to resgiter an iPad(s)) your E-mail address.  You will then be sent an invitation, which includes a link to download an app called TestFlight. You can then intsall the app via TestFlight. This method is subject to change.
 
-**Mac Deployment**: The latest version of the app can be downloaded [https://www-users.cse.umn.edu/~hmuramat/iOS/CPAProductionChecklists.zip](https://www-users.cse.umn.edu/~hmuramat/iOS/CPAProductionChecklists.zip). To do so you will need **Username**: `DUNE` and **Password**: `DUNEana`.
+**Mac Deployment**: The latest version of the app can be downloaded at [https://www-users.cse.umn.edu/~hmuramat/iOS/CPAProductionChecklists.zip](https://www-users.cse.umn.edu/~hmuramat/iOS/CPAProductionChecklists.zip). To do so you will need **Username**: `DUNE` and **Password**: `DUNEana`.
 
 ### Login Page
 
@@ -74,6 +74,7 @@ Once you have logged in, you will see the following:
 
 {% include Using-iPad-app/button-image-index/home-page-index.html %}
 
+[back to top](#contents)
 
 ## PID Display
 
@@ -92,6 +93,7 @@ For now, it takes only ~2mins.
 
 [Sync all pid](../fig/Using-iPad-app/sync-all-pid.png){: width="50%"}
 
+[back to top](#contents)
 
 ## Shipment Tracker
 
@@ -124,6 +126,8 @@ Upon adding a component type to the shipment tracker, you can directly add PIDs 
 
 <br/> <br/>
 
+[back to top](#contents)
+
 ## QR-Code
 
 QR-codes are easy to generate on the iPad app. The proceduce is shown in the video below. Click the info button to get a moveable popup window for more information.
@@ -134,11 +138,14 @@ QR-codes are easy to generate on the iPad app. The proceduce is shown in the vid
 
 <br/> <br/>
 
+[back to top](#contents)
+
 ## Local Storage
 
 The info of the generated “Type List” is stored within the app folder. `CPAProductionChecklists -> Tracker -> _tracker_typeidlist` Pictures taken in the app and QR codes generated are also stored in the `Tracker` folder.
 
 {% include Using-iPad-app/button-image-index/local-storage-index.html %}
 
+[back to top](#contents)
 
 
