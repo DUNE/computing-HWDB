@@ -22,17 +22,24 @@ collaborative_notes: "DUNE-Computing-HWDB"
 
 > ## Announcement of the 2nd HWDB tutorials 
 >
-> The 2nd HWDB tutorials will be held in June XX and YY.
-> See [HWDB Tutorials]({{ page.root }}/training-schedule/index.html) for more details.  
+> The 2nd HWDB tutorials will be held as a two-day workshop on consecutive Mondays, July 15, 2024, and July 22, 2024, each day starting at 9 a.m. CDT.
+>
+> A two day schedule with lesson links is provided as [HWDB Tutorials]({{ page.root }}/training-schedule/index.html).
+>
+> The Indico Site for this training is [https://indico.fnal.gov/event/65297/](https://indico.fnal.gov/event/65297/).
 {: .prereq}
 
 <br/><br/> 
 
 #### This tutorial will teach the basics of accessing and using the DUNE Hardware Database (HWDB).
 
-
-
 <!-- Ether pad: https://pad.carpentries.org/DUNE-Computing-HWDB or use a live Google doc -->
+A live doc will be used to monitor questions posed during the training: [HWDB 2024 Live Doc](https://docs.google.com/document/d/10v5XdwyTiz72EIYcpJxahw8D_FcXZUzpvubDt1axuAI/edit?usp=sharing).
+
+Links to to an earlier tutorial on the HWDB:
+- [Hardware Database Tutorial I (May 2022)](https://indico.fnal.gov/event/54352/)
+- [Hardware Database Tutorial II (May 2022)](https://indico.fnal.gov/event/54411/)
+
 
 {% comment %} This is a comment in Liquid {% endcomment %}
 
@@ -116,7 +123,6 @@ collaborative_notes: "DUNE-Computing-HWDB"
 The official schedule for this event is listed on the [Indico site (59762)](https://indico.fnal.gov/event/59762/timetable/#20230524).
 
 {% include sc/schedule.html %}
-
 -->
 
 
@@ -125,3 +131,4 @@ The official schedule for this event is listed on the [Indico site (59762)](http
 [the online DUNE HWDB documentation]: https://dbweb9.fnal.gov:8443/cdbdev/apidoc/redoc
 [Redoc]: https://github.com/Redocly/redoc
 [Swagger]: https://dbweb9.fnal.gov:8443/cdbdev/apidoc/swagger
+
