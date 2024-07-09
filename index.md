@@ -22,8 +22,9 @@ collaborative_notes: "DUNE-Computing-HWDB"
 
 > ## Announcement of the 2nd HWDB tutorials 
 >
-> The 2nd HWDB tutorials will be held in June XX and YY.
-> See [HWDB Tutorials]({{ page.root }}/training-schedule/index.html) for more details.  
+> The 2nd HWDB tutorials will be held as a two-day workshop on consecutive Mondays, July 15, 2024, and July 22, 2024, each day starting at 9 a.m. CDT.
+>
+> A two day schedule with lesson links is provided as [HWDB Tutorials]({{ page.root }}/training-schedule/index.html).  
 {: .prereq}
 
 <br/><br/> 
