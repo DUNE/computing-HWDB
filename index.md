@@ -78,8 +78,9 @@ Links to to an earlier tutorial on the HWDB:
 >[Ana Paula](mailto: Ana.Vizcaya_Hernandez@colostate.edu?), and
 >[Hajime Muramatsu](mailto: hmuramat@umn.edu?). For issues of the HWDB itself, also inform [here](https://fermi.servicenowservices.com/wp?id=evg-service-item&sys_id=89848f4bdb8c9b00da5174131f961994).
 {: .keypoints}
+
 {% include liaison-list/index.html %}
-<!--
+<!---
 >|-------------+------------------|
 >| Consortium   | Liaison  |
 >|-------------+------------------|
@@ -113,18 +114,14 @@ Links to to an earlier tutorial on the HWDB:
 >|-------------+------------------|
 >| DUNE QA Specialist | [James Mateyack](mailto: mateyack@fnal.gov?) |
 >|-------------+------------------|
- -->
+ --->
 
-<br/><br/> 
+<br/><br/>
 
-<!--
+<!---
 <h2 id="schedule">Schedule by Day</h2>
-
-The official schedule for this event is listed on the [Indico site (59762)](https://indico.fnal.gov/event/59762/timetable/#20230524).
-
 {% include sc/schedule.html %}
--->
-
+--->
 
 {% include links.md %}
 
