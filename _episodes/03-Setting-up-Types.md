@@ -76,7 +76,7 @@ In this session, we will go through what Administrators need to do before active
 
 ## Sub-components
 
-While editing a Component Type, Administrator can also define sub-component Types. 
+While editing a Component Type, Administrator can also define sub-component Types.
 A sub-component is a component (Item) that is linked to another component (Item).
 This is a very powerful functionality, allowing user to trace various related Items for a given single PID.
 We will show how this is done later in this session.
@@ -86,7 +86,7 @@ We will show how this is done later in this session.
 ## Tests
 
 For a given Item, there is a place to store Test results.
-Actually it doesn’t have to be a Test result. One could store there anything that is associated with that Item. 
+Actually it doesn’t have to be a Test result.One could store there anything that is associated with that Item.
 It is Administrator’s job to create/define Test Types for each of your Component Types.
 And for a given Component Type, one could create multiple Test Types.
 Again we will go over how this is done later in this session.
@@ -106,7 +106,7 @@ Sub-component Types, and Test Types, while ordinary (active) users enter data an
 
 For the remaining of this session, we will go through how Administrators achieve these tasks
 in two different ways:
-- WEB UI: user-friendly, intuitive, probably one wouldn’t want to use this method for repetitive tasks. 
+- WEB UI: user-friendly, intuitive, probably one wouldn’t want touse this method for repetitive tasks.
 - REST API: executed from command-line or communicated directly from your preferred programs.
 
 [back to top](#contents)

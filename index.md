@@ -41,6 +41,7 @@ collaborative_notes: "DUNE-Computing-HWDB"
 > First step: follow the directions in the "[Setup](
 > {{ page.root }}/setup.html)" to arrived prepared for this event. Follow the instruction there to obtain your FNAL certificate, 
 > which you will need to communicate with the REST API of the HWDB.
+> Follow along with the training via [Incido](https://indico.fnal.gov/event/65297/).
 {: .callout}
 
 #### By the end of this training, participants will know how to:
