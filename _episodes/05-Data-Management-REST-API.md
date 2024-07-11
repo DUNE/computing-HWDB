@@ -89,10 +89,16 @@ Due to their repeated usage, we will abbreviate the following commands as such:
 
 ~~~
 curl --cert-type P12 --cert MyCert.p12:myPSWD --> CURL
+https://dbwebapi2.fnal.gov:8443/cdbdev/api/v1/ --> APIPATH
+~~~
+{: .language-bash}
+<br/><br/> 
+Note: The above path lets you access to the **development version** of the HWDB.
+In order to access to the **production version**, the path would be;
+~~~
 https://dbwebapi2.fnal.gov:8443/cdb/api/v1/ --> APIPATH
 ~~~
 {: .language-bash}
-
 
 ## GET
 
