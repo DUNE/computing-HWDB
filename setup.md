@@ -90,7 +90,8 @@ So let us define the followings:
 
    **PassWord** is the one you provided in the Step 6 in the above procedure.
 
-   **cdbdev** allows us to communicate with the development version of the HWDB.
+   **cdbdev** allows us to communicate with the development version of the HWDB
+   (and **cdb** allows to communicate with the production version).
 
 2. Let's use an API endpoint, **/users/whoami**, to display your HWDB account info.
 
