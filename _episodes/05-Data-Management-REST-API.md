@@ -88,15 +88,15 @@ Where MyCert.p12 is a p12 certificate which an be obtained from [cilogon](https:
 Due to their repeated usage, we will abbreviate the following commands as such:
 
 ~~~
-curl --cert-type P12 --cert MyCert.p12:myPSWD --> CURL
-https://dbwebapi2.fnal.gov:8443/cdbdev/api/v1/ --> APIPATH
+alias CURL='curl --cert-type P12 --cert usercred.p12:PassWord'
+export APIPATH='https://dbwebapi2.fnal.gov:8443/cdbdev/api/v1'
 ~~~
 {: .language-bash}
 <br/><br/> 
 Note: The above path lets you access to the **development version** of the HWDB.
 In order to access to the **production version**, the path would be;
 ~~~
-https://dbwebapi2.fnal.gov:8443/cdb/api/v1/ --> APIPATH
+export APIPATH='https://dbwebapi2.fnal.gov:8443/cdbdev/api/v1'
 ~~~
 {: .language-bash}
 
@@ -109,7 +109,7 @@ https://dbwebapi2.fnal.gov:8443/cdb/api/v1/ --> APIPATH
 'Getting' an item calls the `/components/<pid>` API endpoint. For the following example we will use the following item: `Z00100400005-00001`. Use the following command line in order to 'get' the desired item.
 
 ~~~
-CURL 'APIPATH/components/Z00100400005-00001'
+CURL "${APIPATH}/components/Z00100400005-00001" | jq
 ~~~
 {: .language-bash}
 
@@ -181,7 +181,7 @@ This can seem overwhealming at first, but notice the following important fields:
 You can also get items by simply specifying the Component Type ID. To do so you can use the `/component-types/<type_id>/components` API endpoint. For the following example we will use component type 'Front Axle' with ID `Z00100400005`.
 
 ~~~
-CURL 'APIPATH/component-types/Z00100400005/components'
+CURL "${APIPATH}/component-types/Z00100400005/components" | jq
 ~~~
 {: .language-bash}
 
@@ -250,7 +250,7 @@ This command returns all items with 'Front Axle' component type. The database re
 ~~~
 {: .output}
 
-In order to access a specific page number, you can use `CURL 'APIPATH/component-types/Z00100300030/components?page=X'` where X is the specific page number.
+In order to access a specific page number, you can use `CURL '${APIPATH}/component-types/Z00100300030/components?page=X'` where X is the specific page number.
 
 [back to top](#contents)
 
@@ -263,7 +263,7 @@ In order to access a specific page number, you can use `CURL 'APIPATH/component-
 You can check which test types are compatible with a given component type. In order to do so you can use the `/component-types/<type_id>/test-types` API endpoint. The following is an example using component type `Z00100100046`.
 
 ~~~
-CURL 'APIPATH/component-types/Z00100100046/test-types'
+CURL "${APIPATH}/component-types/Z00100100046/test-types" | jq
 ~~~
 {: .language-bash}
 
@@ -331,7 +331,7 @@ The response when executed is quite long, so we display an abbreviated list.
 You can also get test results associated with particular items. This uses the `/components/<eid>/tests/<test_type_name>` API endpoint. For the following example, we will use item `Z00100100046-00008` and test type `Test_Parts_3_TestType_10`.
 
 ~~~
-CURL ‘APIPATH/components/Z00100100046-00008/tests/Test_Parts_3_TestType_10'
+CURL "${APIPATH}/components/Z00100100046-00008/tests/Test_Parts_3_TestType_10" | jq
 ~~~
 {: .language-bash}
 
@@ -385,7 +385,7 @@ Which returns the following.
 You can get the current and previous locations of an item using the `/components/<pid>/locations` API endpoint. The returned list is sorted by most recent first. We will use item `Z00100300030-00103` for the following example.
 
 ~~~
-CURL 'APIPATH/components/Z00100300030-00103/locations'
+CURL "${APIPATH}/components/Z00100300030-00103/locations" | jq
 ~~~
 {: .language-bash}
 
@@ -449,7 +449,7 @@ Which returns the following.
 You can use the designated API endpoints `/get-barcode/<pid>` and `/get-qrcode/<pid>` to get a barcode and QR code respectively. Consider `Z00100100048-00033`.
 
 ~~~
-CURL 'APIPATH/get-barcode/Z00100100048-00033-US186' --output test.png
+CURL "${APIPATH}/get-barcode/Z00100100048-00033-US186" --output test.png
 ~~~
 {: .language-bash}
 
@@ -468,16 +468,16 @@ The process is identical for producing QR codes.
 Regardless of how the image was posted (for a given Component Type, Item, or Test entry) the process of GETting the image and downloading it is very similar. The following are the API endpoints for Component type, Item, and Test entry respectively. Note that GETting an image from a test entry requires the OID. The manner in which the OID can be obtained is shown [here](#post-image-for-test).
 
 ~~~
- CURL 'APIPATH/component-types/<type_id>/images'
- CURL 'APIPATH/components/<eid>/images'
- CURL ‘APIPATH/component-tests/<oid>/images’
+ CURL "${APIPATH}/component-types/<type_id>/images"
+ CURL "${APIPATH}/components/<eid>/images"
+ CURL "${APIPATH}/component-tests/<oid>/images"
 ~~~
 {: .language-bash}
 
 We will only guve an example for GETting an image for a given component type, as aside from the inital API endpoint, the process is identical. Suppose you have the type id `Z00100100048`.
 
 ~~~
-CURL 'APIPATH/component-types/Z00100100048/images'
+CURL "${APIPATH}/component-types/Z00100100048/images"
 ~~~
 {: .language-bash}
 
@@ -533,7 +533,7 @@ CURL 'APIPATH/component-types/Z00100100048/images'
 Notice that there are mulitple "myimage.pdf"s, but the image_id is unique. In order to download the desired image, we will require the image_id, since we will utilize the `/img/<image_id>` API endpoint.
 
 ~~~
-CURL 'APIPATH/img/fa636f5c-186d-11ef-ba26-2f96aeb61232' -o myimage.pdf
+CURL "${APIPATH}/img/fa636f5c-186d-11ef-ba26-2f96aeb61232" -o myimage.pdf
 ~~~
 {: .language-bash}
 
@@ -551,7 +551,7 @@ CURL 'APIPATH/img/fa636f5c-186d-11ef-ba26-2f96aeb61232' -o myimage.pdf
 When you post an item, the database generates a unique DUNE PID and assigns it to the item. Posting an item calls on the `/component-types/<type_id>/components` API endpoint. For the following example we will post an item with Component Type ID `Z00100400005`. You can execute the command using the following line:
 
 ~~~
- CURL -H "Content-Type: application/json" -X POST -d @Add_AnItem_Test_Parts_1.json 'APIPATH/component-types/Z00100400005/components' 
+ CURL -H "Content-Type: application/json" -X POST -d @Add_AnItem_Test_Parts_1.json "${APIPATH}/component-types/Z00100400005/components" | jq
 ~~~
 {: .language-bash}
 
@@ -608,7 +608,7 @@ Which displays the assigned PID, `Z00100400005-00014`.
 You can also post multiple items for a specified Component Type ID at once. To do so, you can use the `/component-types/<type_id>/bulk-add` API endpoint. For the following example we will post items with Component Type ID `Z00100400005`. You can execute the command using the following line:
 
 ~~~
-CURL -H "Content-Type: application/json" -X POST -d @Add_ItemS_Test_Parts_1.json 'APIPATH/component-types/Z00100400005/bulk-add' 
+CURL -H "Content-Type: application/json" -X POST -d @Add_ItemS_Test_Parts_1.json "${APIPATH}/component-types/Z00100400005/bulk-add" | jq
 ~~~
 {: .language-bash}
 
@@ -668,7 +668,7 @@ You can see that two distinct PIDs have been assigned `Z00100400005-00015` and `
 Creating a Test Type for a particular Component Type calls upon the `/component-types/<type_id>/test-types` API endpoint. When posting a test type, the test type name and specifications are required. We will continue using Component Type `Z00100400005`.You can excecute the following command line:
 
 ~~~
-CURL -H "Content-Type: application/json" -X POST -d @Post_TestType_Test_parts_3.json 'APIPATH/component-types/Z00100100046/test-types'
+CURL -H "Content-Type: application/json" -X POST -d @Post_TestType_Test_parts_3.json "${APIPATH}/component-types/Z00100100046/test-types" | jq
 ~~~
 {: .language-bash}
 
@@ -714,7 +714,7 @@ Which displays that a test type of name Test_Parts_3_TestType_10 was created.
 Posting test results calls upon the `/components/<pid>/tests` API endpoint. you must specify the name of the test and the specifications. It is important to note that you should know the schema of the specifications prior to submission of the JSON file. Comments are optional. For the following example, the external ID is `Z00100100046-00008`. The command is as follows:
 
 ~~~
-CURL -H "Content-Type: application/json" -X POST -d @Post_TestResult_Test_parts_10.json 'APIPATH/components/Z00100100046-00008/tests'
+CURL -H "Content-Type: application/json" -X POST -d @Post_TestResult_Test_parts_10.json "${APIPATH}/components/Z00100100046-00008/tests" | jq
 ~~~
 {: .language-bash}
 
@@ -755,7 +755,7 @@ When executed, it should produce a response similar to the following:
 You can post a new location to an item by using the `/components/<pid>/locations` API endpoint. The location is specified by Institution ID, which can be found [here]({{site.url}}/02-Introduction-HWDB/index.html#responsible-institution-id-required). When adding a new location to an item, if the time zone is not specified for the arrival time the time zone defaults to CST. The following is an example.
 
 ~~~
-CURL -H "Content-Type: application/json" -X POST -d @Post_ALocation.json ‘APIPATH/components/Z00100300030-00103/locations'
+CURL -H "Content-Type: application/json" -X POST -d @Post_ALocation.json "${APIPATH}/components/Z00100300030-00103/locations" | jq
 ~~~
 {: .language-bash}
 
@@ -797,7 +797,7 @@ You can also post images in three different ways: for a given Component Type, fo
 Posting an image for a given Component Type utilizes the `/component-types/<type_id>/images` API endpoint. Suppose you wish to post an image myimage.pdf to the component type `Z00100100048`.
 
 ~~~
-CURL -H "comments=testing from curl" -F "image=@myimage.pdf" 'APIPATH/component-types/Z00100100048/images'
+CURL -H "comments=testing from curl" -F "image=@myimage.pdf" "${APIPATH}/component-types/Z00100100048/images" | jq
 ~~~
 {: .language-bash}
 
@@ -818,7 +818,7 @@ When executed, the response is as follows.
 Posting an image for a specific item utilizes the `/components/<eid>/images` API endpoint. Suppose you wish to post an image myimage.pdf to the item `Z00100100048-00033`.
 
 ~~~
-CURL -H "comments=testing from curl" -F "image=@myimage.pdf" 'APIPATH/components/Z00100100048-00033/images'
+CURL -H "comments=testing from curl" -F "image=@myimage.pdf" "${APIPATH}/components/Z00100100048-00033/images" | jq
 ~~~
 {: .language-bash}
 
@@ -838,7 +838,7 @@ When executed, the response is as follows.
 In order to post an image to a particular Test entry you require a unique IF assigned to each entry, called an OID. To obtain the OID, you need to GET the particular test result. For this example, suppose you have item `Z00100200040-00001` and test type `CPA_Parts_FR4_main QC check`. You can use the ` /components/<eid>/tests/<test_type_name>` API endpoint to pull the test result.
 
 ~~~
-CURL ‘APIPATH/components/Z00100200040-00001/tests/CPA_Parts_FR4_main QC check?history=true'
+CURL "${APIPATH}/components/Z00100200040-00001/tests/CPA_Parts_FR4_main%20QC%20check?history=true" | jq
 ~~~
 {: .language-bash}
 
@@ -920,7 +920,7 @@ CURL ‘APIPATH/components/Z00100200040-00001/tests/CPA_Parts_FR4_main QC check?
 Here we see two test results, the first one with an image, OID = 110 and the second without, OID = 109. Notice that, independent of whether there is an image(s) associated with a particular test or not, there is always an OID assigned to each of the entries. You can use the ` /component-tests/<oid>/images` API endpoint to post the image to the test result.
 
 ~~~
-CURL -H "comments=testing from curl" -F "image=@myimage.pdf" 'APIPATH/component-tests/109/images'
+CURL -H "comments=testing from curl" -F "image=@myimage.pdf" "${APIPATH}/component-tests/109/images" | jq
 ~~~
 {: .language-bash}
 
@@ -1013,7 +1013,7 @@ Adding subcomponents is a way to link existing items. Before attempting to link 
 In order to link items, the status of the intended subcomponent must be "available." There are two ways to check for this, one is by simply checking the item itself via the `/components/<eid>` API endpoint. The other is to do so directly through the `/components/<eid>/status` API end point. For example, take `Z00100400005-00001`.
 
 ~~~
-CURL ‘APIPATH/components/Z00100400005-00001/status’ 
+CURL "${APIPATH}/components/Z00100400005-00001/status" | jq
 ~~~
 {: .language-bash}
 
@@ -1047,7 +1047,7 @@ We can see that the status is "permanently not available," with id 3. There are 
 If an item already exists which you wish to link to another item, we can make it available via the PATCH command and the `/components/<eid>/status` API endpoint. Take for example `Z00100400007-00001`.
 
 ~~~
-CURL -H "Content-Type: application/json" -X PATCH -d @Patch_Item_Status.json ‘APIPATH/components/Z00100400007-00001/status'
+CURL -H "Content-Type: application/json" -X PATCH -d @Patch_Item_Status.json "${APIPATH}/components/Z00100400007-00001/status"
 ~~~
 {: .language-bash}
 
@@ -1080,7 +1080,7 @@ When executed, it returns the following.
 You can also PATCH the status of multiple items at a time via the `/components/bulk-enable` API endpoint. Suppose you have two items, `Z00100400007-00001` which you wish to enable or make "available" and `Z00100400007-00002` which you wish to disable or make "not available."
 
 ~~~
-CURL -H "Content-Type: application/json" -X PATCH -d @enableBulkSub.json 'APIPATH/components/bulk-enable'
+CURL -H "Content-Type: application/json" -X PATCH -d @enableBulkSub.json "${APIPATH}/components/bulk-enable" | jq
 ~~~
 {: .language-bash}
 
@@ -1147,7 +1147,7 @@ There are two ways to link a subcomponent. One is to do so directly when posting
 In order to link items via post, the process it identical to posting an item without subcomponents via the `/component-types/<type_id>/components` API endpoint. It is important to not that you cannot link items that are already linked to other items.
 
 ~~~
-CURL -H "Content-Type: application/json" -X POST -d @Add_AnItem_Test_Parts_1-2.json 'APIPATH/component-types/Z00100400005/components'
+CURL -H "Content-Type: application/json" -X POST -d @Add_AnItem_Test_Parts_1-2.json "${APIPATH}/component-types/Z00100400005/components" | jq
 ~~~
 {: .language-bash}
 
@@ -1192,7 +1192,7 @@ Notice the only difference is the specified subcomponents. When executed, it ret
 You can patch an item to add subcomponents via the `/components/<eid>/subcomponents` API endpoint.
 
 ~~~
-CURL -H "Content-Type: application/json" -X PATCH -d @Patch_AnItem_Test_Parts_1.json 'APIPATH/components/Z00100400005-00001/subcomponents'
+CURL -H "Content-Type: application/json" -X PATCH -d @Patch_AnItem_Test_Parts_1.json "${APIPATH}/components/Z00100400005-00001/subcomponents" | jq
 ~~~
 {: .language-bash}
 
@@ -1228,7 +1228,7 @@ Notice that "data" has been "Updated."
 You can also undo or clear links using PATCH and the `/components/<eid>/subcomponents` API endpoint. 
 
 ~~~
-CURL -H "Content-Type: application/json" -X PATCH -d @Patch_AnItem_Test_Parts_1_clean.json 'APIPATH/components/Z00100400005-00001/subcomponents'
+CURL -H "Content-Type: application/json" -X PATCH -d @Patch_AnItem_Test_Parts_1_clean.json "${APIPATH}/components/Z00100400005-00001/subcomponents" | jq
 ~~~
 {: .language-bash}
 
@@ -1265,7 +1265,7 @@ When executed, the following is returned.
 You can also use GET and the `/components/<eid>/subcomponents` API endpoint to return a list of all subcomponents linked to a particular item. For example, consider `Z00100400005-00001`.
 
 ~~~
-CURL 'APIPATH/components/Z00100400005-00001/subcomponents'
+CURL "${APIPATH}/components/Z00100400005-00001/subcomponents" | jq
 ~~~
 {: .language-bash}
 
@@ -1319,7 +1319,7 @@ Which returns the following.
 You can also check it see if a particular item is a subcomponent, that is check to if if it has a parent-component. You can do so by calling the `/components/<eid>/container` API endpoint. Consider the item "My L Wheel", `Z00100400007-00001`.
 
 ~~~
-CURL 'APIPATH/components/Z00100400007-00002/container'
+CURL "${APIPATH}/components/Z00100400007-00002/container" | jq
 ~~~
 {: .language-bash}
 
