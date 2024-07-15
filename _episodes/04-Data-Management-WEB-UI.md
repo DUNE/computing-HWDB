@@ -80,7 +80,7 @@ types that only match the filter criteria.
  
 
 
-![component-type-filtering](../fig/Data-management-WEB-UI/comp-type-filter.png){: width="85%"}
+![component-type-filtering](../fig/Data-management-WEB-UI/comp-type-filter.png){: width="95%"}{: style="border: 5px double #CCC;"}
 
 The component types are displayed in list view. This provides a variety of options as seen below. 
 In particular you may access the Component Type definition, the Test Types, and the list of Items 
@@ -204,13 +204,37 @@ will suffice. The UI will display a list of Part IDs matching this substring.
 
 <br/><br/>
 
-#### Adding Tests
+#### Adding Test Types & Tests
 
-Test Types need to be added to the Component Type before performing this action. When editing the item, click on "Test Log" on the top item menu (see [More Item Operations](#more-item-operations) for more) which will present you with something that looks like the following.
+Suppose we want to add a new test type for "Front Axle" named "Bounce Test." To do this, 
+perform the following steps:
+
+- Use the back button on your browser to return to the "Component Types" page that lists "Front Axle"
+- Click on the "Test Types" folder in the "Front Axle" row. The UI will now show "Test Types for Component
+Type: Front Axle"
+- Click on "ADD NEW...". The UI will now show "Edit Item Test Type"
+- Enter the data fields on this screen and click "DONE". The UI will now show an updated screen
+"Test Types for Component Type: Front Axle"
+
+![view-test-types](../fig/Data-management-WEB-UI/view-test-types.png){: width="75%"}{: style="border: 5px double #CCC;"}
+
+You may now add test instances for your new test:
+
+- Find the item you added earlier for the "Front Axle" type.
+- In the Edit Item screen for your item, click on "TEST LOG". You will see "Test history for &lt;your part id&gt;
+
+- Click "ADD NEW TEST..." The UI will now ask you to choose which test type you are using
+
+![avail-test](../fig/Data-management-WEB-UI/avail-test.png){: width="50%"}{: style="border: 5px double #CCC;"}
+
+- Enter the data for your test
 
 {% include data-management-web-ui/add-test-index.html %}
 
-You can also add new tests by editing the item. To do so navigate to the particular item and go to its "Test Log", then click "Add New." Adding a new instance of a test and “editing” an instance are functionally identical! The only difference is that “editing” starts the form pre-filled with the contents of that instance. There is no branching. There is only one sequence of test records, and adding or “editing” will always just add a record to the end of that sequence. If multiple instances of the same test is desired, it is advisable to set up the Test Definition itself to accommodate multiple rows, and then always regard the last record in the log to be “current” and contain all relevant data for all tests, and every other record to be historical and not current.
+<!--You can also add new tests by editing the item. To do so navigate to the particular item and go to its "Test Log", then click "Add New." Adding a new instance of a test and “editing” an instance are functionally identical! The only difference is that “editing” starts the form pre-filled with the contents of that instance. There is no branching. There is only one sequence of test records, and adding or “editing” will always just add a record to the end of that sequence. If multiple instances of the same test is desired, it is advisable to set up the Test Definition itself to accommodate multiple rows, and then always regard the last record in the log to be “current” and contain all relevant data for all tests, and every other record to be historical and not current.
+-->
+
+- Click "DONE" when finished.
 
 [back to top](#contents)
 
