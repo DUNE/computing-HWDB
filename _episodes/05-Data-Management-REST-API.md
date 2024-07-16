@@ -79,16 +79,17 @@ keypoints:
 In order to interface with the REST API we will use the following command line often:
 
 ~~~
-curl --cert-type P12 --cert MyCert.p12:myPSWD 'https://dbwebapi2.fnal.gov:8443/cdbdev/api/version/…'
+curl --cert Output.pem --pass YourPhrase 'https://dbwebapi2.fnal.gov:8443/cdbdev/api/version/…'
 ~~~
 {: .language-bash}
-
-Where MyCert.p12 is a p12 certificate which an be obtained from [cilogon](https://cilogon.org), myPSWD is the certificate's password, and version is the version of the REST API (as of March 11th 2024, the latest version is v1).
+where  **Output.pem** and **YourPhrase** are your pem (Privacy Enhanced Mail) certificate and phrase that you setup
+in [Setup]({{ page.root }}/setup.html), respectively.
+**version** is the version of the REST API (as of March 11th 2024, the latest version is v1).
 
 Due to their repeated usage, we will abbreviate the following commands as such:
 
 ~~~
-alias CURL='curl --cert-type P12 --cert usercred.p12:PassWord'
+alias CURL='curl --cert Output.pem --pass YourPhrase'
 export APIPATH='https://dbwebapi2.fnal.gov:8443/cdbdev/api/v1'
 ~~~
 {: .language-bash}

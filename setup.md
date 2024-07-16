@@ -71,8 +71,28 @@ By following the procedure described below, you will obtain your password-protec
 
 10. You should have a file, **usercred.p12**, downloaded on your computer now.
 
-    Move it to an appropriate area. We also recommend to rename the file.
+11. In your terminal, try the following commands to convert the downloaded **usercred.p12** to a pem file:
+	~~~
+	openssl version
+	~~~
+	{: .language-bash}
+	<br/>
+    If it shows **OpenSSL 1.X**, do the following to convert your downloaded **usercred.p12** to a pem file, in which
+	you would need to provide the password you entered in the Step 6.
+	You would also need to provide a unique phrase. Give anything you like here, but remember it. We will use it.
 
+    As for the output file name, **Output**, give any name you like.
+	~~~
+	openssl pkcs12 -in usercred.p12 -out Output.pem
+	~~~
+	{: .language-bash}
+	
+    If, on the other hand, your OpenSSL version is **3.X** or newer, do the following to obtain your pem file.
+	~~~
+	openssl pkcs12 -in usercred.p12 -out Output.pem --legacy
+	~~~
+	{: .language-bash}
+	
 ## Let's try to use it!
 
 This exercise will use your downloaded certificate to communicate with the REST API of the HWDB.
@@ -81,14 +101,14 @@ This exercise will use your downloaded certificate to communicate with the REST 
 So let us define the followings:
 
    ~~~
-   alias CURL='curl --cert-type P12 --cert usercred.p12:PassWord'
+   alias CURL='curl --cert Output.pem --pass YourPhrase'
    export APIPATH='https://dbwebapi2.fnal.gov:8443/cdbdev/api/v1'
    ~~~
    {: .source}
 
-   In the above, **usercred.p12** is your downloaded certificate. We are assuming it sits in the current directory. Else, provide the appropriate path in front of it.
+   In the above, **Output.pem** is the pem file you obtained earlier. We are assuming it sits in the current directory. Else, provide the appropriate path in front of it.
 
-   **PassWord** is the one you provided in the Step 6 in the above procedure.
+   **YourPhrase'** is the phrase you provided when you converted your downloaded usercred.p12 to your pem file.
 
    **cdbdev** allows us to communicate with the development version of the HWDB
    (and **cdb** allows to communicate with the production version).
