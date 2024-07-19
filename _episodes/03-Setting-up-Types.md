@@ -199,7 +199,7 @@ Clicking its **TYPE NAME** should display its definition as shown below:
 
 <br/><br/> 
 
-### Managed by
+### Managed by (a required field)
 
  In **Managed by** field, we provide a specific *Role* or *Roles* which behaves as an access restriction to this particular Component Type.
  That is, by providing a specific Role, only users who are assigned to that specific Role are allowed to create/edit the corresponding Items.
@@ -222,7 +222,7 @@ Clicking its **TYPE NAME** should display its definition as shown below:
 
 <br/><br/> 
 
-### Manufacturers
+### Manufacturers (an optional field)
 
  Just like Roles, we assign Manufacture(s) from its available list.
  The list can be reached by going to **Manufactures** from the side-menu.
@@ -232,7 +232,7 @@ Clicking its **TYPE NAME** should display its definition as shown below:
 
 <br/><br/> 
 
-### Specifications
+### Specifications (a required field)
 
  Let's now fill the field, **Datasheet** under **Specifications**. This is probably the most important field in defining a Component Type definition.
 
@@ -276,7 +276,7 @@ Clicking its **TYPE NAME** should display its definition as shown below:
 
 <br/><br/> 
 
-### Connectors
+### Connectors (an optional field)
 
 In the **Connectors** section, one can provide **Type IDs** of sub-Components, defining *relations* among different Component Types.
 For instance,
