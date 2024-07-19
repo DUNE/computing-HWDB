@@ -134,6 +134,8 @@ except that you **ADD** new **Subsystem ID** to a list of **Subsystems** instead
  You could have multiple different **System IDs** and multiple different **Subsystem IDs** in general.
  In this example, for simplicity, we stick with the same **System ID** and **Subsystem ID** as before.
 
+**Cautions:** For those names (not IDs) entered in your sheet, you cannot use the following characters: comma, period, quotation marks, underscore or the percent sign.
+
 <br/> 
 
 From the side-menu, go to **Admin** and then select **Upload Excel** as shown below.
