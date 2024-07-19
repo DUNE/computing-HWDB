@@ -303,7 +303,7 @@ In the first one, provide a **functional position name**. This name needs to be 
 such as ASIC-001, SMB00008-S13360.. etc. For us, let's call this 1st sub-Component as **My L Wheel**.
 
 For the 2nd empty box, you need to provide the actual existing Component Type name. Entring 2 characters would trigger the HWDB
-to look for and display them for you, as can be seen below:
+to look for and display them for you, as can be seen below (be careful that the entered characters here are case-sensitive):
 ![sub comp func name](../fig/Setting-up-Types/SubCompFuncName.png){: .image-with-shadow}{: width="70%"}
 Pick the **Left Wheel** there.
 
