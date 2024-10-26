@@ -159,7 +159,7 @@ When executed, you will get the following response.
     }
   },
 ~~~
-{: .output}
+{: .language-json .output}
 
 This can seem overwhealming at first, but notice the following important fields:
 - component type id & name
@@ -235,7 +235,7 @@ When executed, it gives the following response:
   ]
 }
 ~~~
-{: .output}
+{: .language-json .output}
 
 This command returns all items with 'Front Axle' component type. The database returns 100 items at a time. If a component type has more than 100 items associated with it, the list of items is split into multiple pages which is managed by pagination. Take for example `Z00100300030`
 
@@ -249,7 +249,7 @@ This command returns all items with 'Front Axle' component type. The database re
     "total": 182
   }
 ~~~
-{: .output}
+{: .language-json .output}
 
 In order to access a specific page number, you can use `CURL '${APIPATH}/component-types/Z00100300030/components?page=X'` where X is the specific page number.
 
@@ -319,7 +319,7 @@ The response when executed is quite long, so we display an abbreviated list.
       }....
   ]
 ~~~
-{: .output}
+{: .language-json .output}
 
 [back to top](#contents)
 
@@ -373,7 +373,7 @@ Which returns the following.
     }
   ],
 ~~~
-{: .output}
+{: .language-json .output}
 
 [back to top](#contents)
 
@@ -441,7 +441,7 @@ Which returns the following.
     }
 ]
 ~~~
-{: .output}
+{: .language-json .output}
 
 [back to top](#contents)
 
@@ -529,7 +529,7 @@ CURL "${APIPATH}/component-types/Z00100100048/images"
   "status": "OK"
 }
 ~~~
-{: .output}
+{: .language-json .output}
 
 Notice that there are mulitple "myimage.pdf"s, but the image_id is unique. In order to download the desired image, we will require the image_id, since we will utilize the `/img/<image_id>` API endpoint.
 
@@ -577,6 +577,7 @@ And entering the following JSON.
     }
 }
 ~~~
+{: .language-json}
 
 When posting an item, the following fields are **required**:
 - part_type_id
@@ -594,7 +595,7 @@ When excecuted, you should receive a response similar to the following:
   "status": "OK"
 }
 ~~~
-{: .output}
+{: .language-json .output}
 
 Which displays the assigned PID, `Z00100400005-00014`.
 
@@ -630,6 +631,7 @@ And enter the following JSON:
     "count": 2
 }
 ~~~
+{: .language-json}
 
 Notice that we specify how many items we wish to post by "**count**". When excecuted, you should receive a response similar to the following:
 
@@ -654,7 +656,7 @@ Notice that we specify how many items we wish to post by "**count**". When excec
   "status": "OK"
 }
 ~~~
-{: .output}
+{: .language-json .output}
 
 You can see that two distinct PIDs have been assigned `Z00100400005-00015` and `Z00100400005-00016`.
 
@@ -689,6 +691,7 @@ And submit the following JSON file:
     }
 }
 ~~~
+{: .language-json}
 
 When executed, a response similar to the following should be displayed.
 
@@ -700,7 +703,7 @@ When executed, a response similar to the following should be displayed.
    "test_type_id" : 599
 }
 ~~~
-{: .output}
+{: .language-json .output}
 
 Which displays that a test type of name Test_Parts_3_TestType_10 was created.
 
@@ -732,6 +735,7 @@ And the JSON file is as such:
     }
 }
 ~~~
+{: .language-json}
 
 When executed, it should produce a response similar to the following:
 
@@ -743,7 +747,7 @@ When executed, it should produce a response similar to the following:
   "test_type_id": 599
 }
 ~~~
-{: .output}
+{: .language-json .output}
 
 [back to top](#contents)
 
@@ -769,6 +773,7 @@ CURL -H "Content-Type: application/json" -X POST -d @Post_ALocation.json "${APIP
   }
 }
 ~~~
+{: .language-json}
 
 When executed, it should produce a similar response to the following.
 
@@ -779,7 +784,7 @@ When executed, it should produce a similar response to the following.
   "status": "OK"
 }
 ~~~
-{: .output}
+{: .language-json .output}
 
 [back to top](#contents)
 
@@ -811,7 +816,7 @@ When executed, the response is as follows.
   "status": "OK"
 }
 ~~~
-
+{: .language-json .output}
 
 #### POST Image for Item
 
@@ -832,7 +837,7 @@ When executed, the response is as follows.
   "status": "OK"
 }
 ~~~
-
+{: .language-json .output}
 
 #### POST Image for Test
 
@@ -916,7 +921,7 @@ CURL "${APIPATH}/components/Z00100200040-00001/tests/CPA_Parts_FR4_main%20QC%20c
     }
   ]
 ~~~
-{: .output}
+{: .language-json .output}
 
 Here we see two test results, the first one with an image, OID = 110 and the second without, OID = 109. Notice that, independent of whether there is an image(s) associated with a particular test or not, there is always an OID assigned to each of the entries. You can use the ` /component-tests/<oid>/images` API endpoint to post the image to the test result.
 
@@ -934,7 +939,7 @@ When executed, the response is as follows.
   "status": "OK"
 }
 ~~~
-{: .output}
+{: .language-json .output}
 
 [back to top](#contents)
 
@@ -1034,7 +1039,7 @@ Which returns the following.
   }
 }
 ~~~
-{: .output}
+{: .language-json .output}
 
 We can see that the status is "permanently not available," with id 3. There are three different types of statuses:
 
@@ -1064,6 +1069,7 @@ And submit the following.
     }
 }
 ~~~
+{: .language-json}
 
 When executed, it returns the following.
 
@@ -1076,7 +1082,7 @@ When executed, it returns the following.
   "status": "OK"
 }
 ~~~
-{: .output}
+{: .language-json .output}
 
 You can also PATCH the status of multiple items at a time via the `/components/bulk-enable` API endpoint. Suppose you have two items, `Z00100400007-00001` which you wish to enable or make "available" and `Z00100400007-00002` which you wish to disable or make "not available."
 
@@ -1100,6 +1106,7 @@ Submit the following.
     ]
 }
 ~~~
+{: .language-json}
 
 When executed, it returns the following:
 
@@ -1126,7 +1133,7 @@ When executed, it returns the following:
   "status": "OK"
 }
 ~~~
-{: .output}
+{: .language-json .output}
 
 [back to top](#contents)
 
@@ -1141,7 +1148,7 @@ There are two ways to link a subcomponent. One is to do so directly when posting
 	"My R Wheel": <pid>
     }
 ~~~
-
+{: .language-json}
 
 #### POST
 
@@ -1176,6 +1183,7 @@ The JSON passed:
     }
 }
 ~~~
+{: .language-json}
 
 Notice the only difference is the specified subcomponents. When executed, it returns the following.
 
@@ -1187,6 +1195,7 @@ Notice the only difference is the specified subcomponents. When executed, it ret
   "status": "OK"
 }
 ~~~
+{: .language-json .output}
 
 #### PATCH to Link
 
@@ -1210,6 +1219,7 @@ Submit the following JSON.
     }
 }
 ~~~
+{: .language-json}
 
 When executed, it returns the following.
 
@@ -1221,6 +1231,7 @@ When executed, it returns the following.
   "status": "OK"
 }
 ~~~
+{: .language-json .output}
 
 Notice that "data" has been "Updated."
 
@@ -1246,6 +1257,7 @@ In order to clear, pass null in the schema of the defined subcomponent.
     }
 }
 ~~~
+{: .language-json}
 
 When executed, the following is returned.
 
@@ -1257,6 +1269,7 @@ When executed, the following is returned.
   "status": "OK"
 }
 ~~~
+{: .language-json .output}
 
 [back to top](#contents)
 
@@ -1310,7 +1323,7 @@ Which returns the following.
     }
   ],
 ~~~
-{: .output}
+{: .language-json .output}
 
 
 [back to top](#contents)
@@ -1358,7 +1371,7 @@ Which returns the following.
     }
   ]
 ~~~
-{: .output}
+{: .language-json .output}
 
 Notice "container" or the parent-component.
 

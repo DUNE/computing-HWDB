@@ -1,0 +1,112 @@
+{
+    "Values": {
+        "Part Type ID": "D00599800015",
+        "Institution": "(186) University of Minnesota Twin Cities",
+        "Manufacturer": "(7) Hajime Inc"
+    },
+    "Sources": [
+        {
+            "Files": "QuickStartExample.xlsx",
+	    "Sheet Name": "My Items",
+            "Encoder": "My Item Encoder"
+        },
+	{
+            "Files": "QuickStartExample.xlsx",
+	    "Sheet Name": "My Images",
+            "Encoder": "My Image Encoder"
+        },
+	{
+            "Files": "QuickStartExample.xlsx",
+	    "Sheet Name": "My Tests",
+            "Encoder": "My Test Encoder"
+        }
+    ],
+    "Encoders": [
+        {
+            "Encoder Name": "My Item Encoder",
+            "Record Type": "Item",
+            "Part Type ID": "D00599800015",
+            "Schema": {
+                "Specifications": {
+                    "DATA": {
+                        "type": "group",
+                        "key": "Serial Number",
+                        "members": {
+                            "Serial Number": "string",
+                            "Drawing Number": "string",
+			    "My Doc": {
+				"value": "https://edms.cern.ch/document/2505353/"
+			    },
+			    "Serial Number": "string",
+			    "Location": "string",
+			    "Arrived": "string",
+			    "Location Comments": "string"
+                        }
+                    }
+                },
+		"Subcomponents": {
+		    "MySubComp 1": {
+			"column": "MySubComp 1"
+		    },
+		    "MySubComp 2": {
+			"column": "MySubComp 2"
+		    }
+		}
+            }
+        },
+	{
+            "Encoder Name": "My Image Encoder",
+            "Record Type": "Item Image",
+            "Part Type ID": "D00599800015",
+            "Schema": {
+                "type": "group",
+                "key": "Serial Number",
+                "members": {
+                    "Serial Number": "string",
+                    "Image File": "string",
+		    "Comments": "string"
+                }
+            }
+        },
+	{
+	    "Encoder Name": "My Test Encoder",
+            "Record Type": "Test",
+	    "Part Type ID": "D00599800015",
+	    "Test Name": "My Test",
+            "Schema": {
+                "Test Results": {
+                    "DATA": {
+                        "type": "group",
+                        "key": "Serial Number",
+                        "members": {
+			    "Serial Number": "string",
+                            "Operator": "string",
+			    "Location": "string",
+			    "PSU": {
+				"type": "group",
+				"key": "PSU Serial Number",
+				"members": {
+				    "PSU Serial Number": "string",
+				    "Visual Inspection": "string",
+				    "PSU Manufacturer": "string",
+				    "PSU Test 1": "string",
+				    "PSU Test 2": "string"
+				}
+			    },
+			    "Fans": {
+				"type": "group",
+				"key": "Fan Serial Number",
+				"members": {
+				    "Fan Serial Number": "string",
+				    "Fan Manufacturer": "string",
+				    "Fan Test 1": "string",
+				    "Fan Test 2": "string"
+				}
+			    }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

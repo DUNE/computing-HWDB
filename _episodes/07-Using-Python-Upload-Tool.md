@@ -12,6 +12,13 @@ keypoints:
 - keypoint 1
 ---
 
+<br/><br/> 
+
+> ## QuickStart guide
+> For those of you who just need a working example to jump start, instead of exploring other various (useful!) options that the app provides,
+> please refer to our [Quick Start]({{ page.root }}/quickstart/index.html) section.
+{: .prereq}
+
 ## Contents
 >
 >|-------------+------------------|
