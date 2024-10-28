@@ -120,7 +120,7 @@ _meta: {}
   The example spreadsheet file can be obtained from here: [QuickStartExample.xlsx]({{ page.root }}/files/QuickStartExample.xlsx)
   
 - The HWDB needs to know how the contents of the spreadsheet file should be structured/stored. A docket file does the job.
-  Our example docket file can be obtained from here: [QE-dockect.json]({{ page.root }}/files/QE-dockect.json)
+  Our example docket file can be obtained from here: [QE-docket.json]({{ page.root }}/files/QE-docket.json)
   
 - In spreadsheet(s), user provides contents with specific column labels.
   There are specific label names that are reserved for the Tool. We list those **special labels** below.
@@ -129,6 +129,8 @@ _meta: {}
    - Serial Number
    - Comments
    - Manufacturer
+   - Manufacturer ID
+   - Manufacturer Name
    - Institution
    - Institution ID
    - Institution Name
@@ -264,9 +266,9 @@ We'll then go through the docket file to see how it works, including setting up 
 - Again, if you don't need to upload any test data, but only Items, you could just delete this "My Tests" sheet.
 
 
-### QE-dockect.json: "Values" blob:
+### QE-docket.json: "Values" blob:
 
-- "Values" blob in QE-dockect.json should look like the below:
+- "Values" blob in QE-docket.json should look like the below:
 ~~~
  "Values": {
         "Part Type ID": "D00599800015",
@@ -277,9 +279,9 @@ We'll then go through the docket file to see how it works, including setting up 
 {: .language-json}
 Here, you provide Component Type ID of the Items you like to upload (in this case, D00599800015), your Institution, and Manufacturer.
 
-### QE-dockect.json: "Sources":
+### QE-docket.json: "Sources":
 
-- "Sources" in QE-dockect.json should look like the below:
+- "Sources" in QE-docket.json should look like the below:
 ~~~
  "Sources": [
         {
@@ -306,9 +308,9 @@ Here, you provide Component Type ID of the Items you like to upload (in this cas
 
 - We'll describe each of the Encoders in the next sub-sections.
 
-### QE-dockect.json: Encoders:  "My Item Encoder":
+### QE-docket.json: Encoders:  "My Item Encoder":
 
-- "My Item Encoder" in QE-dockect.json should look like the below:
+- "My Item Encoder" in QE-docket.json should look like the below:
 ~~~
             "Encoder Name": "My Item Encoder",
             "Record Type": "Item",
@@ -357,9 +359,9 @@ Here, you provide Component Type ID of the Items you like to upload (in this cas
 - The "Subcomponents" blob just specifies label names for sub-component PIDs (or Serial Numbers).
 
 
-### QE-dockect.json: Encoders:  "My Image Encoder":
+### QE-docket.json: Encoders:  "My Image Encoder":
 
-- "My Image Encoder" in QE-dockect.json should look like the below:
+- "My Image Encoder" in QE-docket.json should look like the below:
 ~~~
             "Encoder Name": "My Image Encoder",
             "Record Type": "Item Image",
@@ -377,9 +379,9 @@ Here, you provide Component Type ID of the Items you like to upload (in this cas
 {: .language-json}
 - Similar to "My Item Encoder" typesets of the labels are defined.
 
-### QE-dockect.json: Encoders:  "My Test Encoder":
+### QE-docket.json: Encoders:  "My Test Encoder":
 
-- "My Test Encoder" in QE-dockect.json should look like the below:
+- "My Test Encoder" in QE-docket.json should look like the below:
 ~~~
             "Encoder Name": "My Test Encoder",
             "Record Type": "Test",
@@ -449,14 +451,14 @@ Here, you provide Component Type ID of the Items you like to upload (in this cas
 
 - If you have modified your sheet(s) and docket file according to your needs, you should be ready to upload them. Execute the following command. Don't worry. It will not upload, yet. It will only check the contents of the provided files.
 ~~~
-hwdb-upload QE-dockect.json
+hwdb-upload QE-docket.json
 ~~~
 {: .language-bash} 
 
 
 - If you don't see any error message from the above command-line, let's upload them for real:
 ~~~
-hwdb-upload QE-dockect.json -- submit
+hwdb-upload QE-docket.json -- submit
 ~~~
 {: .language-bash} 
 - If everything goes well, you should see a screen similar to the one shown below:
