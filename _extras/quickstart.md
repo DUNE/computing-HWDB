@@ -53,6 +53,14 @@ chmod u+x $HWDB/hwdb-*
 ~~~
 {: .language-bash}
 
+- If you don't have **reportlab** on your devide, which doesn't come with the Anaconda distro unfortunately,
+the Tool will suggest you to install it. The Tool itself will run fine without this extra library, but it will not generate [bar/QR-code labels](#barqr-code-labels) in that case.
+  To install this, simple execute the following command:
+~~~
+pip install reportlab
+~~~
+{: .language-bash}
+
 ### Configuring the Tool:
 
 - Obtain your PKCS12 certificate through [these steps]({{ page.root }}/setup.html#obtaining-your-certificate). The obtained file name should be something like "usercred.p12".
