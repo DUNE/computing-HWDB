@@ -458,7 +458,7 @@ hwdb-upload QE-docket.json
 
 - If you don't see any error message from the above command-line, let's upload them for real:
 ~~~
-hwdb-upload QE-docket.json -- submit
+hwdb-upload QE-docket.json --submit
 ~~~
 {: .language-bash} 
 - If everything goes well, you should see a screen similar to the one shown below:
