@@ -33,7 +33,7 @@ keypoints:
   is available for Windows, Linux, and macOS.
 
 - Next, obtain the zipped (or tar.gz, whichever you prefer) source code of the Tool from [here](https://github.com/DUNE/DUNE-HWDB-Python/releases). Make sure to grab the latest version, which is
-v1.2.2 at the time of this writing.
+v1.2.3 at the time of this writing.
 
 ### Installing the Tool:
 

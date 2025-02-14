@@ -20,6 +20,15 @@ collaborative_notes: "DUNE-Computing-HWDB"
 
 <br/><br/> 
 
+> ## Generate many DUNE bar/QR-code labels at ease!
+>
+> The Python HWDB Upload Tool now allows user to configure paper/label sizes as well as label positions at run time.
+>
+> Please refer to the newly created [Generating bar/QR-code labels]({{ page.root }}/barqrcode/index.html) section for details.
+{: .testimonial}
+
+<br/><br/> 
+
 > ## The 2nd HWDB tutorials 
 >
 > The 2nd HWDB tutorials was held as a two-day workshop on consecutive Mondays, July 15, 2024, and July 22, 2024.
