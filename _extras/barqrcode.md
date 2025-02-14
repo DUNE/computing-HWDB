@@ -33,7 +33,7 @@ keypoints:
 hwdb-labels
 ~~~
 This will create:
-  - **default_labels.py** and **custom_labels.py** in <your home directory>/.sisyphus/
+  - **default_labels.py** and **custom_labels.py** in \<your home directory>/.sisyphus/
   - **labels.pdf** in your local directory
 {: .language-bash} 
 
