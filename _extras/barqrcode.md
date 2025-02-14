@@ -26,8 +26,7 @@ keypoints:
 
 ## Getting ready
 
-- We will use the Python HWDB Upload Tool. For its installation and setting up the Tool, please refer to [Using the Python HWDB Upload Tool]({{ page.root }}/07-Using-Python-Upload-Tool/index.html) section or [Quick Start]({{ page.root }}/quickstart/index.html) section.
-  Just make sure to install **version 1.2.3 or newer**. The latest version can be found from [here](https://github.com/DUNE/DUNE-HWDB-Python/releases).
+- We will use the Python HWDB Upload Tool. For its installation and setting up the Tool, please refer to [Using the Python HWDB Upload Tool]({{ page.root }}/07-Using-Python-Upload-Tool/index.html) section or [Quick Start]({{ page.root }}/quickstart/index.html) section. Just make sure to install **version 1.2.3 or newer**. The latest version can be found from [here](https://github.com/DUNE/DUNE-HWDB-Python/releases).
 
 - Once the Tool is setup and ready, go to your working directory. And then execute the following command:
  ~~~
