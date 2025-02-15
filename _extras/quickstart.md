@@ -472,15 +472,20 @@ hwdb-upload QE-docket.json --submit
 - If everything goes well, you should see a screen similar to the one shown below:
 
 ![uploaded screen](../fig/QuickStart/Uploaded.png){: .image-with-shadow}{: width="50%"}
-
+  and **new PIDs are assigned** to each of the newly uploaded Items (i.e., the corresponding Serial Numbers).
 
 - Again, if you don't need to upload Tests, you can remove the Test sheet from the spreadsheet file and the Tests portion from "Sources" and "Endoder" of the docket file.
 
 - Likewise, if you don't plan to upload images, remove the corresponding parts from the spreadsheet and docket files.
 
-- If you upload with Serial Numbers (or External IDs) that already exist in the HWDB, it will overwrite the existing Item Specifications and Tests (don't worry, their histories are kept in the HWDB). This is actually a useful feature when you need to update contents in the HWDB.
+
+
+### with External IDs (or Serial Numbers) that already exist in the HWDB
+
+- If you upload with Serial Numbers (or External IDs) that already exist in the HWDB, it will **overwrite** the existing Item Specifications and Tests (don't worry, their histories are kept in the HWDB). This is actually a useful feature when you need to update contents in the HWDB.
 
 <br/><br/>
+
 
 
 
