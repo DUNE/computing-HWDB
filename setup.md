@@ -77,13 +77,13 @@ and/or how it works, see [https://auth0.com/docs/secure/tokens/json-web-tokens] 
    ~~~
    {: .language-text}
    
-   Once you provide your credential at the CILogon site, you should see a message, "You have successfully approved the user code. Please return to your device for further instructions.".
+   Once you provide your credential at the CILogon site, you should see a message, "You have successfully approved the user code. Please return to your device for further instructions." in your browser.
 
 2. By this time, you should have two tokens in /tmp/ of your local machine. Your **UID** is used in naming these token files. They are your Bearer token (/tmp/bt_u\<UID\>) and Vault token (/tmp/vt_u\<UID\>).
 
    Their life times are **3 hours** and **7 days** for Bearer and Vault tokens, respectively.
    
-   There is another file, credkey-fermilab-default, created in \<your home\>/.config/htgettoken/. This file holds your username at FNAL.
+   There is another file, credkey-fermilab-default, created in \<your home\>/.config/htgettoken/. This file holds your FNAL username.
    
    By the way, if you don't want your tokens or credkey-fermilab-default stored in these default locations, you could specify different locations as options. See what options are available via;
    ~~~
@@ -102,12 +102,12 @@ and/or how it works, see [https://auth0.com/docs/secure/tokens/json-web-tokens] 
    {: .language-bash}
    to refresh your tokens.
    
-   Particularly, when you refresh your Bearer token (the shorter life time token that expires in every 3 hours), you will not be asked to provide your credential. You need to provide yours when you refresh your Vault token.
+   Particularly, if you are refreshing your Bearer token only (the shorter life time token that expires in every 3 hours), you will not be asked to provide your credential. You will need to provide yours once your your Vault token is expired.
 
 	
 ## Let's try to use it!
 
-This exercise will use your downloaded certificate to communicate with the REST API of the HWDB.
+This exercise will use your obtained tokens to communicate with the REST API of the HWDB.
 
 1. This step may not be necessary. But there are certain lines that repeatedly show up in curl commands during the tutorials.
 So let us define the followings:
@@ -120,7 +120,7 @@ So let us define the followings:
 
    In the above, the **-s** option is just to silence additional displays from curl.
    
-   And basically you just need to provide your Bearer token through its header (the 501 happens to be my personal UID).
+   And basically you just need to provide your Bearer token through its header. The 501 happens to be my personal UID and you need to replace it with yours.
    Notice that there is the command **cat** in front of the token file. That is, you need to provide **content** of the token there.
 
    In defining the API root path, APIPATH, **cdbdev** allows us to communicate with the development version of the HWDB

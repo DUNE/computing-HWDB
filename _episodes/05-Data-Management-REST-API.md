@@ -79,20 +79,19 @@ keypoints:
 In order to interface with the REST API we will use the following command line often:
 
 ~~~
-curl --cert Output.pem --pass YourPhrase 'https://dbwebapi2.fnal.gov:8443/cdbdev/api/version/…'
+curl --header "Authorization: Bearer $(cat /tmp/bt_u501)" 'https://dbwebapi2.fnal.gov:8443/cdbdev/api/v1/…'
 ~~~
 {: .language-bash}
-where  **Output.pem** and **YourPhrase** are your pem (Privacy Enhanced Mail) certificate and phrase that you setup
-in [Setup]({{ page.root }}/setup.html), respectively.
-**version** is the version of the REST API (as of March 11th 2024, the latest version is v1).
+where the file, /tmp/bt_u501, is your Bearer token file (you should have a different file name than u501 though).
+See the  [Setup]({{ page.root }}/setup.html) page for more details, particularly how to obtain the token files, such as /tmp/bt_u501.
 
 Due to their repeated usage, we will abbreviate the following commands as such:
-
 ~~~
-alias CURL='curl --cert Output.pem --pass YourPhrase'
+alias CURL='curl -s --header "Authorization: Bearer $(cat /tmp/bt_u501)"'
 export APIPATH='https://dbwebapi2.fnal.gov:8443/cdbdev/api/v1'
 ~~~
 {: .language-bash}
+
 <br/><br/> 
 Note: The above path lets you access to the **development version** of the HWDB.
 In order to access to the **production version**, the path would be;
