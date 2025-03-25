@@ -20,13 +20,19 @@ questions:
 ## Objectives
 
 - Get ready to do the tutorials
-- Obtain a certificate to access to the HWDB (both development and production version)
+- Obtain tokens to access to the HWDB (both development and production version)
 
 ## Requirement
 
 - You must have a FNAL Services account and be on the DUNE Collaboration member list.
 - You also need to have your terminal ready.
 - During our "REST API" sessions, we will extensively use the command, cURL (client URL, pronounced “curl”, [https://curl.se/]).
+- You must have the "htgettoken" command ready. It will obtain your access tokens and refresh them for you. Install this Python-based command in the usual way; e.g.,
+	~~~
+	pip install htgettoken
+	~~~
+	{: .language-bash}
+	Or if you like, you could obtain the source from [https://github.com/fermitools/htgettoken].
 
 ## Do you have your account in the HWDB?
 
@@ -47,51 +53,57 @@ If you can login there, you are ready to go through the training with the WEB UI
 
 To communicate through the REST API, however, you would need a FNAL certificate. The followings describe how to obtain yours.
 
-## Obtaining your certificate
+## Obtaining your tokens
 
-By following the procedure described below, you will obtain your password-protected certificate in the "PKCS #12 format" that bundles a private key with its X.509 certificate from [https://www.cilogon.org].
+By following the procedure described below, you will obtain your access JWT (JASON Web Token) tokens. To find out about what the JWT framework is
+and/or how it works, see [https://auth0.com/docs/secure/tokens/json-web-tokens] and/or [https://lss.fnal.gov/archive/2021/conf/fermilab-conf-21-070-ccd-scd.pdf].
 
-1. With your web browser, go to [https://www.cilogon.org]
 
-2. Select **Log On** from its side menu.
+1. Assuming you already have the htgettoken command ready, execute the following: 
+   ~~~
+   htgettoken --vaultserver=htvaultprod.fnal.gov --issuer=fermilab
+   ~~~
+   {: .language-bash}
+   This will launch your web browser and take you to a CILogon site, where you will be asked to provide your FNAL SSO credential.
+   
+   If the htgettoken cannot or is having a difficulty to launch your web browser (e.g., you are running htgettoken remotely), htgettoken will display the URL you should access with your local browser as shown below:
+   ~~~
+   Attempting OIDC authentication with https://htvaultprod.fnal.gov:8200
 
-3. Select **Fermi National Accelerator Laboratory** as your Identity Provider and click **Log On**.
+	Complete the authentication at:
+    https://cilogon.org/device/?user_code=JLD-RQ6-ZPW
+	No web open command defined, please copy/paste the above to any web browser
+	Waiting for response in web browser
+   ~~~
+   {: .language-text}
+   
+   Once you provide your credential at the CILogon site, you should see a message, "You have successfully approved the user code. Please return to your device for further instructions.".
 
-4. Provide your FNAL Services account credential.
+2. By this time, you should have two tokens in /tmp/ of your local machine. Your **UID** is used in naming these token files. They are your Bearer token (/tmp/bt_u\<UID\>) and Vault token (/tmp/vt_u\<UID\>).
 
-5. Select **Create Password-Protected Certificate** (usually shows up at the top).
+   Their life times are **3 hours** and **7 days** for Bearer and Vault tokens, respectively.
+   
+   There is another file, credkey-fermilab-default, created in \<your home\>/.config/htgettoken/. This file holds your username at FNAL.
+   
+   By the way, if you don't want your tokens or credkey-fermilab-default stored in these default locations, you could specify different locations as options. See what options are available via;
+   ~~~
+   htgettoken --help
+   ~~~
+   {: .language-bash}
 
-6. Enter the password, which is not necessarily the same as the one for your FNAL Services account (preferentially a different password).
+   <br/>
+   That's it! You are ready to access to the HWDB now.
+   <br/>
+   
+3. Ok, one more additional step. When your tokens are expired, just execute the same command line;
+   ~~~
+   htgettoken --vaultserver=htvaultprod.fnal.gov --issuer=fermilab
+   ~~~
+   {: .language-bash}
+   to refresh your tokens.
+   
+   Particularly, when you refresh your Bearer token (the shorter life time token that expires in every 3 hours), you will not be asked to provide your credential. You need to provide yours when you refresh your Vault token.
 
-7. Select **Get New Certificate**.
-
-8. Select **Download Your Certificate**.
-
-9. Select **Log Off** (or close your browser).
-
-10. You should have a file, **usercred.p12**, downloaded on your computer now.
-
-11. In your terminal, try the following commands to convert the downloaded **usercred.p12** to a pem file:
-	~~~
-	openssl version
-	~~~
-	{: .language-bash}
-	<br/>
-    If it shows **OpenSSL 1.X**, do the following to convert your downloaded **usercred.p12** to a pem file, in which
-	you would need to provide the password you entered in the Step 6.
-	You would also need to provide a unique phrase. Give anything you like here, but remember it. We will use it.
-
-    As for the output file name, **Output**, give any name you like.
-	~~~
-	openssl pkcs12 -in usercred.p12 -out Output.pem
-	~~~
-	{: .language-bash}
-	
-    If, on the other hand, your OpenSSL version is **3.X** or newer, do the following to obtain your pem file.
-	~~~
-	openssl pkcs12 -in usercred.p12 -out Output.pem --legacy
-	~~~
-	{: .language-bash}
 	
 ## Let's try to use it!
 
@@ -101,16 +113,17 @@ This exercise will use your downloaded certificate to communicate with the REST 
 So let us define the followings:
 
    ~~~
-   alias CURL='curl --cert Output.pem --pass YourPhrase'
+   alias CURL='curl -s --header "Authorization: Bearer $(cat /tmp/bt_u501)"'
    export APIPATH='https://dbwebapi2.fnal.gov:8443/cdbdev/api/v1'
    ~~~
-   {: .source}
+   {: .language-bash}
 
-   In the above, **Output.pem** is the pem file you obtained earlier. We are assuming it sits in the current directory. Else, provide the appropriate path in front of it.
+   In the above, the **-s** option is just to silence additional displays from curl.
+   
+   And basically you just need to provide your Bearer token through its header (the 501 happens to be my personal UID).
+   Notice that there is the command **cat** in front of the token file. That is, you need to provide **content** of the token there.
 
-   **YourPhrase'** is the phrase you provided when you converted your downloaded usercred.p12 to your pem file.
-
-   **cdbdev** allows us to communicate with the development version of the HWDB
+   In defining the API root path, APIPATH, **cdbdev** allows us to communicate with the development version of the HWDB
    (and **cdb** allows to communicate with the production version).
 
 2. Let's use an API endpoint, **/users/whoami**, to display your HWDB account info.
@@ -120,28 +133,19 @@ So let us define the followings:
    ~~~
    {: .language-bash}
 
-   > ## If everything is correct, you should see your account information in **JSON** like the following:
-   {: .keypoints}
-   
-   ~~~
-   {"data":{"active":true,"administrator":true,"affiliation":"University of Minnesota","architect":true,"email":"hmuramat@umn.edu","full_name":"Hajime Muramatsu","roles":[{"id":30,"name":"HVS-CPA"},{"id":32,"name":"HVS-EW"},{"id":31,"name":"HVS-FC"},{"id":4,"name":"tester"},{"id":3,"name":"type-manager"}],"user_id":12624,"username":"hajime3"},"link":{"href":"/cdbdev/api/v1/users/12624","rel":"self"},"status":"OK"}
-   ~~~
-   {: .output}
-   
-   Sometimes the response might be too long.
-   If commands like json_pp or jq are available, you could also pipe into them:
-   
+   Or you could use your favorite JSON parser to make the returned outputs prettier:
    ~~~
    CURL "${APIPATH}/users/whoami" | json_pp -json_opt pretty,canonical
    or
    CURL "${APIPATH}/users/whoami" | jq
    ~~~
    {: .language-bash}
-   
-   Then the above JSON response would look nicer, easier to read as the following:
+
+   > ## If everything is correct, you should see your account information in **JSON** like the following:
+   {: .keypoints}
    
    ~~~
-   {
+{
   "data": {
     "active": true,
     "administrator": true,
@@ -181,11 +185,17 @@ So let us define the followings:
   "status": "OK"
 }
    ~~~
-   {: .output}
+   {: .language-json}
+   
+  
 
 {% include links.md %}
 
 [https://curl.se/]: https://curl.se/
+[https://github.com/fermitools/htgettoken]: https://github.com/fermitools/htgettoken
+[https://en.wikipedia.org/wiki/JSON_Web_Token]: https://en.wikipedia.org/wiki/JSON_Web_Token
+[https://auth0.com/docs/secure/tokens/json-web-tokens]: https://auth0.com/docs/secure/tokens/json-web-tokens
+[https://lss.fnal.gov/archive/2021/conf/fermilab-conf-21-070-ccd-scd.pdf]: https://lss.fnal.gov/archive/2021/conf/fermilab-conf-21-070-ccd-scd.pdf
 [https://www.cilogon.org]: https://www.cilogon.org
 [https://dbweb0.fnal.gov/cdb/login/sso]: https://dbweb0.fnal.gov/cdb/login/sso
 [https://dbweb0.fnal.gov/cdbdev/login/sso]: https://dbweb0.fnal.gov/cdbdev/login/sso
