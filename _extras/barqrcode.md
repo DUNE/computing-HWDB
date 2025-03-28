@@ -26,7 +26,7 @@ keypoints:
 
 ## Getting ready
 
-- We will use the Python HWDB Upload Tool. For its installation and setting up the Tool, please refer to [Using the Python HWDB Upload Tool]({{ page.root }}/07-Using-Python-Upload-Tool/index.html) section or [Quick Start]({{ page.root }}/quickstart/index.html) section. Just make sure to install **version 1.2.3 or newer**. The latest version can be found from [here](https://github.com/DUNE/DUNE-HWDB-Python/releases).
+- We will use the Python HWDB Upload Tool. For its installation and setting up the Tool, please refer to [Using the Python HWDB Upload Tool]({{ page.root }}/07-Using-Python-Upload-Tool/index.html) section. Just make sure to install **version 1.2.3 or newer**. The latest version can be found from [here](https://github.com/DUNE/DUNE-HWDB-Python/releases/latest).
 
 - Once the Tool is setup and ready, go to your working directory. And then execute the following command:
  ~~~
@@ -534,9 +534,9 @@ The locally created labels.pdf show the following:
 
 ### Generating many labels at once:
 
-In practice, you would be running a commend like this (as in the example given in [Quick Start]({{ page.root }}/quickstart/index.html) section);
+In practice, you would be running a commend like this (as in the example given in [section 6 of Using the Python HWDB Upload Tool]({{ page.root }}/07-Using-Python-Upload-Tool/index.html#lesson-6-do-them-all-at-once));
 ~~~
-hwdb-upload QE-docket.json
+hwdb-upload QE-docket.json --labels
 ~~~
 {: .language-bash} 
 This will create a local directory with its directory name being a timesstamp (e.g., YYYYMMDDTHHMMSS).

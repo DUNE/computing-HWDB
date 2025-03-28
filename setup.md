@@ -1,5 +1,5 @@
 ---
-title: Obtaining a FNAL certificate
+title: Obtaining JWT tokens
 teaching: 60
 exercises: 0
 questions:
@@ -145,45 +145,45 @@ So let us define the followings:
    {: .keypoints}
    
    ~~~
-{
-  "data": {
-    "active": true,
-    "administrator": true,
-    "affiliation": "University of Minnesota",
-    "architect": true,
-    "email": "hmuramat@umn.edu",
-    "full_name": "Hajime Muramatsu",
-    "roles": [
-      {
-        "id": 30,
-        "name": "HVS-CPA"
-      },
-      {
-        "id": 32,
-        "name": "HVS-EW"
-      },
-      {
-        "id": 31,
-        "name": "HVS-FC"
-      },
-      {
-        "id": 4,
-        "name": "tester"
-      },
-      {
-        "id": 3,
-        "name": "type-manager"
-      }
-    ],
-    "user_id": 12624,
-    "username": "hajime3"
-  },
-  "link": {
-    "href": "/cdbdev/api/v1/users/12624",
-    "rel": "self"
-  },
-  "status": "OK"
-}
+   {
+     "data": {
+       "active": true,
+       "administrator": true,
+       "affiliation": "University of Minnesota",
+       "architect": true,
+       "email": "hmuramat@umn.edu",
+       "full_name": "Hajime Muramatsu",
+       "roles": [
+         {
+           "id": 30,
+           "name": "HVS-CPA"
+         },
+         {
+           "id": 32,
+           "name": "HVS-EW"
+         },
+         {
+           "id": 31,
+           "name": "HVS-FC"
+         },
+         {
+           "id": 4,
+           "name": "tester"
+         },
+         {
+           "id": 3,
+           "name": "type-manager"
+         }
+       ],
+       "user_id": 12624,
+       "username": "hajime3"
+     },
+     "link": {
+       "href": "/cdbdev/api/v1/users/12624",
+       "rel": "self"
+     },
+     "status": "OK"
+   }
    ~~~
    {: .language-json}
    
