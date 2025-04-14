@@ -37,16 +37,28 @@ questions:
 ## Do you have your account in the HWDB?
 
 Anybody with a FNAL Services account should have their account ready in the HWDB.
+And everybody who is a Fermilab user should have a Services account automatically.
+
+If you are new to FNAL, please visit the [Global Services/Users and affiliates access](https://get-connected.fnal.gov/users-affiliates-access/) site
+to request your new account.
 
 Perhaps, the best way to check this to try to log into one of the HWDB versions available. There are two versions of the DUNE HWDB,
-the development version and the production version. You can *practice* in the development version (e.g., to go through this training site),
+the development version and the production version. You can practice in the development version (e.g., to go through this training site),
 while the production version is the official DUNE Hardware Database. Go ahead to try log into one of them with your Web browser:
 
  Production version : [https://dbweb0.fnal.gov/cdb/login/sso]
 
  Development version: [https://dbweb0.fnal.gov/cdbdev/login/sso]
 
-If you can login, that confirms that you have your account ready in the HWDB. And let us know if you cannot.
+If you can login, that confirms that you have your account ready in the HWDB.
+
+If you can't login, yet if you have your FNAL Services account, it is likely that you are not affiliated to the DUNE experiment in the system.
+Again, visit the [Global Services/Users and affiliates access](https://get-connected.fnal.gov/users-affiliates-access/) site
+to check to see if you are. You can add an additional affiliation there as well.
+
+If you have your FNAL Services account ready and are affiliated to the DUNE experiment, yet can't login, let us know.
+
+<br/> <br/>
 
 There are two ways to communicate with the DUNE HWDB, through the WEB UI and the REST API (more on these methods later!).
 If you can login there, you are ready to go through the training with the WEB UI.
