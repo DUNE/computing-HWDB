@@ -30,6 +30,7 @@ keypoints:
 >|-------------------------------------+------------------|
 >| [Receiving checklist](#receiving-checklist) | to be filled when shipment arrives its final destination |
 >|-------------------------------------+------------------|
+{: .checklist}
 
 ## The two apps and word documents
 

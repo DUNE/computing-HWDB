@@ -42,7 +42,7 @@ keypoints:
 >|-------------+------------------|
 >| &emsp;&emsp;[Specifications](#specifications) | DB schema for a Component Type |
 >|-------------+------------------|
->| &emsp;&emsp;[Connectors](#connectors) | where sub-Component Types are defined |
+>| &emsp;&emsp;[Connectors](#connectors-an-optional-field) | where sub-Component Types are defined |
 >|-------------+------------------|
 >| &emsp;&emsp;[SPEC LOG](#spec-log) | History of Specifications |
 >|-------------+------------------|
