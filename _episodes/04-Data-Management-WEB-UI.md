@@ -53,9 +53,9 @@ keypoints:
 
 This tutorial will walk you through using the Web UI for the Hardware Database.
 
-The development version of the HWDB can be accessed via http://dbweb0.fnal.gov:8443/cdbdev/login.
+The development version of the HWDB can be accessed via [https://dbweb0.fnal.gov/cdbdev/login/sso].
 
-The production version of the HWDB can be accessed via http://dbweb0.fnal.gov:8443/cdbdev/login.
+The production version of the HWDB can be accessed via [https://dbweb0.fnal.gov/cdb/login/sso].
 
 ## Accessing Component Types
 
@@ -427,3 +427,5 @@ all return the intended item.
 
 {% include links.md %}
 
+[https://dbweb0.fnal.gov/cdb/login/sso]: https://dbweb0.fnal.gov/cdb/login/sso
+[https://dbweb0.fnal.gov/cdbdev/login/sso]: https://dbweb0.fnal.gov/cdbdev/login/sso
