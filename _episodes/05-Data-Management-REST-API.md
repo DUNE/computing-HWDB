@@ -1015,7 +1015,13 @@ Adding subcomponents is a way to link existing items. Before attempting to link 
 
 ### Dealing with Status
 
-In order to link items, the status of the intended subcomponent must be "available." There are two ways to check for this, one is by simply checking the item itself via the `/components/<eid>` API endpoint. The other is to do so directly through the `/components/<eid>/status` API end point. For example, take `Z00100400005-00001`.
+In order to link items, the status of the intended subcomponent must be one of the following four statuses:
+- In Fabrication
+- Waiting on QA/QC Tests
+- QA/QC Tests - Passed All
+- QA/QC Tests - Use As is
+
+There are two ways to check for this, one is by simply checking the item itself via the `/components/<eid>` API endpoint. The other is to do so directly through the `/components/<eid>/status` API end point. For example, take `Z00100400005-00001`.
 
 ~~~
 CURL "${APIPATH}/components/Z00100400005-00001/status" | jq
@@ -1032,21 +1038,29 @@ Which returns the following.
   },
   "data": {
     "status": {
-      "id": 3,
-      "name": "permanently not available"
+      "id": 170,
+      "name": "Permanently Unavailable"
     }
   }
 }
 ~~~
 {: .language-json .output}
 
-We can see that the status is "permanently not available," with id 3. There are three different types of statuses:
+We can see that the status is "Permanently Unavailable" with id 170. There are three different types of statuses:
 
 | Status ID | Status Name |
 |----------|----------|
-| 1 | available |
-| 2 | temporarily not available |
-| 3| permanently not available |
+|   0 | Unknown |
+| 100 | In Fabrication |
+| 110 | Waiting on QA/QC Tests |
+| 120 | QA/QC Tests - Passed All |
+| 130 | QA/QC Tests - Non-conforming |
+| 140 | QA/QC Tests - Use As Is |
+| 150 | In Rework |
+| 160 | In Repair |
+| 170 | Permanently Unavailable |
+| 180 | Broken or Needs Repair |
+
 
 
 If an item already exists which you wish to link to another item, we can make it available via the PATCH command and the `/components/<eid>/status` API endpoint. Take for example `Z00100400007-00001`.
