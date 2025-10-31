@@ -8,7 +8,7 @@ keypoints:
 ---
 
 
-### This page describes the DUNE Shipping checklists which must be filled out when one needs to ship DUNE components to the warehouse in Rapid City, SD and eventually to SURF.
+### This page describes the DUNE Shipping checklists which must be filled out when one needs to ship DUNE components to the warehouse in Rapid City, SD and eventually to SURF. The procedure can be also employed in the case of shipping to non-SURF destinations, including the case of transshipping to SURF.
 
 <br/>
 
@@ -33,19 +33,20 @@ keypoints:
 
 ## The two apps and word document
 
-We offer two applications, the [iPad App]({{ page.root }}/06-Using-iPad-App/index.html) and the [Python HWDB Upload Tool]({{ page.root }}/07-Using-Python-Upload-Tool/index.html). These two apps help and enforce users to follow the shipping steps we describe below.
+We offer two applications, the [iPad App]({{ page.root }}/06-Using-iPad-App/index.html) and the [Python HWDB Tools]({{ page.root }}/07-Using-Python-Upload-Tool/index.html). These two apps help and enforce users to follow the shipping steps we describe below.
 
 One could also either just follow the steps below or download the shipping procedure from [here](https://drive.google.com/file/d/1k7gG9VhwyT7_CrBE8PnrfWttH8xBy6cB/view?usp=share_link).
 
 <br/>
 
 As for the two apps, please refer to their corresponding pages about how to obtain/install them.
-Here, we briefly descrie how they should be initially configured.
+We only briefly descrie how they should be initially configured here.
 
 ### iPad app setup
 
 There isn't particularly a user needs to do.
-Once loggin in as described [here]({{ page.root }}/06-Using-iPad-App/index.html), tap **Shipment Tracker** button on the very first page you see. That would take you to the Shipment Tracker menu page as shown below.
+Once log in as described [here]({{ page.root }}/06-Using-iPad-App/index.html), tap **Shipment Tracker** button on the very first page you see.
+That takes you to the Shipment Tracker menu page as shown below.
 From there, one could reach individual checklist pages (Packing, Pre-shipping, Shipping, and Receiving).
 
 The app also produces various files, such as QR-code shipping sheet and csv files while filling checklists.
@@ -62,17 +63,24 @@ this menu page and tap the **Remove Shipment Info** button.
 Launch the shipment tracker by typing **hwdb-shipping**.
 For the 1st time, you should then go **Preferences** where you should at least set up whether you like to connect to the development or production version of the HWDB in the HWDB Configuration plance as shown below. You can also setup your working directory, to which all produced files will be stored.
 
-Once you are done with configuring the tracker, goto -> Option -> New Window, where you provide a PID of your shipping box. And then click "find". If it find the PID in the HWDB, click "Continue" to proceed.
+Once you are done with configuring the tracker, goto -> Option -> New Window, where you provide a PID of your shipping box. And then click "find". If it finds the PID in the HWDB, click "Continue" to proceed.
 
 You should be then seeing the checklist menu as shown below.
 
 
 iPad app             |  Python HWDB Upload Tool
 :-------------------------:|:-------------------------:
-![ipad menu](../fig/ShippingProcedure/shipping_menu_iPad.jpg){: .image-with-shadow}{: width="100%"}  |![python menu](../fig/ShippingProcedure/PythonAppMenu.png){: .image-with-shadow}{: width="80%"}
+![ipad menu](../fig/ShippingProcedure/shipping_menu_iPad.jpg){: .image-with-shadow}{: width="100%"}  |![python menu](../fig/ShippingProcedure/PythonApp_menu.jpg){: .image-with-shadow}{: width="100%"}
 
 
 <br/><br/>
+
+Notice that, in both apps, you have three routes to choose from:
+- Shipping to SURF: Shipping directly to the SD warehouse/SURF.
+- Shipping to non-SURF: Shipping to non-SURF: Shipping to a place that is not warehouse/SURF.
+- Transshipping to SURF: Shipping to an intermediate non-SURF location. Then without opening the shipping box, it will be sent to SURF sometime in the future.
+
+You need to choose one of the three. Then depending on your selection, some of the steps we describe below will be skipped. We will point out when steps are skipped below.
 
 For rest of this page, we are going to describe the four checklists, Packing, Pre-shipping, Shipping, and Receiving.
 These are the checklists that one must fill out when shipping to warehouse/SURF.
@@ -105,6 +113,10 @@ The Python HWDB Upload Tool doesn't offer Packing checklist at this point.
 ![packing default](../fig/ShippingProcedure/iPad_Packing.jpg){: .image-with-shadow}{: width="50%"}
 -->
 
+
+
+
+
 <br/> <br/>
 
 [back to top](#contents)
@@ -119,7 +131,15 @@ Pre-shipping checklist must be completed before filling out shipping checklist.
 
 ### Gathering information of the shipment, POC, and QA Representative
 
-Your shipping box needs to be **consortium-certified** before being shipped as described [here]({{ page.root }}/shippinghandoff/index.html).
+> ## Certification of shipment via consortium
+>
+> The very first thing you need to do in Pre-shipping checklist is to have your shipment **consortium-certified**.
+> 
+> Please refer to [Shipping handoff process]({{ page.root }}/shippinghandoff/index.html) to learn;
+> - how it can be certified
+> - and who certifies.
+{: .testimonial}
+
 
 Once your shipping box is certified:
 - Provide the name and email address of your Consortium QA Representative who has certified your shipment.
@@ -134,7 +154,7 @@ This person will be contacted in case of shipment failure.
 
 [back to top](#contents)
 
-### Shipment size, weight, and arrival date
+### Shipment origin, destination, size, weight, and arrival date
 
 Next, we need to tell whether the shipment is domestic or international.
 
@@ -146,6 +166,7 @@ Next, we need to tell whether the shipment is domestic or international.
 
 You will then need to provide the followings:
 - Shipment's origin
+- Shipment's destination
 - Dimension (length x width x height) of your shipment
 - Weight of your shipment
 - Name of your Freight Forwarder
@@ -252,6 +273,7 @@ An example is shown below in the JSON format:
 	{"DUNE PID": "D00599800007-00075"}, 
 	{"HTS code": "78906"}, 
 	{"Origin of this shipment": "University of Minnesota"}, 
+	{"Destination of this shipment": "SD Warehouse/SURF"}, 
 	{"Dimension of this shipment": "9 x 10 x 3 m"},
 	{"Weight of this shipment": "89 kg"}, 
 	{"Freight Forwarder name": "FedEx"}, 
@@ -268,6 +290,22 @@ An example is shown below in the JSON format:
   ]
  }
 </pre>
+
+<br/> <br/>
+
+> ## If you are not shipping to SD Warehouse/SURF
+>
+> Skip the all steps that are related to communicate with the FD Logistics team.
+> - No need to provide info of your Consortium QA representative.
+> - No need to provide info on size, weight, Freight Forwarder, abd expected arrival date of your shipment.
+> - No need to send an acknowledgement to the FD Logistics team.
+>
+> You are still encouraged to do the following:
+> - Provide info of your POC person.
+> - Provide origin and destination of your shipment.
+> - Generate the DUNE Shipping Sheet and upload it to the HWDB.
+> - Upload the corresponding pre-shipping checklist.
+{: .callout}
 
 <br/> <br/>
 
@@ -394,6 +432,15 @@ Again, we provide an example in the JSON format below:
  }
 </pre>
 
+<br/> <br/>
+
+> ## If you are not shipping to SD Warehouse/SURF
+>
+> Skip the all steps that are related to communicate with the FD Logistics team.
+>
+> That is, you could skip all steps described above for Shipping checklist, except to update
+> location info of your shipment in the HWDB.
+{: .callout}
 
 <br/> <br/>
 
@@ -407,6 +454,15 @@ When your shipping box arrives at its final destination, the followings must be 
 - Remove all of the links to its sub-components in the HWDB.
 - Send an email to the POC person(s) to notify its arrival at its final destination.
 
+
+<br/> <br/>
+
+> ## If you are transshipping to SD Warehouse/SURF
+>
+> Do not remove the sub-component links.
+>
+> The links should be removed when your shipment eventually arrives at SURF after being transshipped.
+{: .callout}
 
 
 <!--

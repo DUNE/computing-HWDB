@@ -20,15 +20,8 @@ collaborative_notes: "DUNE-Computing-HWDB"
 
 <br/><br/> 
 
-> ## Generate many DUNE bar/QR-code labels at ease!
->
-> The Python HWDB Upload Tool now allows user to configure paper/label sizes as well as label positions at run time.
->
-> Please refer to the newly created [Generating bar/QR-code labels]({{ page.root }}/barqrcode/index.html) section for details.
-{: .testimonial}
 
-<br/><br/> 
-
+<!--
 > ## The 2nd HWDB tutorials 
 >
 > The 2nd HWDB tutorials was held as a two-day workshop on consecutive Mondays, July 15, 2024, and July 22, 2024.
@@ -38,11 +31,12 @@ collaborative_notes: "DUNE-Computing-HWDB"
 > The Indico Site for this training is [https://indico.fnal.gov/event/65297/](https://indico.fnal.gov/event/65297/).
 >
 > Links to to an earlier tutorial on the HWDB:
-> - [Hardware Database Tutorial I (May 2022)](https://indico.fnal.gov/event/54352/)
-> - [Hardware Database Tutorial II (May 2022)](https://indico.fnal.gov/event/54411/)
+> - [HWDB Tutorial I (May 2022)](https://indico.fnal.gov/event/54352/)
+> - [HWDB Tutorial II (May 2022)](https://indico.fnal.gov/event/54411/)
 {: .prereq}
 
 <br/><br/> 
+-->
 
 <!-- #### This tutorial will teach the basics of accessing and using the DUNE Hardware Database (HWDB). -->
 
@@ -59,15 +53,22 @@ collaborative_notes: "DUNE-Computing-HWDB"
 > ## Getting Started
 >
 > First step: follow the directions in the "[Setup](
-> {{ page.root }}/setup.html)" to arrived prepared for this event. Follow the instruction there to obtain your FNAL certificate, 
+> {{ page.root }}/setup.html)" to arrived prepared for this event. Follow the instruction there to obtain your FNAL tokens, 
 > which you will need to communicate with the REST API of the HWDB.
-> Follow along with the training via [Incido](https://indico.fnal.gov/event/65297/).
+>
+> Then follow along with the training, which is based on the 2nd HWDB tutorials held in 2024
+> ([incido](https://indico.fnal.gov/event/65297/)). Slides shown there and videos of each sessions are
+> also available [here]({{ page.root }}/training-schedule/index.html).
+> Links to to earlier tutorials on the HWDB, in case if you are interested in: [Tutorial I (May 2022)](https://indico.fnal.gov/event/54352/)
+> and [Tutorial II (May 2022)](https://indico.fnal.gov/event/54411/).
 {: .callout}
 
+<!---
 #### By the end of this training, participants will know how to:
 * GET/POST things from/to the DUNE HWDB through both the WEB UI and the REST API methods.
 * Easily go up&down PID hierarchy, scan QR-codes, and GET/POST Item locations using the iPad app.
 * Easily POST massive data to the HWDB using the Python API.
+--->
 
 <br/><br/> 
 
@@ -135,6 +136,19 @@ collaborative_notes: "DUNE-Computing-HWDB"
 <h2 id="schedule">Schedule by Day</h2>
 {% include sc/schedule.html %}
 --->
+
+
+> ## Quick links
+>
+> If you like to skip all basics and jump into more useful stuff, here are some quick links.
+>
+> - [**HWDB Dashboard**]({{ page.root }}/dashboard/index.html) : Provides filtered data from the HWDB visually.
+> - [**DUNE Shipping Procedure**]({{ page.root }}/shippingprocedure/index.html) and [**Shipping handoff process**]({{ page.root }}/shippinghandoff/index.html) : Each steps of shipping stuff to either the SD Warehouse/SURF or non-SURF places.
+> - [**DUNE bar/QR-codes**]({{ page.root }}/barqrcode/index.html) : Generate many DUNE bar/QR-code labels at ease!
+> - [**Pratical usage of the HWDB**]({{ page.root }}/hwdbusage/index.html) : Type/PID hierarchies, filtering data, storing data without a specific DB schema!?
+{: .testimonial}
+
+<br/><br/> 
 
 {% include links.md %}
 
