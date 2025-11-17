@@ -231,10 +231,15 @@ Once they respond:
 ### Generate a DUNE Shipping Sheet and upload it to the HWDB
 
 We are now ready to produce a DUNE Shipping Sheet. It needs to have:
-- A QR-code in which the PID of your shipping box is embedded.
-- Information of the POC.
-- Information of the System, Subsystem, and Component Type of your shipping box.
-- Information of your linked sub-components.
+- A **QR-code** in which the PID of your shipping box is embedded.
+- Similarly, a **bar-code** of the PID (folks at the SD warehouse prefers bar-codes to scan).
+- Right below the two codes, display:
+  - **A version of the HWDB** you are using. It's either pro (production) or dev (development).
+  - The corresponding **Component Type Name**.
+  - The **PID**.
+- Information of the **POC** person.
+- Information of the **System** and **Subsystem** of your shipping box.
+- Information of your linked **sub-components**.
 
 An example of such sheet is shown below.
 ![shipping sheet](../fig/ShippingProcedure/ShippingSheet.jpg){: .image-with-shadow}{: width="50%"}
