@@ -55,7 +55,7 @@ The app also runs on Macs with both Intel and Apple M chips.
 
 **iPad app Deployment**: As of now, you must contact Hajime Muramatsu and send [send him](mailto: hmuramat@umn.edu?subject=Request to resgiter an iPad(s)) your E-mail address.  You will then be sent an invitation, which includes a link to download an app called TestFlight. You can then intsall the app via TestFlight. This method is subject to change.
 
-**Mac Deployment**: The latest version of the app can be downloaded at [https://www-users.cse.umn.edu/~hmuramat/iOS/CPAProductionChecklists-3-96.zip](https://www-users.cse.umn.edu/~hmuramat/iOS/CPAProductionChecklists-3-96.zip). To do so you will need **Username**: `DUNE` and **Password**: `DUNEana`.
+**Mac Deployment**: The latest version of the app can be downloaded at [https://www-users.cse.umn.edu/~hmuramat/iOS/CPAProductionChecklists-3-97.zip](https://www-users.cse.umn.edu/~hmuramat/iOS/CPAProductionChecklists-3-97.zip). To do so you will need **Username**: `DUNE` and **Password**: `DUNEana`.
 
 ### Login Page
 
