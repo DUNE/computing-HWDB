@@ -22,7 +22,7 @@ keypoints:
 >| [Requirement for Consortium Certified QA/QC to be "Yes"](#requirement-for-consortium-certified-qaqc-to-be-yes) | Introduction of the 10 Component statuses |
 >|-------------------------------------+------------------|
 >|-------------------------------------+------------------|
->| &emsp; [Who sets Component Status](#who-sets-component-status) |  |
+>| &emsp; [Who sets Component Status and How](#who-sets-component-status-and-how) |  |
 >|-------------------------------------+------------------|
 >| &emsp; [Treatment of components with Non-conforming](#treatment-of-components-with-non-conforming) | How a component with non-conforming status should be treated |
 >|-------------------------------------+------------------|
@@ -41,9 +41,11 @@ including a shipment box that contains it:
 
 These flags are binary (Yes or No) and can be easily set via either the WEB-UI (or the REST API) in an Item View of the HWDB as shown below.
 
-\<**image will be here**\>
+![twoflagswebui](../fig/HandOff/TheTwoFlags_WEBUI.jpg){: .image-with-shadow}{: width="70%"}
 
-\<**also a command-line for the REST API**\>
+<br/>
+
+As for setting via the REST API, please refer to [Session 5]({{ page.root }}/05-Data-Management-REST-API/index.html#updating-flags-by-patching-an-items).
 
 
 >## **Key behavior of the HWDB:**
@@ -79,7 +81,7 @@ There are 10 choices to be selected in Component Status:
 - Permanently Unavailable
 
 >## **Key behavior of the HWDB:**
-> - Only components with statuses in **bold** above are allowed to be linked in the HWDB.
+> - Only components with statuses in **bold** in the above list are allowed to be linked in the HWDB.
 > - When a new component is created in the HWDB, its initial Component Status is always Status Unknown.
 {: .prereq}
 
@@ -87,10 +89,13 @@ In order to set **Consortium Certified QA/QC** to be "Yes", a component must hav
 - QA/QC Tests - Passed All
 - QA/QC Tests - Use As Is
 
-### Who sets Component Status
+### Who sets Component Status and How
 
 A component status flag should be set by a local QA/QC-test leader at each testing site.
-Again, it can be set via either the WEB-UI or  [the REST API]({{ page.root }}/05-Data-Management-REST-API/index.html#dealing-with-status).
+To change these Component Status Flags, again, there are two ways:
+- via the REST API: Please refer to this page; [Dealing with Status]({{ page.root }}/05-Data-Management-REST-API/index.html#dealing-with-status).
+
+
 
 ### Treatment of components with Non-conforming
 
