@@ -43,10 +43,26 @@ keypoints:
 >|-------------------------------------+------------------|
 >| [Shipment Tracker tab](#shipment-tracker-tab) | See the all statuses of your shipments on a single pane |
 >|-------------------------------------+------------------|
+>| [Binary/Test Downloader tab](#binarytest-downloader-tab) | Download test results or photos or csv files of many PIDs at once |
+>|-------------------------------------+------------------|
 {: .checklist}
 
 <br/>
 
+## What is this:
+
+It is an app, that is based on Python (Dash/Plotly) and provides UI to help download (not upload) activities
+from the DUNE HWDB. It is a part of [the Python HWDB Tools package]({{ page.root }}/07-Using-Python-Upload-Tool/index.html), available
+to all DUNE members.
+
+When launched, the following 4 tabs would be seen with the initial tab being Plots:
+
+- Plots: To plot and save variables stored in the HWDB for a given Component Type ID (and optionally a Test Type Name).
+- Type Getter: A simple UI that lets user to go through the PID hierarchy to find a Component Type ID user is interested in.
+- Shipment Tracker: Displays statuses of all shipping boxes for a given Component Type ID.
+- Binary/Test Downloader: Let user to download Test Data (in csv or JSON format) or Photos, documentations, csv files that correspond to multiple PIDs at once.
+
+For the rest of this page, we go through each of these four tabs and describe their basic functionalities and their usages.
 
 ## Requirement:
 
@@ -360,6 +376,64 @@ On the right, you see the following information:
 - **Pre-shipping**: Shows contents of the Pre-shipping checklist you fill out before shipping.
 - **Shipping**: Similarly shows contents of the Shipping checklist you fill out. This includes buttons to download your bill of lading, proforma invoice if international shipment, and other binaries that must be uploaded to the HWDB according to the [DUNE Shipping Procedure]({{ page.root }}/shippingprocedure/index.html).
 - **Info @ Warehouse**: This shows SKU, Pallet ID of your shipment at the SD Warehouse, along with its received date/time and result of visual inspection when it is received there.
+
+
+[back to top](#contents)
+
+<br/><br/> 
+
+## Binary/Test Downloader tab:
+
+When this is selected, a screen like the one shown below should be displayed.
+
+![downloader_test_intro](../fig/Dash/downloader_test_intro.jpg){: .image-with-shadow}{: width="100%"}
+
+User first needs to select whether to download test data, that are stored in **Test Log** under each PIDs,
+or **Binaries**, such as photos, documentations (pdf files), csv files (no Excel), that are stored
+either under a Component Type ID or individual PIDs.
+
+Let us describe how it works for the case of downloading Test Data first.
+
+### Downloading Test Data:
+
+Once selecting **Test Data** to download, user then needs to select in which format the downloaded data should be saved.
+The choice is either csv or JSON format.
+
+User then needs to provide a reference PID and a Test Type name. They will be used to determine the database schema
+that is employed for the stored data. So the PID and name must be the ones that hold the data you like to download.
+
+Once a reference PID and a Test Type name are entered, click **Sync to the HWDB**.
+You should be then seeing a diagram like the one below:
+
+![downloader_test_dbschema](../fig/Dash/downloader_test_dbschema.jpg){: .image-with-shadow}{: width="40%"}
+
+Select those leaves that you are interested in downloading and then click **Download Selected Data**.
+It will download the selected data of the selected Test Type name under **all PIDs** that correspond to the provided Component Type ID.
+
+Optionally one could provide a single PID (right above the  **Download Selected Data** button) to download data for that particular PID
+or a range of PIDs.
+
+Downloaded data will be saved as a single file in /\<your working directory>/\<the provided Component Type ID>/ with a file name, \<Component Type ID>\_\<Test Type name>\_Test\_\<time stamp>.\<csv or json>.
+
+<br/><br/> 
+
+### Downloading Binaries:
+
+When **Binaries** is selected to be downloaded, one should be seeing a screen as below:
+
+![downloader_binary_intro](../fig/Dash/downloader_binary_intro.jpg){: .image-with-shadow}{: width="60%"}
+
+User needs to provide either a Component Type ID or a PID.
+
+Recall that binaries (images, csv files... etc) can be stored in the HWDB under a particular Component Type ID or a PID (and even a Test Log, but the app doesn't download from Test Logs, yet).
+
+Once an ID is entered, click **Sync to the HWDB**.
+You should be then seeing a screen like the one shown below:
+
+![downloader_binary_list](../fig/Dash/downloader_binary_list.jpg){: .image-with-shadow}{: width="60%"}
+
+Select (or deselect) the ones you like and then click **Download**.
+All files will be downloaded into  /\<your working directory>/\<the provided Component Type ID>/\<images>/.
 
 
 [back to top](#contents)
