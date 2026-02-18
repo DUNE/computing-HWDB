@@ -116,7 +116,7 @@ collaborative_notes: "DUNE-Computing-HWDB"
 >|-------------+------------------|
 >| FD2 TDE  | [Vyacheslav Galymov](mailto: vgalymov@ipnl.in2p3.fr?) |
 >|-------------+------------------|
->| FD  DAQ  | [Roland Sipos](mailto: Roland.Sipos@cern.ch?) |
+>| FD  DAQ  | [Alec Habig](mailto: habig@neutrino.d.umn.edu?) |
 >|-------------+------------------|
 >| FD1 HV   | [Steve Magill](mailto: srm@anl.gov?) |
 >|-------------+------------------|

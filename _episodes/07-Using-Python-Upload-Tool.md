@@ -81,10 +81,13 @@ keypoints:
 
 ## Introduction
 
-The Python HWDB Upload Tool is an application written in Python that helps users to upload massive data to the HWDB.
-User provides data by means of spreadsheets to the app. The app then simply uploads them.
+The Python HWDB Upload Tool is a package of applications, written in Python that helps users to communicate with the HWDB.
 
-The app can also accept a docket file, along with spreadsheets, in which complex database schema can be defined as well.
+It is consists of multiple applications:
+- Uploader : Uploads massive data to the HWDB. User provides data by means of spreadsheets to the app. The app then simply uploads them. The app can also accept a docket file, along with spreadsheets, in which complex database schema can be defined as well. The detail usage is described later in this very page.
+- [Shipping Tracker]({{ page.root }}/shippingprocedure/index.html) : Helps user to follow the official DUNE shipping procedure. It also generates/uploads shipping label, along with the required shipping documentations.
+- [Label Generator]({{ page.root }}/barqrcode/index.html) : Generates labels of QR- and bar-codes. Allows user to define label & paper sizes as well as to detail orientations of codes.
+- [HWDB Dashboard]({{ page.root }}/dashboard/index.html) : Helps to provide information stored in the HWDB. Runs within a web-browser with multiple tabs (Type Getter, Plots, Shipment Tracker, Binary/Test Downloader). See the link for more details.
 
 [back to top](#contents)
 
@@ -99,9 +102,34 @@ It can be obtained from [https://www.anaconda.com/download](https://www.anaconda
 
 ## Installation
 
-Follow these instructions to install the Python HWDB API:
+There are 3 ways to install.
 
-- Download the zipped (or tar.gz, whichever you prefer) source code of the Tool from [https://github.com/DUNE/DUNE-HWDB-Python/releases/latest](https://github.com/DUNE/DUNE-HWDB-Python/releases/latest).
+### Binaries
+
+Perhaps the easiest way is to obtain standalone binaries. We have a linux version, built under Ubuntu 24.04.4 LTS on a x86_64 machine. We have tested it also within a WSL2 environment.
+A Mac version is also available, which was built on a ARM64-based machine.
+These binaries can be obtained from [https://github.com/DUNE/DUNE-HWDB-Python/releases/latest](https://github.com/DUNE/DUNE-HWDB-Python/releases/latest](https://github.com/DUNE/DUNE-HWDB-Python/releases/latest). Make sure to access to v1.7.2 or later.
+And look for **HWDBTools_lnx.zip** or **HWDBTools_mac.zip** under Assets there.
+
+Once unzip the file, you can put the folder anywhere you like.
+The folder contains the following executables:
+- hwdb-configure
+- hwdb-upload
+- hwdb-shipping
+- hwdb-labels
+- hwdb-dash
+- hwdb-list-institutions
+- hwdb-list-manufacturers
+- hwdb-logs
+- setup_path.sh
+
+Optionally, setup_path.sh can be run to add the path to these binaries to $PATH.
+
+### Source codes
+
+You can download the source codes.
+
+- Download the **Source code(zip)** (or **Source code (tar.gz)**, whichever you prefer) of the Tool from [https://github.com/DUNE/DUNE-HWDB-Python/releases/latest](https://github.com/DUNE/DUNE-HWDB-Python/releases/latest).
 
 - Extract the source code to a directory of your choosing. For the purposes of this 
 document, we will assume this directory is $HOME/DUNE-HWDB-Python.
@@ -148,6 +176,11 @@ the Tool will suggest you to install it. The Tool itself will run fine without t
   conda install conda-forge::htgettoken
   ~~~
   {: .language-bash}
+
+### Auto ENV Setup
+
+You can download the source codes as described above. But once extracted the downloaded archived file, you can find the shell script, **setup_hwdbtools_env.sh** inside. Executing the script there would crete a new virtual environment,
+auto-download the required additional modules, and set up the needed environmental variables for you.
 
 <br/>
 
