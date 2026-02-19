@@ -1,10 +1,10 @@
 ---
-title: Using the Python HWDB Upload Tool
+title: Using the Python HWDB Tools
 teaching: 120
 exercises: 0
 questions:
 - Active user privilage is required.
-- How does one upload bulk data with the Python HWDB Upload Tool?
+- How does one upload bulk data with the Python HWDB Tools?
 objectives:
 - upload a component specification (thus, obtain its assigned DUNE PID)
 - update a component specification (for a given PID)
@@ -81,7 +81,7 @@ keypoints:
 
 ## Introduction
 
-The Python HWDB Upload Tool is a package of applications, written in Python that helps users to communicate with the HWDB.
+The Python HWDB Tools is a package of applications, written in Python that helps users to communicate with the HWDB.
 
 It is consists of multiple applications:
 - Uploader : Uploads massive data to the HWDB. User provides data by means of spreadsheets to the app. The app then simply uploads them. The app can also accept a docket file, along with spreadsheets, in which complex database schema can be defined as well. The detail usage is described later in this very page.
