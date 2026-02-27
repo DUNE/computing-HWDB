@@ -79,11 +79,13 @@ Notice that, in both apps, you have three routes to choose from:
 - Shipping to SURF: Shipping directly to the SD warehouse/SURF.
 - Shipping to non-SURF: Shipping to non-SURF: Shipping to a place that is not warehouse/SURF.
 - Transshipping to SURF: Shipping to an intermediate non-SURF location. Then without opening the shipping box, it will be sent to SURF sometime in the future.
+- From Vendor: Shipping directly from Vendor to SURF.
 
-You need to choose one of the three. Then depending on your selection, some of the steps we describe below will be skipped. We will point out when steps are skipped below.
+You need to choose one of the four (**the From Vendor route is not available in the apps, yet**. We are currently in the process of updating the apps).
+Then depending on your selection, some of the steps we describe below will be skipped and/or different. We will point out when steps are skipped below.
 
 For rest of this page, we are going to describe the four checklists, Packing, Pre-shipping, Shipping, and Receiving.
-These are the checklists that one must fill out when shipping to warehouse/SURF.
+
 
 
 <br/> <br/>
@@ -124,6 +126,7 @@ The Python HWDB Upload Tool doesn't offer Packing checklist at this point.
 ## Pre-shipping checklist:
 
 The goal of this checklist is to:
+- certify your shipment by going through [Shipping handoff process]({{ page.root }}/shippinghandoff/index.html)
 - gather information about your shipment and notify the FD Logistics team about the shipment
 - and generate a DUNE Shipping Sheet that contains the corresponding QR-code.
 
@@ -145,6 +148,16 @@ Once your shipping box is certified:
 - Provide the name and email address of your Consortium QA Representative who has certified your shipment.
 - Also provide the name and email address of your point of contact (POC) person.
 This person will be contacted in case of shipment failure.
+
+
+> ## If your shipment is sent directly from vendor to SD Warehouse/SURF
+>
+> Obviously there is no way to perform the certification process in this case.\
+> Skip this process entirely. And you will need to go through the process once your shipment is arrived at SURF\
+> (i.e., when you fill the Receiving checklist).
+>
+{: .callout}
+
 
 <!--
 ![preshipping 1](../fig/ShippingProcedure/preshipping_1.png){: .image-with-shadow}{: width="50%"}
@@ -348,6 +361,41 @@ And request them to send you the finalized invoice electronically as well.
 [back to top](#contents)
 
 
+### Recipient (Warehouse) address
+
+The warehouse address should be:
+>ATTEN: LBNF/DUNE\
+>Dakota Warehouse\
+>1313 E Saint Patrick St.\
+>Rapid City, SD 57701
+>
+>PH: 605-389-3344
+{: .prereq}
+Of course, if it is an international shipment, don't forget to add **USA** at the end of the address
+and the phone number should be 1-605-389-3344.
+
+> ## If your shipment is sent directly from vendor to SD Warehouse/SURF
+>
+> The recipient address should be the following (just add \<PID\> as shown below):
+>
+>ATTN: LBNF/DUNE &nbsp;&nbsp;\<PID\>\
+>Dakota Warehouse\
+>1313 E Saint Patrick St.\
+>Rapid City, SD 57701
+>
+>PH: 605-389-3344
+>
+>where \<PID\> should be the PID of your shipping box. This way, the FD Logistics team would recognize
+>what the shipment is when they receive it at the warehouse.
+{: .callout}
+
+<br/> <br/>
+
+> If you are sending in an envelope form which it is not possible to attach your shipping label to,\
+> you should also include \<PID\> in your recipient address.
+{: .prereq}
+
+
 ### Sending BoL (and Proforma invoice) to the FD Logistics team
 
 We are now ready to send a request for the final approval for this shipment to the FD Logistics team.
@@ -467,6 +515,19 @@ When your shipping box arrives at its final destination, the followings must be 
 > Do not remove the sub-component links.
 >
 > The links should be removed when your shipment eventually arrives at SURF after being transshipped.
+{: .callout}
+
+<br/> <br/>
+
+> ## If your shipment is sent directly from vendor to SD Warehouse/SURF
+>
+> As you skipped the certification process in the Pre-shipping checklist,
+> you now need to go through this step to certify your shipment.
+> 
+> Please refer to [Shipping handoff process]({{ page.root }}/shippinghandoff/index.html) to learn;
+> - how it can be certified
+> - and who certifies.
+>
 {: .callout}
 
 

@@ -93,7 +93,7 @@ In order to set **Consortium Certified QA/QC** to be "Yes", a component must hav
 
 A component status flag should be set by a local QA/QC-test leader at each testing site.
 To change these Component Status Flags, again, there are two ways:
-- via the REST API: Please refer to this page; [Dealing with Status]({{ page.root }}/05-Data-Management-REST-API/index.html#dealing-with-status).
+- via the REST API: Please refer to this page; [Updating Flags by Patching an Item(s)]({{ page.root }}/05-Data-Management-REST-API/index.html#updating-flags-by-patching-an-items).
 
 
 
@@ -120,7 +120,9 @@ In an Item View, clicking **SPECS LOG** takes you to a page like the one shown b
 
 - The first column shows date/time of when a flag is changed.
 - The 2nd column shows who changes a flag.
-- The column labeled as **Status_id** shows an ID of **Component Status**.
+- The column labeled as **Status_id** shows an ID of **Component Status**.\
+  As for values of the IDs, again, please refer to [Updating Flags by Patching an Item(s)]({{ page.root }}/05-Data-Management-REST-API/index.html#updating-flags-by-patching-an-items).
+
 - **Qaqc_info_uploaded** represents the **All QA/QC Test and Documentation Uploaded**.
 - **Consort_cert_qaqc** represents the **Consortium Certified QA/QC**.
 
