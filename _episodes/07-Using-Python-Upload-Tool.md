@@ -108,7 +108,7 @@ There are 3 ways to install.
 
 Perhaps the easiest way is to obtain standalone binaries. We have a linux version, built under Ubuntu 24.04.4 LTS on a x86_64 machine. We have tested it also within a WSL2 environment.
 A Mac version is also available, which was built on a ARM64-based machine.
-These binaries can be obtained from [https://github.com/DUNE/DUNE-HWDB-Python/releases/latest](https://github.com/DUNE/DUNE-HWDB-Python/releases/latest). Make sure to access to v1.7.2 or later.
+These binaries can be obtained from [https://github.com/DUNE/DUNE-HWDB-Python/releases/latest](https://github.com/DUNE/DUNE-HWDB-Python/releases/latest). Make sure to access to v1.7.4 or later.
 And look for **HWDBTools_lnx.zip** or **HWDBTools_mac.zip** under Assets there.
 
 Once unzip the file, you can put the folder anywhere you like.
@@ -123,7 +123,9 @@ The folder contains the following executables:
 - hwdb-logs
 - setup_path.sh
 
-Optionally, setup_path.sh can be run to add the path to these binaries to $PATH.
+Make sure to run the included shell script, **setup_path.sh**, inside of the HWDBTools folder
+to setup file permissions correctly. It will also write a line into your login file (e.g., .bashrc)
+to include \<path to your HWDBTools folder\> to your $PATH.
 
 ### Source codes
 
