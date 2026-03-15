@@ -108,11 +108,25 @@ There are 3 ways to install.
 
 Perhaps the easiest way is to obtain standalone binaries. We have a linux version, built under Ubuntu 24.04.4 LTS on a x86_64 machine. We have tested it also within a WSL2 environment.
 A Mac version is also available, which was built on a ARM64-based machine.
-These binaries can be obtained from [https://github.com/DUNE/DUNE-HWDB-Python/releases/latest](https://github.com/DUNE/DUNE-HWDB-Python/releases/latest). Make sure to access to v1.7.4 or later.
-And look for **HWDBTools_lnx.zip** or **HWDBTools_mac.zip** under Assets there.
+These binaries can be obtained from [https://github.com/DUNE/DUNE-HWDB-Python/releases/latest](https://github.com/DUNE/DUNE-HWDB-Python/releases/latest). Make sure to access to v1.7.5 or later.
+And look for **HWDBTools_lnx_x8664.tar.gz** or **HWDBTools_mac_arm64.tar.gz** under Assets there.
 
-Once unzip the file, you can put the folder anywhere you like.
-The folder contains the following executables:
+Once downloaded, you can put it anywhere you like.
+Extract the contents and make sure to run the attached shell script, **setup_path.sh**, inside of the HWDBTools folder
+to setup file permissions correctly. It will also write a line into your login file (e.g., .bashrc)
+to include \<path to your HWDBTools folder\> to your $PATH.
+
+For instance,
+  ~~~
+  cd <path to your downloaded file, HWDBTools_mac_arm64.tar.gz>
+  tar -xzf HWDBTools_mac_arm64.tar.gz
+  cd HWDBTools_mac_arm64
+  ./setup_path.sh
+  ~~~
+  {: .language-bash}
+
+
+The following commands should be available now:
 - hwdb-configure
 - hwdb-upload
 - hwdb-shipping
@@ -121,11 +135,10 @@ The folder contains the following executables:
 - hwdb-list-institutions
 - hwdb-list-manufacturers
 - hwdb-logs
+- hwdb-htgettoken
 - setup_path.sh
 
-Make sure to run the included shell script, **setup_path.sh**, inside of the HWDBTools folder
-to setup file permissions correctly. It will also write a line into your login file (e.g., .bashrc)
-to include \<path to your HWDBTools folder\> to your $PATH.
+
 
 ### Source codes
 
@@ -807,6 +820,8 @@ Some notes on linking subcomponents:
 
 ### Example 3.1: Uploading images
 
+#### To individual item
+
 This example demonstrates how to upload image files for items.
 
 <table class="spreadsheet">
@@ -827,6 +842,73 @@ This example demonstrates how to upload image files for items.
 This sheet is available here; [Ex_3-1.xlsx]({{ page.root }}/files/Ex_3-1.xlsx).
 
 <br/>
+
+#### To individual test entry
+
+We can also upload images to individual test entry, to even older test entries if wish.
+Let's do this with a docket file and a spreadsheet as an example.
+Take a look at the spreadsheet below.
+<table class="spreadsheet">
+<tr>
+    <th style="width: 1em"></th>
+    <th style="width: 10em">A</th>
+    <th style="width: 14em">B</th>
+    <th style="width: 14em">C</th>
+	<th style="width: 14em">D</th></tr>
+<tr><th>1</th><td><b>External ID</b></td><td><b>Comments</b></td><td><b>Image File</b></td><td><b>History Order</b></td></tr>
+<tr><th>2</th><td>Z00100300012-00001</td><td>This is fine.</td><td>this_is_fine.jpg</td><td>0</td></tr>
+<tr><th>3</th><td>Z00100300012-00002</td><td>This is fine.</td><td>this_is_fine.jpg</td><td>0</td></tr>
+</table>
+
+<br/>
+The **History Order** column is optional. It take a positive integer and its default value is 0.\
+It tells the app which test entry it uploads images to.\
+History Order = 0 corresponds to the latest entry, 1 corresponds to its next latest entry, and so on.
+
+The corresponding docket file could look like below:
+~~~
+{
+    "Values": {
+        "Part Type ID": "Z00100200040",
+        "Institution": "(186) University of Minnesota Twin Cities",
+        "Manufacturer": "(7) Hajime Inc"
+    },
+    "Sources": [
+	{
+            "Files": "test_images.xlsx",
+	    "Sheet": "My Test Image",
+            "Encoder": "My Test Image Encoder",
+        }
+    ],
+    "Encoders": [
+	{
+	    "Encoder Name": "My Test Image Encoder",
+            "Record Type": "Test Image",
+	    "Part Type ID": "Z00100200040",
+	    "Test Name": "CPA_Parts_FR4_main QC check",
+            "Schema": {
+		"type": "group",
+		"key": "External ID",
+		"members": {
+		    "External ID": "string",
+		    "Comments": "string",
+		    "Image File": "string"
+                }
+	    }
+        }
+    ]
+}
+
+~~~
+{: .language-json}
+
+Executing a command line like this;
+  ~~~
+  hwdb-upload test_docket.json --submit
+  ~~~
+  {: .language-bash} 
+will upload the image file, this_is_fine.jpg, to the latest test entries of Test Type Name = "CPA_Parts_FR4_main QC check" of the 2 PIDs,
+Z00100300012-00001 and Z00100300012-00002, for instance.
 
 [back to top](#contents)
 
