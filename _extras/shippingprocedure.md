@@ -33,64 +33,33 @@ keypoints:
 
 ## The two apps and word document
 
-We offer two applications, the [iPad App]({{ page.root }}/06-Using-iPad-App/index.html) and the [Python HWDB Tools]({{ page.root }}/07-Using-Python-Upload-Tool/index.html). These two apps help and enforce users to follow the shipping steps we describe below.
+We offer two applications, the [HWDB Dashboard]({{ page.root }}/dashboard/index.html) and [iPad App]({{ page.root }}/06-Using-iPad-App/index.html).
+These two apps help and enforce users to follow the shipping steps we describe below.
 
 One could also either just follow the steps below or download the shipping procedure from [here](https://drive.google.com/file/d/1k7gG9VhwyT7_CrBE8PnrfWttH8xBy6cB/view?usp=share_link).
 
-<br/>
+In the following, where appropriate, we show screenshots based on the [HWDB Dashboard]({{ page.root }}/dashboard/index.html) as the iPad app has very much similar GUI.
 
-As for the two apps, please refer to their corresponding pages about how to obtain/install them.
-We only briefly descrie how they should be initially configured here.
+In the [HWDB Dashboard]({{ page.root }}/dashboard/index.html), clicking the **Shipments** tab, one arrives at a page as shown below.
+(see also [HWDB Dashboard#shipments]({{ page.root }}/dashboard/index.html#shipments))\
+You see all available shipping containers/boxes (PIDs) here, separately for the ones that are;
+- currently in **In-Transit** status,
+- have some contents in them, but not shipped, yet,
+- and the ones that are completely empty (no linked sub-components).
 
-### iPad app setup
-
-There isn't particularly a user needs to do.
-Once log in as described [here]({{ page.root }}/06-Using-iPad-App/index.html), tap **Shipment Tracker** button on the very first page you see.
-That takes you to the Shipment Tracker menu page as shown below.
-From there, one could reach individual checklist pages (Packing, Pre-shipping, Shipping, and Receiving).
-
-The app also produces various files, such as QR-code shipping sheet and csv files while filling checklists.
-All produced files will be stored in /Tracker/Shipping/\<PID\>/ directory within its own app folder of your iPad.
-
-In general, all provided information persists through out the entire shipping process, so that one could
-resume the process from anywhere, as long as you don't logout from the app or kill the app.
-
-When you need to refresh the provided information, e.g., to start to prepare for a new shipment, come to
-this menu page and tap the **Remove Shipment Info** button.
-
-### Python HWDB Upload Tool setup
-
-Launch the shipment tracker by typing **hwdb-shipping**.
-For the 1st time, you should then go **Preferences** where you should at least set up whether you like to connect to the development or production version of the HWDB in the HWDB Configuration plance as shown below. You can also setup your working directory, to which all produced files will be stored.
-
-Once you are done with configuring the tracker, goto -> Option -> New Window, where you provide a PID of your shipping box. And then click "find". If it finds the PID in the HWDB, click "Continue" to proceed.
-
-You should be then seeing the checklist menu as shown below.
-
-
-iPad app             |  Python HWDB Upload Tool
-:-------------------------:|:-------------------------:
-![ipad menu](../fig/ShippingProcedure/shipping_menu_iPad.jpg){: .image-with-shadow}{: width="100%"}  |![python menu](../fig/ShippingProcedure/PythonApp_menu.jpg){: .image-with-shadow}{: width="100%"}
+Type in your Type ID or name and find your shipping box (a PID). Select a PID and start to pack!
+![shipment opening](../fig/ShippingProcedure/shipmentopening.jpg){: .image-with-shadow}{: width="90%"}
 
 
 <br/><br/>
 
-Notice that, in both apps, you have three routes to choose from:
-- Shipping to SURF: Shipping directly to the SD warehouse/SURF.
-- Shipping to non-SURF: Shipping to non-SURF: Shipping to a place that is not warehouse/SURF.
-- Transshipping to SURF: Shipping to an intermediate non-SURF location. Then without opening the shipping box, it will be sent to SURF sometime in the future.
-- From Vendor: Shipping directly from Vendor to SURF.
-
-You need to choose one of the four (**the From Vendor route is not available in the apps, yet**. We are currently in the process of updating the apps).
-Then depending on your selection, some of the steps we describe below will be skipped and/or different. We will point out when steps are skipped below.
-
 For rest of this page, we are going to describe the four checklists, Packing, Pre-shipping, Shipping, and Receiving.
-
-
 
 <br/> <br/>
 
 [back to top](#contents)
+
+
 
 
 ## Packing checklist:
@@ -102,26 +71,39 @@ And that is basically all you need to do in the packing checklist.
 It prepares you to assign a PID to your shipment box, while making links from the assigned PID to
 each of your sub-components that are contained inside of your shipment box.
 
->## **Skipping this checklist?**
->If your shipping box already has its PID assigned and has links to its contents (sub-components),
->please skip this checklist and start from the **Pre-shipping** checklist.
-{: .prereq}
+In the [HWDB Dashboard]({{ page.root }}/dashboard/index.html), one can see current contents of your shipping box in the **PACKING** pane, if there is any.
+See below as an example.\
+Notice that one could directly **unlink** components from here, if wished. To add more components, click **Add items...** button.
+![packing menu](../fig/ShippingProcedure/packingmenu.jpg){: .image-with-shadow}{: width="50%"}
 
-<!--
-We show the Packing checklist of the iPad app as a reference below. There, user selets a Component Type ID, selects PIDs of the expected sub-components, and then request the HWDB to assign a new PID to its shipping box.
+<br/>
 
-The Python HWDB Upload Tool doesn't offer Packing checklist at this point.
+In the packing session, you can select available sub-components as shown below.
+![packing1](../fig/ShippingProcedure/packing_1.jpg){: .image-with-shadow}{: width="100%"}
 
-![packing default](../fig/ShippingProcedure/iPad_Packing.jpg){: .image-with-shadow}{: width="50%"}
--->
+<br/>
 
-
-
-
+You could also use your smart phone to scan QR-codes to read-in PIDs as well.
+![packing2](../fig/ShippingProcedure/packing_2.jpg){: .image-with-shadow}{: width="100%"}
 
 <br/> <br/>
 
 [back to top](#contents)
+
+
+<br/> <br/><br/> <br/>
+
+### Workflow in the Dashboard
+
+The rest of the checklists, Pre-shipping, Shipping, and Receiving checklists in the HWDB Dashboard can be found in
+the **SHIPPING WORKFLOWS** pane as shown below. Select one to start to go through it.
+
+![workflow](../fig/ShippingProcedure/dashboardwordflow.jpg){: .image-with-shadow}{: width="35%"}
+
+
+<br/> <br/>
+
+
 
 ## Pre-shipping checklist:
 
@@ -136,11 +118,12 @@ Pre-shipping checklist must be completed before filling out shipping checklist.
 
 > ## Certification of shipment via consortium
 >
-> The very first thing you need to do in Pre-shipping checklist is to have your shipment **consortium-certified**.
+> The very first thing you need to do in Pre-shipping checklist is to produce and post an **[Executive Summary]({{ page.root }}/executivesummary/index.html)**.
 > 
-> Please refer to [Shipping handoff process]({{ page.root }}/shippinghandoff/index.html) to learn;
-> - how it can be certified
-> - and who certifies.
+> In producing an Executive Summary, make sure that components in your shipping box have;
+> - the two flags set to be **Yes** and
+> - the component status is either **QA/QC Tests - Passed All** or **Use As Is**.
+> See [Shipping handoff process]({{ page.root }}/shippinghandoff/index.html) to learn about this hand-off process.
 {: .testimonial}
 
 
@@ -158,10 +141,15 @@ This person will be contacted in case of shipment failure.
 >
 {: .callout}
 
+<br/> <br/>
 
-<!--
-![preshipping 1](../fig/ShippingProcedure/preshipping_1.png){: .image-with-shadow}{: width="50%"}
--->
+In the Dashboard, user is prompted to select a particular route, checked for the existence of Executive Summary, info for a QA-rep and POC:
+
+![routeselection](../fig/ShippingProcedure/pre_route.jpg){: .image-with-shadow}{: width="70%"}
+![ES](../fig/ShippingProcedure/pre_ES.jpg){: .image-with-shadow}{: width="70%"}
+![rep](../fig/ShippingProcedure/pre_qarep.jpg){: .image-with-shadow}{: width="70%"}
+![poc](../fig/ShippingProcedure/pre_poc.jpg){: .image-with-shadow}{: width="70%"}
+
 
 <br/> <br/>
 
@@ -186,9 +174,11 @@ You will then need to provide the followings:
 - Mode of transportation
 - Expected arrival date
 
-<!--
-![preshipping 2](../fig/ShippingProcedure/preshipping_2.jpg){: .image-with-shadow}{: width="50%"}
--->
+<br/>
+
+Or in the Dashboard, it would look like these:
+![origin](../fig/ShippingProcedure/pre_origin.jpg){: .image-with-shadow}{: width="70%"}
+![ff](../fig/ShippingProcedure/pre_ff.jpg){: .image-with-shadow}{: width="70%"}
 
 <br/> <br/>
 
@@ -215,10 +205,16 @@ Should there be any issue with this shipment, email to the following address(es)
 Hajime Muramatsu
 </pre>
 
- <br/>
+<br/>
  
 And here is an example of such csv file that should be attached to the above email message:
 ![preshipping csv](../fig/ShippingProcedure/preshipping_notfiy_csv.jpg){: .image-with-shadow}{: width="50%"}
+
+
+<br/><br/>
+
+In the Dashboard, it would look like these:
+![email](../fig/ShippingProcedure/pre_email.jpg){: .image-with-shadow}{: width="70%"}
 
 <br/> <br/>
 
@@ -233,9 +229,8 @@ Once they respond:
 - Record the name of the person who responded and its date/time.
 - Perform one last visual inspection on your shipping box as well.
 
-<!--
-![preshipping 3](../fig/ShippingProcedure/preshipping_3.jpg){: .image-with-shadow}{: width="50%"}
--->
+Again, in the Dashboard, it would look like this:
+![damage](../fig/ShippingProcedure/pre_damage.jpg){: .image-with-shadow}{: width="70%"}
 
 <br/> <br/>
 
@@ -327,6 +322,11 @@ An example is shown below in the JSON format:
 
 <br/> <br/>
 
+In the Dashboard, this process of generating a shipping label and recoding in the HWDB would look like this:
+![final](../fig/ShippingProcedure/pre_final.jpg){: .image-with-shadow}{: width="70%"}
+
+<br/> <br/>
+
 [back to top](#contents)
 
 
@@ -355,6 +355,11 @@ For an international shipment, a **Proforma Invoice** (i.e., commercial invoice)
 Again, make sure to request your carrier to include the shipping box PID and its Component Type Name in the invoice.
 And request them to send you the finalized invoice electronically as well.
 
+<br/> <br/>
+
+In the Dashboard, it would look like these:
+![shi_check](../fig/ShippingProcedure/shi_check.jpg){: .image-with-shadow}{: width="70%"}
+![shi_bol](../fig/ShippingProcedure/shi_bol.jpg){: .image-with-shadow}{: width="70%"}
 
 <br/> <br/>
 
@@ -419,6 +424,11 @@ Hajime (POC)
 
 <br/> <br/>
 
+In the Dashboard, it would look like these:
+![shi_email](../fig/ShippingProcedure/shi_email.jpg){: .image-with-shadow}{: width="70%"}
+
+<br/> <br/>
+
 [back to top](#contents)
 
 
@@ -432,6 +442,9 @@ Once you are approved to ship:
 - Approved Date/Time
 - A photo of the email message that approves your shipment
 
+<br/> <br/>
+
+
 ### Attach your DUNE Shipping Sheet and ship it!
 
 Before you finally ship it, make sure the followings are done:
@@ -440,7 +453,12 @@ Before you finally ship it, make sure the followings are done:
   (and Proforma Invoice for international shipment).
 - Make sure that your shipment box (e.g., crate, cargo) is adequately insured for transit.
 
-If all are done, ship it.
+<br/> <br/>
+
+In the Dashboard, it would look like these:
+![shi_approval](../fig/ShippingProcedure/shi_approval.jpg){: .image-with-shadow}{: width="70%"}
+
+If all are done, **ship it**.
 
 ### Update location information of your shipment in the HWDB
 
@@ -487,6 +505,12 @@ Again, we provide an example in the JSON format below:
 
 <br/> <br/>
 
+In the Dashboard, it would look like these:
+![shi_ship](../fig/ShippingProcedure/shi_ship.jpg){: .image-with-shadow}{: width="70%"}
+![shi_final](../fig/ShippingProcedure/shi_finish.jpg){: .image-with-shadow}{: width="70%"}
+
+<br/> <br/>
+
 > ## If you are not shipping to SD Warehouse/SURF
 >
 > Skip the all steps that are related to communicate with the FD Logistics team.
@@ -507,6 +531,12 @@ When your shipping box arrives at its final destination, the followings must be 
 - Remove all of the links to its sub-components in the HWDB.
 - Send an email to the POC person(s) to notify its arrival at its final destination.
 
+<br/> <br/>
+
+In the Dashboard, it would look like these:
+![rec_check](../fig/ShippingProcedure/rec_check.jpg){: .image-with-shadow}{: width="70%"}
+![rec_loc](../fig/ShippingProcedure/rec_loc.jpg){: .image-with-shadow}{: width="70%"}
+![rec_email](../fig/ShippingProcedure/rec_email.jpg){: .image-with-shadow}{: width="70%"}
 
 <br/> <br/>
 
@@ -531,53 +561,6 @@ When your shipping box arrives at its final destination, the followings must be 
 {: .callout}
 
 
-<!--
-
-The purpose of this checklist is to update location information of both your shipment box and its contents,
-and remove the links from your shipment box to its sub-components.
-It will also notify its arrival to the POC person at the end.
-
-### Receiving checklist - Step 1:
-
-Just like In-Transit checklist, it starts by scanning a QR-code.
-Once a QR-code is properly scanned, it should display a list of sub-components, if any, and its location history, if any, as shown below.
-
-![receiving step 1](../fig/ShippingProcedure/receiving_1.jpg){: .image-with-shadow}{: width="50%"}
-
-### Receiving checklist - Step 2:
-
-Again just like in In-Transit checklist,
-select a location (usually your current or latest), along with your local time, which is auto-translated into the US Central Time.
-Tap **Update Location** button to record the information in the HWDB.
-
-Notice that this will update not just the location of your shipment box, but **all** of your sub-components as well.
-
-![receiving step 2](../fig/ShippingProcedure/receiving_2.jpg){: .image-with-shadow}{: width="50%"}
-
-
-### Receiving checklist - Step 3:
-
-Tap **Remove links** to un-do the links from your shipment box to your sub-components.
-
-If you don't do this, your sub-components will not be able to link to their real parent(s)
-when you start to assemble them!
-
-![receiving step 3](../fig/ShippingProcedure/receiving_3.jpg){: .image-with-shadow}{: width="50%"}
-
-
-### Receiving checklist - Step 4:
-
-Tap **Email** to sen its arrival notification to the POC person.
-
-This completes the shipping procedure.
-
-![receiving step 4](../fig/ShippingProcedure/receiving_4.jpg){: .image-with-shadow}{: width="50%"}
-
-<br/> <br/>
-
-[back to top](#contents)
-
--->
 
 <br/> <br/>
 

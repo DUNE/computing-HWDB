@@ -33,8 +33,8 @@ keypoints:
 
 This is a web-based app, lets you;
 - go through the hierarchical structure of the HWDB (Systems, Subsystems, Types, and Items) easily,
-- help you to deal with your shipments,
-- generate and post executive summaries,
+- help you to deal with your [shipments]({{ page.root }}/shippingprocedure/index.html) (e.g., packing, shipping, and tracking them),
+- generate and post [Executive Summaries]({{ page.root }}/executivesummary/index.html),
 - and interact with component type heretical charts.
 
 Access from here: **[https://www.phy.bnl.gov/twister/cets/hw/](https://www.phy.bnl.gov/twister/cets/hw/)**.
@@ -109,8 +109,9 @@ It provides information about the Item:
 - Serial Number.
 - Item Specifications.
 - Tests (data are downloadable in JSON).
-- PIDs of linked sub-components.
+- The latest available Executive Summary and a link to edit it or newly post one.
 - Timeline of its location.
+- PIDs of linked sub-components.
 - Binaries (photos, csv files) that are associated with this PID.
 
 ![itemview](../fig/Dash/itemview.jpg){: .image-with-shadow}{: width="70%"}
@@ -149,9 +150,16 @@ As can be seen below, clicking one of the boxes would pop up a small window, in 
 
 ## Shipments
 
-In the Shipments tab, it shows the currently available shipping boxes/containers (PIDs) as can be seen below:
+In the **Shipments** tab, it shows the currently available shipping boxes/containers (PIDs) as can be seen below:
 
-![shipments](../fig/Dash/shipments.jpg){: .image-with-shadow}{: width="70%"}
+
+You see all available shipping containers/boxes (PIDs) here, separately for the ones that are;
+- currently in **In-Transit** status,
+- have some contents in them, but not shipped, yet,
+- and the ones that are completely empty (no linked sub-components).
+
+Type in your Type ID or name and find your shipping box (a PID). Select a PID and start to pack!
+![shipment opening](../fig/ShippingProcedure/shipmentopening.jpg){: .image-with-shadow}{: width="90%"}
 
 Selecting a particular PID would take you to its shipping box View like the one below.\
 There, you can see:
@@ -160,13 +168,15 @@ There, you can see:
 - Contents of the 2 checklists, Pre-shipping and Shipping.\
   You can also directly download the corresponding Shipping Sheet (the label with bar/QR-codes).
 - Info from the SD Warehouse if available.
+- A link to an existing Executive Summary if already exists, or to newly create or edit one.
 - A list of linked sub-components (the actual contents of this shipping box).
 - Location timeline of this shipping box.
 - Binaries (such as photos) that are associated with this shipping box, if any.
 
-![eachshipment1](../fig/Dash/eachshipment1.jpg){: .image-with-shadow}{: width="70%"}
-![eachshipment2](../fig/Dash/eachshipment2.jpg){: .image-with-shadow}{: width="70%"}
-![eachshipment3](../fig/Dash/eachshipment3.jpg){: .image-with-shadow}{: width="70%"}
+![eachshipment1](../fig/Dash/eachship_1.jpg){: .image-with-shadow}{: width="70%"}
+![eachshipment2](../fig/Dash/eachship_2.jpg){: .image-with-shadow}{: width="70%"}
+![eachshipment3](../fig/Dash/eachship_3.jpg){: .image-with-shadow}{: width="70%"}
+![eachshipment4](../fig/Dash/eachship_4.jpg){: .image-with-shadow}{: width="70%"}
 
 [back to top](#contents)
 
