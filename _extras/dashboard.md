@@ -25,6 +25,8 @@ keypoints:
 >|-------------------------------------+------------------|
 >| [Shipments](#shipments) |  Displays statuses of available shipping boxes |
 >|-------------------------------------+------------------|
+>| [Activities](#activities) |  Displays recent changes in the HWDB |
+>|-------------------------------------+------------------|
 {: .checklist}
 
 <br/>
@@ -75,6 +77,7 @@ Clicking a particular Type here would take you to the Type View.
 
 ![overview](../fig/Dash/overview.jpg){: .image-with-shadow}{: width="70%"}
 
+<br/><br/> 
 
 [back to top](#contents)
 
@@ -94,6 +97,7 @@ Selecting a particular PID here will take you to its Item View in a new tab.
 
 ![typeview2](../fig/Dash/typeview_2.jpg){: .image-with-shadow}{: width="70%"}
 
+<br/><br/> 
 
 [back to top](#contents)
 
@@ -115,6 +119,8 @@ It provides information about the Item:
 - Binaries (photos, csv files) that are associated with this PID.
 
 ![itemview](../fig/Dash/itemview.jpg){: .image-with-shadow}{: width="70%"}
+
+<br/><br/> 
 
 [back to top](#contents)
 
@@ -144,6 +150,7 @@ As can be seen below, clicking one of the boxes would pop up a small window, in 
 
 ![detector2](../fig/Dash/detector_2.jpg){: .image-with-shadow}{: width="70%"}
 
+<br/><br/> 
 
 [back to top](#contents)
 
@@ -152,6 +159,9 @@ As can be seen below, clicking one of the boxes would pop up a small window, in 
 
 In the **Shipments** tab, it shows the currently available shipping boxes/containers (PIDs) as can be seen below:
 
+(for details of how to deal with shipments using the Dashboard, please refer to [DUNE Shipping Procedure]({{ page.root }}/shippingprocedure//index.html))
+
+<br/> 
 
 You see all available shipping containers/boxes (PIDs) here, separately for the ones that are;
 - currently in **In-Transit** status,
@@ -177,6 +187,35 @@ There, you can see:
 ![eachshipment2](../fig/Dash/eachship_2.jpg){: .image-with-shadow}{: width="70%"}
 ![eachshipment3](../fig/Dash/eachship_3.jpg){: .image-with-shadow}{: width="70%"}
 ![eachshipment4](../fig/Dash/eachship_4.jpg){: .image-with-shadow}{: width="70%"}
+
+<br/><br/> 
+
+[back to top](#contents)
+
+
+## Activities
+
+This shows \"what have been changed in the HWDB\" when the *sync* process of the HWDB finds anything new (e.g., new Items, new Test records... etc).
+An example screenshot is shown below:
+
+![activity](../fig/Dash/activity.jpg){: .image-with-shadow}{: width="70%"}
+
+<br/> 
+
+You can also get notified about changes for specific Component Types or Items.\
+For instance, in a Type View, you would find a **Watch** button at the top-right as shown below. Click it to include that Type to your Watch List.
+You can take the same stem in a Item View to watch a specific Item.
+
+![activity_watch](../fig/Dash/activity_watch.jpg){: .image-with-shadow}{: width="70%"}
+
+<br/> 
+
+To remove from your Watch List, click your user profile avatar, which takes you to a page as shown below.\
+You can remove Types and/or Items from yoru Watch List here.
+
+![activity_profile](../fig/Dash/activity_profile.jpg){: .image-with-shadow}{: width="90%"}
+
+<br/><br/> 
 
 [back to top](#contents)
 

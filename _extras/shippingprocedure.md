@@ -50,8 +50,15 @@ You see all available shipping containers/boxes (PIDs) here, separately for the 
 Type in your Type ID or name and find your shipping box (a PID). Select a PID and start to pack!
 ![shipment opening](../fig/ShippingProcedure/shipmentopening.jpg){: .image-with-shadow}{: width="90%"}
 
-
 <br/><br/>
+
+If a PID has not been assigned to your shipping box, go to its corresponding Type View page
+and find a pane, **New box**, as shown below:
+
+![newbox](../fig/ShippingProcedure/newbox.jpg){: .image-with-shadow}{: width="75%"}
+You can assign a PID to your new shipping box from here.
+
+<br/><br/><br/><br/>
 
 For rest of this page, we are going to describe the four checklists, Packing, Pre-shipping, Shipping, and Receiving.
 
