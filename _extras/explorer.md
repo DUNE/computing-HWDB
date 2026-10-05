@@ -1,5 +1,5 @@
 ---
-title: HWDB Dashboard
+title: HWDB Explorer
 teaching: 15
 exercises: 0
 questions:
@@ -7,7 +7,7 @@ objectives:
 keypoints:
 ---
 
-### This page describes usage of the HWDB Dashboard which provides data obtained from the HWDB visually (e.g., by plotting them).
+### This page describes usage of the HWDB Explorer which provides data obtained from the HWDB visually (e.g., by plotting them).
 
 
 ## Contents
@@ -24,8 +24,12 @@ keypoints:
 >| [Detector](#detector) | Allows one to explore Component Type hierarchy charts |
 >|-------------------------------------+------------------|
 >| [Shipments](#shipments) |  Displays statuses of available shipping boxes |
+>|--------------------------------------------------------|
+>| [Plots](#plots) | Plots various distributions based on data stored in the HWDB |
 >|-------------------------------------+------------------|
 >| [Activities](#activities) |  Displays recent changes in the HWDB |
+>|-------------------------------------+------------------|
+>| [Checklists](#checklists) | Create/Employ QC checklists |
 >|-------------------------------------+------------------|
 {: .checklist}
 
@@ -35,8 +39,12 @@ keypoints:
 
 This is a web-based app, lets you;
 - go through the hierarchical structure of the HWDB (Systems, Subsystems, Types, and Items) easily,
+- provides [Dashboard functionalities]({{ page.root }}/explorer/index.html#type-view) (e.g., displays # of certain components as a function of time),
+- generates/plots any distribution based on data stored in the HWDB,
+- create/employ (QC) checklists,
 - help you to deal with your [shipments]({{ page.root }}/shippingprocedure/index.html) (e.g., packing, shipping, and tracking them),
 - generate and post [Executive Summaries]({{ page.root }}/executivesummary/index.html),
+- create mass label sheets,
 - and interact with component type heretical charts.
 
 Access from here: **[https://www.phy.bnl.gov/twister/cets/hw/](https://www.phy.bnl.gov/twister/cets/hw/)**.
@@ -48,7 +56,7 @@ After loggin, you would likely see a screen like the one shown below:
 
 As can be seen there:
 - It allows you to access to two versions of the HWDB, the production or the development.
-- At the top, we have the tabbed navigation. There are currently 6 selections.
+- At the top, we have the tabbed navigation (Overview, Browse, Detector, Shipments... etc).
   For the rest of this page, we go through each of these tabs and describe their basic functionalities and their usages.
 
 More detail description can be also found here: [https://github.com/BNLIF/cets/blob/main/docs/tutorial/hwdb-explorer.md](https://github.com/BNLIF/cets/blob/main/docs/tutorial/hwdb-explorer.md).
@@ -159,7 +167,7 @@ As can be seen below, clicking one of the boxes would pop up a small window, in 
 
 In the **Shipments** tab, it shows the currently available shipping boxes/containers (PIDs) as can be seen below:
 
-(for details of how to deal with shipments using the Dashboard, please refer to [DUNE Shipping Procedure]({{ page.root }}/shippingprocedure//index.html))
+(for details of how to deal with shipments using the Explorer, please refer to [DUNE Shipping Procedure]({{ page.root }}/shippingprocedure//index.html))
 
 <br/> 
 
@@ -193,6 +201,16 @@ There, you can see:
 [back to top](#contents)
 
 
+## Plots
+
+It lets you create and display distributions based on data stored in the HWDB.\
+An example is shown below. As can be seen there, one can plot data from a particular PID or a range of PIDs, and can apply various *cuts*.
+
+For more detail information of how-to, please refer to [its documentation](https://www.phy.bnl.gov/twister/cets/hw/docs/plots/).
+
+
+![plots](../fig/Dash/plots.jpg){: .image-with-shadow}{: width="100%"}
+
 ## Activities
 
 This shows \"what have been changed in the HWDB\" when the *sync* process of the HWDB finds anything new (e.g., new Items, new Test records... etc).
@@ -214,6 +232,31 @@ To remove from your Watch List, click your user profile avatar, which takes you 
 You can remove Types and/or Items from yoru Watch List here.
 
 ![activity_profile](../fig/Dash/activity_profile.jpg){: .image-with-shadow}{: width="90%"}
+
+<br/><br/> 
+
+[back to top](#contents)
+
+## Checklists
+
+The Explorer also let's you create/edit checklists and use them (e.g., uploading QC test results to the HWDB, editting them by retrieving data).\
+For more detail information on how-to, please refer to [its documentation](https://www.phy.bnl.gov/twister/cets/hw/docs/checklist-editor/).
+
+Here we show a few simple examples of such checklists below.
+![checklist-1](../fig/Dash/checklist-1.jpg){: .image-with-shadow}{: width="90%"}
+
+<br/><br/>
+
+As can be sen below, it is also possible to embed distributions that are created in the **Plots** as well.\
+It also let you scan QR/bar-codes, link/unlink sub-components as well.
+![checklist-2](../fig/Dash/checklist-2.jpg){: .image-with-shadow}{: width="90%"}
+
+<br/><br/>
+
+And it offers the GUI-based checklist editor, which comes with the Live-viewer.
+![checklist-editor](../fig/Dash/checklist-editor.jpg){: .image-with-shadow}{: width="90%"}
+
+
 
 <br/><br/> 
 

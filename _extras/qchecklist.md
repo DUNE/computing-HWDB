@@ -1,5 +1,5 @@
 ---
-title: QC Checklist (HWDB Dashboard)
+title: QC Checklist via HWDB Explorer
 teaching: 60
 exercises: 0
 questions:
@@ -7,7 +7,7 @@ objectives:
 keypoints:
 ---
 
-### This page describes how to Create a QC checklist using the HWDB Dashboard.
+### This page describes how to Create a QC checklist using the HWDB Explorer.
 
 
 ## Contents
@@ -35,7 +35,7 @@ keypoints:
 
 We store various QC test results in the HWDB. It is often helpful for QC testers to have a QC checklist(s) that is dedicated to a specific QC test. It would be even better if the resultant (filled out) checklist could be easily uploaded to the HWDB.
 
-This page describes how to create such QC checklist using the HWDB Dashboard.
+This page describes how to create such QC checklist using the HWDB Explorer.
 
 In the first half of this page, we show some examples of such QC checklists.\
 In the second half, we dive into the how-to based on the **GUI-based QC checklist editor**.
@@ -108,7 +108,7 @@ which invokes a scanning session to scan-in a (sub-component) PID. The scanned P
 
 In another example shown below, we can see buttons to;
 - Submit HWDB
-- Save draft (this saves the contents within the Dashboard without actually uploading to the HWDB)
+- Save draft (this saves the contents within the Explorer without actually uploading to the HWDB)
 - Print
 - Download CSV
 - Email
@@ -122,7 +122,7 @@ In this checklist, we can also see a link to another existing checklist, **CRU_c
 
 <br/><br/><br/>
 
-The HWDB Dashboard auto-adjusts its layout based on screensize.
+The HWDB Explorer auto-adjusts its layout based on screensize.
 E.g., one can fill out checklists on mobile devices.
 
 We show example screenshots of two checklists below:
@@ -167,7 +167,7 @@ Editor             |  Live Preview
 :-------------------------:|:-------------------------:
 ![edit_checklist](../fig/QCChecklist/checklist_edit.jpg){: .image-with-shadow}{: width="100%"}|![view_checklist](../fig/QCChecklist/checklist_view.jpg){: .image-with-shadow}{: width="100%"}
 
-- **Name:** This is the name to be used within the Dashboard. E.g., the link to this checklist or when you reference to this checklist from another checklist.
+- **Name:** This is the name to be used within the Explorer. E.g., the link to this checklist or when you reference to this checklist from another checklist.
 - **Start from:** One could select an existing example to start to create a checklist. If you don't see an example you like, you could copy your existing checklist as a template. We'll describe how to do this in a later section.
 - **Title:** This will be the title of your checklist.
 - **Test type:** Contents of the checklist will be stored in the **Test** section of the HWDB. Thus, assigning a unique **Test Type name** is required. Provide your QC test name here, which needs to be unique within this (selected) **Type ID**.

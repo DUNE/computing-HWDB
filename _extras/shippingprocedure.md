@@ -33,15 +33,15 @@ keypoints:
 
 ## The two apps and word document
 
-We offer two applications, the [HWDB Dashboard]({{ page.root }}/dashboard/index.html) and [iPad App]({{ page.root }}/06-Using-iPad-App/index.html).
+We offer two applications, the [HWDB Explorer]({{ page.root }}/explorer/index.html) and [iPad App]({{ page.root }}/06-Using-iPad-App/index.html).
 These two apps help and enforce users to follow the shipping steps we describe below.
 
 One could also either just follow the steps below or download the shipping procedure from [here](https://drive.google.com/file/d/1k7gG9VhwyT7_CrBE8PnrfWttH8xBy6cB/view?usp=share_link).
 
-In the following, where appropriate, we show screenshots based on the [HWDB Dashboard]({{ page.root }}/dashboard/index.html) as the iPad app has very much similar GUI.
+In the following, where appropriate, we show screenshots based on the [HWDB Explorer]({{ page.root }}/explorer/index.html) as the iPad app has very much similar GUI.
 
-In the [HWDB Dashboard]({{ page.root }}/dashboard/index.html), clicking the **Shipments** tab, one arrives at a page as shown below.
-(see also [HWDB Dashboard#shipments]({{ page.root }}/dashboard/index.html#shipments))\
+In the [HWDB Explorer]({{ page.root }}/explorer/index.html), clicking the **Shipments** tab, one arrives at a page as shown below.
+(see also [HWDB Explorer#shipments]({{ page.root }}/explorer/index.html#shipments))\
 You see all available shipping containers/boxes (PIDs) here, separately for the ones that are;
 - currently in **In-Transit** status,
 - have some contents in them, but not shipped, yet,
@@ -78,7 +78,7 @@ And that is basically all you need to do in the packing checklist.
 It prepares you to assign a PID to your shipment box, while making links from the assigned PID to
 each of your sub-components that are contained inside of your shipment box.
 
-In the [HWDB Dashboard]({{ page.root }}/dashboard/index.html), one can see current contents of your shipping box in the **PACKING** pane, if there is any.
+In the [HWDB Explorer]({{ page.root }}/explorer/index.html), one can see current contents of your shipping box in the **PACKING** pane, if there is any.
 See below as an example.\
 Notice that one could directly **unlink** components from here, if wished. To add more components, click **Add items...** button.
 ![packing menu](../fig/ShippingProcedure/packingmenu.jpg){: .image-with-shadow}{: width="50%"}
@@ -100,9 +100,9 @@ You could also use your smart phone to scan QR-codes to read-in PIDs as well.
 
 <br/> <br/><br/> <br/>
 
-### Workflow in the Dashboard
+### Workflow in the Explorer
 
-The rest of the checklists, Pre-shipping, Shipping, and Receiving checklists in the HWDB Dashboard can be found in
+The rest of the checklists, Pre-shipping, Shipping, and Receiving checklists in the HWDB Explorer can be found in
 the **SHIPPING WORKFLOWS** pane as shown below. Select one to start to go through it.
 
 ![workflow](../fig/ShippingProcedure/dashboardwordflow.jpg){: .image-with-shadow}{: width="35%"}
@@ -150,7 +150,7 @@ This person will be contacted in case of shipment failure.
 
 <br/> <br/>
 
-In the Dashboard, user is prompted to select a particular route, checked for the existence of Executive Summary, info for a QA-rep and POC:
+In the Explorer, user is prompted to select a particular route, checked for the existence of Executive Summary, info for a QA-rep and POC:
 
 ![routeselection](../fig/ShippingProcedure/pre_route.jpg){: .image-with-shadow}{: width="70%"}
 ![ES](../fig/ShippingProcedure/pre_ES.jpg){: .image-with-shadow}{: width="70%"}
@@ -183,7 +183,7 @@ You will then need to provide the followings:
 
 <br/>
 
-Or in the Dashboard, it would look like these:
+Or in the Explorer, it would look like these:
 ![origin](../fig/ShippingProcedure/pre_origin.jpg){: .image-with-shadow}{: width="70%"}
 ![ff](../fig/ShippingProcedure/pre_ff.jpg){: .image-with-shadow}{: width="70%"}
 
@@ -220,7 +220,7 @@ And here is an example of such csv file that should be attached to the above ema
 
 <br/><br/>
 
-In the Dashboard, it would look like these:
+In the Explorer, it would look like these:
 ![email](../fig/ShippingProcedure/pre_email.jpg){: .image-with-shadow}{: width="70%"}
 
 <br/> <br/>
@@ -236,7 +236,7 @@ Once they respond:
 - Record the name of the person who responded and its date/time.
 - Perform one last visual inspection on your shipping box as well.
 
-Again, in the Dashboard, it would look like this:
+Again, in the Explorer, it would look like this:
 ![damage](../fig/ShippingProcedure/pre_damage.jpg){: .image-with-shadow}{: width="70%"}
 
 <br/> <br/>
@@ -329,7 +329,7 @@ An example is shown below in the JSON format:
 
 <br/> <br/>
 
-In the Dashboard, this process of generating a shipping label and recoding in the HWDB would look like this:
+In the Explorer, this process of generating a shipping label and recoding in the HWDB would look like this:
 ![final](../fig/ShippingProcedure/pre_final.jpg){: .image-with-shadow}{: width="70%"}
 
 <br/> <br/>
@@ -364,7 +364,7 @@ And request them to send you the finalized invoice electronically as well.
 
 <br/> <br/>
 
-In the Dashboard, it would look like these:
+In the Explorer, it would look like these:
 ![shi_check](../fig/ShippingProcedure/shi_check.jpg){: .image-with-shadow}{: width="70%"}
 ![shi_bol](../fig/ShippingProcedure/shi_bol.jpg){: .image-with-shadow}{: width="70%"}
 
@@ -431,7 +431,7 @@ Hajime (POC)
 
 <br/> <br/>
 
-In the Dashboard, it would look like these:
+In the Explorer, it would look like these:
 ![shi_email](../fig/ShippingProcedure/shi_email.jpg){: .image-with-shadow}{: width="70%"}
 
 <br/> <br/>
@@ -462,7 +462,7 @@ Before you finally ship it, make sure the followings are done:
 
 <br/> <br/>
 
-In the Dashboard, it would look like these:
+In the Explorer, it would look like these:
 ![shi_approval](../fig/ShippingProcedure/shi_approval.jpg){: .image-with-shadow}{: width="70%"}
 
 If all are done, **ship it**.
@@ -512,7 +512,7 @@ Again, we provide an example in the JSON format below:
 
 <br/> <br/>
 
-In the Dashboard, it would look like these:
+In the Explorer, it would look like these:
 ![shi_ship](../fig/ShippingProcedure/shi_ship.jpg){: .image-with-shadow}{: width="70%"}
 ![shi_final](../fig/ShippingProcedure/shi_finish.jpg){: .image-with-shadow}{: width="70%"}
 
@@ -540,7 +540,7 @@ When your shipping box arrives at its final destination, the followings must be 
 
 <br/> <br/>
 
-In the Dashboard, it would look like these:
+In the Explorer, it would look like these:
 ![rec_check](../fig/ShippingProcedure/rec_check.jpg){: .image-with-shadow}{: width="70%"}
 ![rec_loc](../fig/ShippingProcedure/rec_loc.jpg){: .image-with-shadow}{: width="70%"}
 ![rec_email](../fig/ShippingProcedure/rec_email.jpg){: .image-with-shadow}{: width="70%"}

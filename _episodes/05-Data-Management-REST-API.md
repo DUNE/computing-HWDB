@@ -97,7 +97,7 @@ export APIPATH='https://dbwebapi2.fnal.gov:8443/cdbdev/api/v1'
 Note: The above path lets you access to the **development version** of the HWDB.
 In order to access to the **production version**, the path would be;
 ~~~
-export APIPATH='https://dbwebapi2.fnal.gov:8443/cdbdev/api/v1'
+export APIPATH='https://dbwebapi2.fnal.gov:8443/cdb/api/v1'
 ~~~
 {: .language-bash}
 

@@ -142,7 +142,7 @@ collaborative_notes: "DUNE-Computing-HWDB"
 >
 > If you like to skip all basics and jump into more useful stuff, here are some quick links.
 >
-> - [**HWDB Dashboard**]({{ page.root }}/dashboard/index.html) : Provides filtered data from the HWDB visually.
+> - [**HWDB Explorer**]({{ page.root }}/dashboard/index.html) : Provides filtered data from the HWDB visually.
 > - [**DUNE Shipping Procedure**]({{ page.root }}/shippingprocedure/index.html) and [**Shipping handoff process**]({{ page.root }}/shippinghandoff/index.html) : Each steps of shipping stuff to either the SD Warehouse/SURF or non-SURF places.
 > - [**DUNE bar/QR-codes**]({{ page.root }}/barqrcode/index.html) : Generate many DUNE bar/QR-code labels at ease!
 > - [**Pratical usage of the HWDB**]({{ page.root }}/hwdbusage/index.html) : Type/PID hierarchies, filtering data, storing data without a specific DB schema!?

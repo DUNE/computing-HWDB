@@ -1,5 +1,5 @@
 ---
-title: Executive Summary (HWDB Dashboard)
+title: Executive Summary via HWDB Explorer
 teaching: 15
 exercises: 0
 questions:
@@ -7,7 +7,7 @@ objectives:
 keypoints:
 ---
 
-### This page describes how to produce an Executive Summary using the HWDB Dashboard.
+### This page describes how to produce an Executive Summary using the HWDB Explorer.
 
 
 ## Contents
@@ -30,10 +30,10 @@ keypoints:
 ## What is this:
 
 Executive Summary (ES) is to report QC results and needed for signoff of different assemblies or component batches.
-This summary is created by the [HWDB Dashboard]({{ page.root }}/dashboard/index.html) which also allows designated individuals to certify components and records their associated sign-off in the HWDB.
+This summary is created by the [HWDB Explorer]({{ page.root }}/dashboard/index.html) which also allows designated individuals to certify components and records their associated sign-off in the HWDB.
 The application also converts the produced summary into a PDF file and uploads it to the HWDB.
 
-The QC results and sign-offs, that are displayed by the [HWDB Dashboard]({{ page.root }}/dashboard/index.html), vary by component type. 
+The QC results and sign-offs, that are displayed by the [HWDB Explorer]({{ page.root }}/dashboard/index.html), vary by component type. 
 Hence, each consortium needs to determine which component types need to have the corresponding ES.
 
 For a given component type, the consortium needs to provide a list (config. file) of fields in the HWDB that are included in the ES.
@@ -83,7 +83,7 @@ A config file is provided in JSON format and it needs to be placed in the **IMAG
 
 <br/><br/> 
 
-Our [HWDB Dashboard]({{ page.root }}/dashboard/index.html) provides GUI to produce config file.
+Our [HWDB Explorer]({{ page.root }}/dashboard/index.html) provides GUI to produce config file.
 Go ahead to click the **Create the type's ES config...** button.\
 In the Edit scene, you might be seeing a very empty page, if you haven't had an ES for the selected PID.\
 Below, we show an example of how one could fill out this Edit scene.
@@ -174,7 +174,7 @@ These extra fields, if you create, will be a part of the summary section of ES.
 ![esconfig3](../fig/ExecutiveSummary/ES_config_3.jpg){: .image-with-shadow}{: width="70%"}
 
 Once you are done with editing, click **Save config to HWDB**.
-The Dashboard generates a JSON file and uploads it to the HWDB.
+The Explorer generates a JSON file and uploads it to the HWDB.
 
 <br/><br/> <br/><br/> 
 
