@@ -107,6 +107,24 @@ Selecting a particular PID here will take you to its Item View in a new tab.
 
 <br/><br/> 
 
+### Dashboard plot
+
+In a Type View, as can be seen, the Explorer auto-generates and displays two types of dashboard plots,
+one for **Item updated** and **Tests performed** for the other.
+**Item updated** plots show # of components (items), that currently exist under the given Type ID in the HWDB, as
+a function of updated time, while **Tests performed** display similar distributions for the stored Test data.
+
+Below, we show the pane of **Item updated** plots as an example.
+![dashboardplot](../fig/Dash/dashboardplot.jpg){: .image-with-shadow}{: width="100%"}
+As can be seen, you can also easily overlay **total # to be produced**, **date for completion**, and **date for the absolute need**.
+- You can set its display range in the two fields found at the top-right corner.
+- Projection line(s) can be added (seen as blue dashed lines in the above example) by filling the **Projected** and **by** fields and click the plus-sign button to apply.
+- Fill put the **Plan** field with your **the expected total # of component**.
+- Fill out the **completed by** field with **the date to be completed** for the plan.
+- Fill out the **needed by** field with **the date to be needed** for the plan.
+
+<br/><br/> 
+
 [back to top](#contents)
 
 ### Item View:
